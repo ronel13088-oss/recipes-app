@@ -103,11 +103,11 @@ const screens = {
       center: v => [h('b', {}, bdi(v == null ? '?' : String(v))), h('span', {}, v == null ? 'זמן עבודה לא ידוע' : 'דק׳ עבודה שלך')] });
     const tl = h('ul', { class: 'tl', id: 'recipe-tl' },
       h('li', {}, h('div', { class: 'blk you' }, h('b', {}, 'אתה'), h('span', { class: 's' }, r.prepMinutes == null ? (r.timeNote || 'המקור לא מציין זמן עבודה') : 'זמן עבודה לפי המקור'), h('span', { class: 'min' }, bdi(r.prepMinutes == null ? 'לא ידוע' : r.prepMinutes + '′')))),
-      hasDev ? h('li', {}, h('div', { class: 'blk dev', id: 'device-block' }, h('b', {}, DEV_WORK[devKey] || 'המכשיר עובד, אתה לא'), h('span', { class: 's' }, r.devicePartial ? 'חלקי: רק חלק מהשלבים מתוזמנים במקור' : 'לפי המקור'), h('span', { class: 'min' }, bdi(L.fmtRange(r.deviceMin, r.deviceMax))))) : null,
+      hasDev ? h('li', {}, h('div', { class: 'blk dev', id: 'device-block' }, h('b', {}, DEV_WORK[devKey] || 'המכשיר עובד, אתה לא'), h('span', { class: 's' }, r.devicePartial ? 'רק חלק מהשלבים מתוזמנים במקור' : 'לפי המקור'), h('span', { class: 'min' }, r.devicePartial ? h('span', { class: 'tag-partial' }, 'חלקי') : null, bdi(L.fmtRange(r.deviceMin, r.deviceMax))))) : null,
       h('li', {}, h('div', { class: 'blk tot' }, h('b', {}, 'סה״כ'), h('span', { class: 's' }, r.totalMinutes == null ? 'המקור לא מציין' : (r.devicePartial ? 'לפי המקור (זמן המכשיר חלקי)' : 'לפי המקור')), h('span', { class: 'min' }, bdi(r.totalMinutes == null ? 'לא ידוע' : r.totalMinutes + '′')))));
     const ingr = r.ingredients.map(i => i.qty ? `${i.qty} ${i.name}` : i.name);
     const eat = () => { const e = P.recipeEntry(r); const list = St.today(); list.push(e); St.setToday(list);
-      const undo = () => { const l = St.today(); const k = l.findIndex(x => x.ts === e.ts && x.id === e.id); if (k >= 0) { l.splice(k, 1); St.setToday(l); } };
+      const undo = () => { const l = St.today(); const k = l.findIndex(x => x.uid === e.uid); if (k >= 0) { l.splice(k, 1); St.setToday(l); } };
       if (e.g == null) toast(['החלבון במתכון הזה לא ידוע — לא נוסף ליעד'], undo); else toast(['✓ נרשמו ', bdi((e.basis === 'calculated' ? '≈' : '') + e.g), ' ג׳ להיום'], undo); };
     return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה'),
         r.sourceUrl ? h('a', { href: r.sourceUrl, target: '_blank', rel: 'noopener noreferrer' }, 'מקור', ic('ext')) : null),
@@ -157,8 +157,8 @@ const screens = {
     const items = log.map((e, i) => { const r = e.type === 'custom' ? null : R.find(x => x.id === e.id); const g = P.entryGrams(e);
       return h('li', {}, h('span', {}, e.type === 'custom' ? e.name : (r?.title || e.id), e.type === 'custom' ? h('span', { class: 'tag' }, 'ידני') : null, e.type === 'custom' && e.servings > 1 ? [' ×', bdi(String(e.servings))] : null),
         h('span', { class: 'sub' }, g == null ? 'לא ידוע · לא נרשם' : [bdi((e.basis === 'calculated' ? '≈' : '') + g), ' ג׳']),
-        e.type === 'custom' ? h('button', { class: 'ibtn', 'aria-label': `ערוך ${e.name}`, onclick: () => openSheet(i) }, ic('edit')) : null,
-        h('button', { class: 'ibtn', 'aria-label': 'מחק רשומה', onclick: () => { const l = St.today(); l.splice(i, 1); St.setToday(l); render(); } }, ic('trash'))); });
+        e.type === 'custom' ? h('button', { class: 'ibtn', 'aria-label': `ערוך ${e.name}`, onclick: () => openSheet(e.uid) }, ic('edit')) : null,
+        h('button', { class: 'ibtn', 'aria-label': 'מחק רשומה', onclick: () => { St.setToday(St.today().filter(x => x.uid !== e.uid)); render(); } }, ic('trash'))); });
     const byP = [...R].sort((a, b) => (b.protein_g ?? -1) - (a.protein_g ?? -1)); const maxP = Math.max(1, ...R.map(r => r.protein_g ?? 0));
     return [h('h1', {}, 'חלבון היום'), ...top,
       h('h2', {}, 'אכלתי היום'), log.length ? h('ul', { class: 'lines', id: 'plog' }, items) : h('p', { class: 'hint', id: 'plog-empty' }, 'עוד לא נרשם כלום היום.'),
@@ -176,7 +176,7 @@ const screens = {
     return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה')), h('h1', {}, 'מה יש בבית?'), h('p', { class: 'hint' }, 'כתוב מצרכים מופרדים בפסיק. המתכונים מדורגים לפי מספר המצרכים שיש לך.'), ta, out]; },
   settings() { const file = h('input', { type: 'file', accept: 'application/json', 'aria-label': 'ייבוא גיבוי' });
     file.addEventListener('change', async () => { try { const o = JSON.parse(await file.files[0].text()); if (!L.validBackup(o)) throw 0;
-      if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { St.importState(L.importState(o)); go('home'); } } catch { alert('קובץ גיבוי לא תקין'); } });
+      if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { try { St.importState(L.importState(o)); } catch { alert('הייבוא נכשל (אין מספיק מקום?). הנתונים הקודמים שוחזרו.'); return; } go('home'); } } catch { alert('קובץ גיבוי לא תקין'); } });
     return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה')), h('h1', {}, 'גיבוי'),
       h('button', { class: 'btn dark', onclick: () => { const b = new Blob([JSON.stringify({ app: 'recipes-app', exported: new Date().toISOString(), state: St.exportState() })], { type: 'application/json' });
         const url = URL.createObjectURL(b); const a = h('a', { href: url, download: `recipes-${P.dayKey(new Date())}.json` }); a.click(); setTimeout(() => URL.revokeObjectURL(url), 0); } }, 'ייצוא גיבוי'),
@@ -184,7 +184,7 @@ const screens = {
 };
 
 // ---------- Custom entry bottom sheet ----------
-function openSheet(editIdx) { const log = St.today(); const cur = editIdx != null ? log[editIdx] : null;
+function openSheet(editUid) { const cur = editUid != null ? St.today().find(x => x.uid === editUid) || null : null;
   const name = h('input', { type: 'text', id: 'c-name', maxlength: String(P.NAME_MAX), required: true, value: cur?.name ?? '' });
   const grams = h('input', { type: 'text', id: 'c-g', inputmode: 'decimal', placeholder: 'לא ידוע', value: cur?.g ?? '' });
   let sv = cur?.servings ?? 1; const out = h('output', { id: 'c-sv', 'aria-live': 'polite' }, String(sv));
@@ -199,12 +199,12 @@ function openSheet(editIdx) { const log = St.today(); const cur = editIdx != nul
     chips.length ? h('div', { class: 'chips', 'aria-label': 'אחרונים' }, chips) : null,
     h('label', { for: 'c-name' }, 'שם'), name, h('label', { for: 'c-g' }, 'גרם חלבון למנה (לא חובה)'), grams,
     h('label', {}, 'מנות'), h('div', { class: 'stepper' }, minus, out, plus), err, h('div', { class: 'row' }, save));
-  save.addEventListener('click', () => { const e = P.customEntry({ name: name.value, g: grams.value, servings: sv }, cur?.ts ?? Date.now());
+  save.addEventListener('click', () => { const e = P.customEntry({ name: name.value, g: grams.value, servings: sv }, cur?.ts ?? Date.now(), cur?.uid);
     if (e.error) { err.textContent = e.error === 'grams' ? 'מספר בין 0 ל־300' : 'שם חובה (עד 60 תווים)'; return; }
-    const l = St.today(); if (cur) { const k = l.findIndex(x => x.ts === cur.ts && x.type === 'custom'); if (k >= 0) l[k] = e; else l.push(e); } else l.push(e);
+    const l = St.today(); if (cur) { const k = l.findIndex(x => x.uid === cur.uid); if (k >= 0) l[k] = e; else l.push(e); } else l.push(e);
     St.setToday(l); St.setRecent(P.pushRecent(St.recent(), { name: e.name, g: e.g })); dlg.close();
     const before = cur; render();
-    toast(e.g == null ? ['נרשם ', e.name, ' · חלבון לא ידוע, לא נוסף ליעד'] : ['✓ נרשמו ', bdi(String(P.entryGrams(e))), ' ג׳ להיום'], () => { const m = St.today(); const k = m.findIndex(x => x.ts === e.ts && x.type === 'custom'); if (k >= 0) { before ? m[k] = before : m.splice(k, 1); St.setToday(m); render(); } }); });
+    toast(e.g == null ? ['נרשם ', e.name, ' · חלבון לא ידוע, לא נוסף ליעד'] : ['✓ נרשמו ', bdi(String(P.entryGrams(e))), ' ג׳ להיום'], () => { const m = St.today(); const k = m.findIndex(x => x.uid === e.uid); if (k >= 0) { before ? m[k] = before : m.splice(k, 1); St.setToday(m); render(); } }); });
   dlg.addEventListener('close', () => dlg.remove()); document.body.append(dlg); upd(); dlg.showModal(); name.focus(); }
 
 // Day rollover: re-render protein screen when the local date changes.

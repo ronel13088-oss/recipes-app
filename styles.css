@@ -90,3 +90,5 @@ dialog.sheet::backdrop { background: rgba(38,34,28,.45); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.tag-partial { font: 500 11.5px Rubik; color: var(--ink-muted); margin-inline-end: 6px; vertical-align: 2px; }
+.after-cd { font-weight: 300; color: var(--ink-muted); }

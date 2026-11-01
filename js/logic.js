@@ -1,4 +1,4 @@
-import { validEntry, validRecent, validFree, parseGoal } from './protein.js';
+import { validEntry, validRecent, validFree, parseGoal, withUids, uniqueDay, MAX_DAYS, MAX_PER_DAY } from './protein.js';
 // Pure logic (no DOM) — tested in tests/logic.test.mjs
 export function proteinLabel(r) {
   if (r.protein_g == null) return 'חלבון: לא ידוע';
@@ -91,17 +91,18 @@ export function validBackup(o) {
   if (!Array.isArray(st.plan) || !st.plan.every(x => typeof x === 'string')) return false;
   if (!st.log || typeof st.log !== 'object' || Array.isArray(st.log)) return false;
   for (const v of Object.values(st.log)) if (!Array.isArray(v) || !v.every(e => e && typeof e === 'object' && !Array.isArray(e) && (st.v === 2 || isNum(e.g)))) return false;
+  if (Object.keys(st.log).length > MAX_DAYS || Object.values(st.log).some(v => v.length > MAX_PER_DAY)) return false;
   if (st.v === 2) { if (!(st.goal === null || parseGoal(st.goal) === st.goal)) return false;
     if (!validRecent(st.recent) || !validFree(st.free)) return false;
     if (st.checked !== undefined && !(Array.isArray(st.checked) && st.checked.every(x => typeof x === 'string'))) return false;
-    for (const [k, v] of Object.entries(st.log)) if (!/^\d{4}-\d\d-\d\d$/.test(k) || !v.every(validEntry)) return false;
+    for (const [k, v] of Object.entries(st.log)) if (!/^\d{4}-\d\d-\d\d$/.test(k) || v.length > MAX_PER_DAY || !v.every(validEntry) || !uniqueDay(v)) return false;
     return true; }
   return isNum(st.goal) && st.goal > 0;
 }
 // Convert a validated backup (v1 or v2) into current state shape.
 export function importState(o) { const st = o.state;
-  if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: structuredClone(st.log), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])] };
-  const log = {}; for (const [k, v] of Object.entries(st.log)) log[k] = v.map((e, i) => ({ type: 'custom', name: (typeof e.label === 'string' && e.label.replace(/\s+/g, ' ').trim().slice(0, 60)) || 'ידני', g: e.g >= 0 && e.g <= 300 ? Math.round(e.g * 10) / 10 : null, servings: 1, ts: i }));
+  if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: Object.fromEntries(Object.entries(st.log).map(([k, v]) => [k, withUids(v)])), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])] };
+  const log = {}; for (const [k, v] of Object.entries(st.log)) log[k] = withUids(v.map((e, i) => ({ type: 'custom', name: (typeof e.label === 'string' && e.label.replace(/\s+/g, ' ').trim().slice(0, 60)) || 'ידני', g: e.g >= 0 && e.g <= 300 ? Math.round(e.g * 10) / 10 : null, servings: 1, ts: i })));
   return { v: 2, plan: [...st.plan], goal: null, log, recent: [], free: [], checked: [] }; } // v1 goal dropped: no-default rule
 
 // Steps: accepts strings (old) or {text, timer_min} objects (new). Empty/missing text -> skipped. timer_min must be a positive finite number (<=600) else null.
@@ -129,3 +130,6 @@ export const stepStop = (cur, dir) => STOPS[Math.max(0, Math.min(STOPS.length - 
 // angle (deg, 0 = 12 o'clock, clockwise) -> minutes 0..30
 export const angleToMinutes = deg => ((deg % 360) + 360) % 360 / 360 * 30;
 export const fmtRange = (a, b) => a === b ? `${a}′` : `${a}–${b}′`;
+// Cook-mode countdown: starts from timer_min; after it ends, a range step shows the remaining upper bound.
+export const countdownStart = s => s?.timer_min ?? null;
+export const afterCountdown = s => s?.timer_min != null && s.timer_max != null ? `עוד עד ${s.timer_max - s.timer_min} דק׳` : null;
