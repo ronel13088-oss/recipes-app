@@ -64,3 +64,5 @@ test('pantry: whole-word match only', () => { const rs = [{ id: 'p', title: 'P',
   assert.deepEqual(L.rankByPantry(rs, 'יוגורט').map(x => x.r.id), ['y']); assert.deepEqual(L.rankByPantry(rs, 'יוגורט יווני').map(x => x.r.id), ['y']); assert.deepEqual(L.rankByPantry(rs, 'יוג').length, 0); });
 test('no-time recipe under 5-minute filter lands in unknown group', () => { const rs = L.normalize([{ id: 'n', active_minutes: null }, { id: 'f', active_minutes: 5 }, { id: 's', active_minutes: 6 }]);
   assert.deepEqual(L.filterRecipes(rs, { maxPrep: 5 }).map(r => r.id), ['f']); assert.deepEqual(L.unknownPrep(rs, { maxPrep: 5 }).map(r => r.id), ['n']); });
+test('20-minute filter on real data matches raw count', () => { const n = RAW.filter(r => typeof r.active_minutes === 'number' && r.active_minutes <= 20).length;
+  const f = L.filterRecipes(R, { maxPrep: 20 }); assert.equal(f.length, n); assert.ok(f.every(r => r.prepMinutes <= 20)); assert.ok(n >= L.filterRecipes(R, { maxPrep: 15 }).length); });

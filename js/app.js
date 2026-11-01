@@ -20,7 +20,7 @@ const tabs = {
     return [h('h1', {}, 'מתכונים'), h('div', { class: 'filters' },
       sel('ארוחה', F.meal, L.MEALS, v => { F.meal = v; show('list'); }),
       sel('מכשיר', F.device, L.DEVICES, v => { F.device = v; show('list'); }),
-      sel('עד זמן עבודה', F.maxPrep == null ? '' : String(F.maxPrep), { 5: '5 דק׳', 10: '10 דק׳', 15: '15 דק׳' }, v => { F.maxPrep = v ? +v : null; show('list'); })),
+      sel('עד זמן עבודה', F.maxPrep == null ? '' : String(F.maxPrep), { 5: '5 דק׳', 10: '10 דק׳', 15: '15 דק׳', 20: '20 דק׳' }, v => { F.maxPrep = v ? +v : null; show('list'); })),
       h('p', { class: 'hint', id: 'count' }, `${rs.length} מתוך ${R.length} מתכונים`), h('ul', { class: 'cards' }, rs.map(r => card(r))),
       unk.length ? h('section', { id: 'unknown-time' }, h('h2', {}, `זמן לא ידוע (${unk.length})`), h('ul', { class: 'cards' }, unk.map(r => card(r)))) : null]; },
   pantry() { const ta = h('textarea', { rows: 3, placeholder: 'למשל: ביצים, טונה, יוגורט יווני', 'aria-label': 'מצרכים שיש בבית' }); ta.value = pantry;

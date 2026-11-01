@@ -1,4 +1,4 @@
-const V = 'recipes-35483c6cc0a0'; // auto-set by scripts/build-version.mjs (pre-commit)
+const V = 'recipes-0eff13fd11a0'; // auto-set by scripts/build-version.mjs (pre-commit)
 const ASSETS = ['./', 'index.html', 'styles.css', 'manifest.webmanifest', 'js/app.js', 'js/logic.js', 'data/recipes.json', 'icons/icon-192.png', 'icons/icon-512.png'];
 self.addEventListener('install', e => e.waitUntil(caches.open(V).then(c => c.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' })))))); // waits until user taps refresh
 self.addEventListener('message', e => { if (e.data === 'skipWaiting') self.skipWaiting(); });
