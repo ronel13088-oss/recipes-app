@@ -28,7 +28,8 @@ export function normalize(raw) {
       ingredients: (Array.isArray(r.ingredients) ? r.ingredients : []).map(parseIngredient).filter(x => x.name),
       steps: Array.isArray(r.steps) ? r.steps.map(String) : [],
       sourceUrl: typeof (r.url ?? r.sourceUrl) === 'string' && /^https:\/\//.test(r.url ?? r.sourceUrl) ? (r.url ?? r.sourceUrl) : '',
-      protein_g: typeof p === 'number' && p >= 0 ? p : null, proteinBasis: r.protein_basis || '',
+      protein_g: typeof p === 'number' && p >= 0 ? p : null,
+      proteinCalculated: r.protein_basis === 'calculated', proteinBasis: ['source', 'calculated'].includes(r.protein_basis) ? '' : (typeof r.protein_basis === 'string' ? r.protein_basis : ''),
       servings: r.servings ?? null, note: r.short_note || r.notes || '', ninjaBake: !!r.ninja_bake_adaptation, ninjaNote: typeof r.ninja_note === 'string' ? r.ninja_note : '' };
   });
 }
@@ -36,18 +37,25 @@ export function normalize(raw) {
 export function filterRecipes(rs, { meal = '', device = '', maxPrep = null } = {}) {
   return rs.filter(r => (!meal || r.meal === meal) && (!device || r.devices.includes(device)) && (maxPrep == null || (r.prepMinutes != null && r.prepMinutes <= maxPrep)));
 }
+// When a max time is set: recipes matching meal/device whose time is unknown (shown as a separate group).
+export function unknownPrep(rs, { meal = '', device = '', maxPrep = null } = {}) {
+  if (maxPrep == null) return [];
+  return rs.filter(r => (!meal || r.meal === meal) && (!device || r.devices.includes(device)) && r.prepMinutes == null);
+}
 const norm = s => s.replace(/[׳'"״]/g, '').replace(/\s+/g, ' ').trim();
+// Simple Hebrew singular/plural folding: ביצה/ביצים, עגבנייה/עגבניות -> same stem (words of 4+ letters only).
+export const stem = s => norm(s).split(' ').map(w => w.length >= 4 ? w.replace(/(ים|ות|יה|ה)$/, '') : w).join(' ');
 export function rankByPantry(rs, haveText) {
-  const have = haveText.split(/[,\n،]+/).map(norm).filter(Boolean);
+  const have = haveText.split(/[,\n،]+/).map(stem).filter(Boolean);
   if (!have.length) return [];
-  return rs.map(r => { const hit = r.ingredients.filter(i => have.some(h => norm(i.name).includes(h)));
+  return rs.map(r => { const hit = r.ingredients.filter(i => have.some(h => stem(i.name).includes(h)));
     return { r, hit: hit.length, total: r.ingredients.length, score: r.ingredients.length ? hit.length / r.ingredients.length : 0 }; })
-    .filter(x => x.hit > 0).sort((a, b) => b.score - a.score || b.hit - a.hit);
+    .filter(x => x.hit > 0).sort((a, b) => b.hit - a.hit || b.score - a.score);
 }
 export function shoppingList(rs, ids) {
   const map = new Map();
   for (const id of ids) { const r = rs.find(x => x.id === id); if (!r) continue;
-    for (const i of r.ingredients) { const k = norm(i.name); const e = map.get(k) || { name: i.name, sums: {}, other: [], from: new Set() };
+    for (const i of r.ingredients) { const k = stem(i.name); const e = map.get(k) || { name: i.name, sums: {}, other: [], from: new Set() };
       if (i.amount != null) e.sums[i.unit] = (e.sums[i.unit] || 0) + i.amount; else if (i.qty) e.other.push(i.qty);
       e.from.add(r.title); map.set(k, e); } }
   return [...map.values()].map(e => ({ name: e.name, count: e.from.size,

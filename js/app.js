@@ -9,20 +9,20 @@ const h = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) { if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else if (v !== false && v != null) e.setAttribute(k, v === true ? '' : v); }
   for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : String(c)); return e; };
 const view = $('#view'); const F = { meal: '', device: '', maxPrep: null }; let pantry = '';
-const prot = r => r.protein_g == null ? 'חלבון: לא ידוע' : `חלבון: ${r.protein_g} ג׳${r.proteinBasis ? ' (' + r.proteinBasis + ')' : ''}`;
+const prot = r => r.protein_g == null ? 'חלבון: לא ידוע' : `חלבון: ${r.protein_g} ג׳${r.proteinCalculated ? ' (מחושב)' : ''}${r.proteinBasis ? ' (' + r.proteinBasis + ')' : ''}`;
 const prep = r => r.prepMinutes == null ? 'זמן עבודה: לא ידוע' : `${r.prepMinutes} דק׳ עבודה`;
 const card = (r, extra) => h('li', { class: 'card' }, h('button', { class: 'title', onclick: () => show('recipe', r.id) }, r.title),
   h('div', { class: 'meta' }, `${L.MEALS[r.meal] || r.meal} · ${prep(r)} · ${prot(r)}`), extra || null);
 const sel = (label, val, opts, on) => h('label', {}, label, h('select', { onchange: e => on(e.target.value) },
   h('option', { value: '' }, 'הכל'), ...Object.entries(opts).map(([k, v]) => h('option', { value: k, selected: k === val }, v))));
 const tabs = {
-  list() { const rs = L.filterRecipes(R, F);
+  list() { const rs = L.filterRecipes(R, F), unk = L.unknownPrep(R, F);
     return [h('h1', {}, 'מתכונים'), h('div', { class: 'filters' },
       sel('ארוחה', F.meal, L.MEALS, v => { F.meal = v; show('list'); }),
       sel('מכשיר', F.device, L.DEVICES, v => { F.device = v; show('list'); }),
       sel('עד זמן עבודה', F.maxPrep == null ? '' : String(F.maxPrep), { 5: '5 דק׳', 10: '10 דק׳', 15: '15 דק׳' }, v => { F.maxPrep = v ? +v : null; show('list'); })),
-      F.maxPrep != null ? h('p', { class: 'hint' }, 'מתכונים בלי זמן עבודה ידוע לא מוצגים בסינון לפי זמן.') : null,
-      h('p', { class: 'hint', id: 'count' }, `${rs.length} מתוך ${R.length} מתכונים`), h('ul', { class: 'cards' }, rs.map(r => card(r)))]; },
+      h('p', { class: 'hint', id: 'count' }, `${rs.length} מתוך ${R.length} מתכונים`), h('ul', { class: 'cards' }, rs.map(r => card(r))),
+      unk.length ? h('section', { id: 'unknown-time' }, h('h2', {}, `זמן לא ידוע (${unk.length})`), h('ul', { class: 'cards' }, unk.map(r => card(r)))) : null]; },
   pantry() { const ta = h('textarea', { rows: 3, placeholder: 'למשל: ביצים, טונה, יוגורט יווני', 'aria-label': 'מצרכים שיש בבית' }); ta.value = pantry;
     const out = h('ul', { class: 'cards' });
     const run = () => { pantry = ta.value; out.replaceChildren(...L.rankByPantry(R, pantry).map(x => card(x.r, h('div', { class: 'meta' }, `יש לך ${x.hit} מתוך ${x.total} מצרכים`)))); };

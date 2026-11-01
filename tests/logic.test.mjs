@@ -25,3 +25,19 @@ test('build-data merges, fails on duplicate id and bad JSON', () => { const d = 
   assert.equal(merge(d).recipes.length, 2);
   fs.writeFileSync(path.join(d, 'recipes-b3.json'), JSON.stringify([{ id: 'a' }])); assert.throws(() => merge(d), /duplicate id "a"/);
   fs.writeFileSync(path.join(d, 'recipes-b3.json'), '{oops'); assert.throws(() => merge(d), /invalid JSON in recipes-b3/); });
+test('pantry ranks by matched count first: tuna salad tops "טונה, ביצה"', () => { const x = L.rankByPantry(R, 'טונה, ביצה'); assert.match(x[0].r.title, /טונה/); assert.ok(x[0].hit >= 2);
+  for (let i = 1; i < x.length; i++) assert.ok(x[i - 1].hit > x[i].hit || (x[i - 1].hit === x[i].hit && x[i - 1].score >= x[i].score)); });
+test('singular/plural folding', () => { assert.equal(L.stem('ביצה'), L.stem('ביצים')); assert.equal(L.stem('עגבנייה'), L.stem('עגבניות'));
+  const rs = [{ id: 'a', title: 'A', ingredients: [L.parseIngredient('1 ביצה')] }, { id: 'b', title: 'B', ingredients: [L.parseIngredient('3 ביצים')] }];
+  const l = L.shoppingList(rs, ['a', 'b']); assert.equal(l.length, 1); assert.equal(l[0].qty, '4');
+  assert.equal(L.rankByPantry(rs, 'ביצים').length, 2); });
+test('unknown-time group only when max set, respects meal/device, disjoint from main list', () => {
+  assert.deepEqual(L.unknownPrep(R, {}), []);
+  const F = { maxPrep: 10 }, main = L.filterRecipes(R, F), unk = L.unknownPrep(R, F);
+  assert.ok(unk.length > 0 && unk.every(r => r.prepMinutes == null)); assert.ok(!unk.some(r => main.includes(r)));
+  assert.equal(main.length + unk.length + R.filter(r => r.prepMinutes != null && r.prepMinutes > 10).length, R.length);
+  assert.ok(L.unknownPrep(R, { maxPrep: 10, meal: 'shake' }).every(r => r.meal === 'shake')); });
+test('protein_basis: source/calculated/free text/missing', () => {
+  const [a, b, c, d] = L.normalize([{ id: 'a', protein_g: 20, protein_basis: 'calculated' }, { id: 'b', protein_g: 20, protein_basis: 'source' }, { id: 'c', protein_g: 5, protein_basis: 'לעוגייה' }, { id: 'd' }]);
+  assert.equal(a.proteinCalculated, true); assert.equal(a.proteinBasis, ''); assert.equal(b.proteinCalculated, false); assert.equal(b.proteinBasis, '');
+  assert.equal(c.proteinBasis, 'לעוגייה'); assert.equal(d.protein_g, null); assert.equal(d.proteinCalculated, false); });

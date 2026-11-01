@@ -2,8 +2,8 @@
 body { font-family: system-ui, sans-serif; margin: 0; background: #fafafa; color: #222; }
 main { max-width: 640px; margin: 0 auto; padding: 16px; }
 h1 { font-size: 1.4rem; margin: 8px 0 12px; } h2 { font-size: 1.1rem; }
-.tabs { position: sticky; top: 0; display: flex; overflow-x: auto; background: #fff; border-bottom: 1px solid #ddd; z-index: 1; }
-.tabs button { flex: 1 0 auto; padding: 12px 10px; border: 0; background: none; font: inherit; cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs { position: sticky; top: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); background: #fff; border-bottom: 1px solid #ddd; z-index: 1; }
+.tabs button { min-width: 0; padding: 10px 2px; font-size: .8rem; line-height: 1.2; white-space: normal; border: 0; background: none; font: inherit; cursor: pointer; border-bottom: 2px solid transparent; }
 .tabs button.on { border-bottom-color: #333; font-weight: 600; }
 button { font: inherit; padding: 8px 14px; border: 1px solid #bbb; border-radius: 8px; background: #fff; cursor: pointer; margin: 4px 0; }
 button.small { padding: 4px 10px; font-size: .9rem; }
