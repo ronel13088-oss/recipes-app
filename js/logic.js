@@ -54,10 +54,13 @@ export function unknownPrep(rs, { meal = '', device = '', maxPrep = null } = {})
 const norm = s => s.replace(/[׳'"״]/g, '').replace(/\s+/g, ' ').trim();
 // Simple Hebrew singular/plural folding: ביצה/ביצים, עגבנייה/עגבניות -> same stem (words of 4+ letters only).
 export const stem = s => norm(s).split(' ').map(w => w.length >= 4 ? w.replace(/(ים|ות|יה|ה)$/, '') : w).join(' ');
+// Whole-word match: every token of the (stemmed) query phrase appears contiguously as whole tokens in the ingredient.
+export function hasPhrase(name, phrase) { const a = name.split(' '), b = phrase.split(' ').filter(Boolean); if (!b.length) return false;
+  for (let i = 0; i + b.length <= a.length; i++) if (b.every((t, j) => a[i + j] === t)) return true; return false; }
 export function rankByPantry(rs, haveText) {
   const have = haveText.split(/[,\n،]+/).map(stem).filter(Boolean);
   if (!have.length) return [];
-  return rs.map(r => { const hit = r.ingredients.filter(i => have.some(h => stem(i.name).includes(h)));
+  return rs.map(r => { const hit = r.ingredients.filter(i => have.some(h => hasPhrase(stem(i.name), h)));
     return { r, hit: hit.length, total: r.ingredients.length, score: r.ingredients.length ? hit.length / r.ingredients.length : 0 }; })
     .filter(x => x.hit > 0).sort((a, b) => b.hit - a.hit || b.score - a.score);
 }
@@ -80,4 +83,12 @@ export function streak(log, goal, today = new Date()) {
   while (dayTotal(log[dayKey(d)]) >= goal) { n++; d.setDate(d.getDate() - 1); }
   return n;
 }
-export function validBackup(o) { return o && typeof o === 'object' && o.app === 'recipes-app' && typeof o.state === 'object'; }
+const isNum = x => typeof x === 'number' && Number.isFinite(x);
+export function validBackup(o) {
+  if (!o || typeof o !== 'object' || Array.isArray(o) || o.app !== 'recipes-app') return false;
+  const st = o.state; if (!st || typeof st !== 'object' || Array.isArray(st)) return false;
+  if (!Array.isArray(st.plan) || !st.plan.every(x => typeof x === 'string')) return false;
+  if (!st.log || typeof st.log !== 'object' || Array.isArray(st.log)) return false;
+  for (const v of Object.values(st.log)) if (!Array.isArray(v) || !v.every(e => e && typeof e === 'object' && !Array.isArray(e) && isNum(e.g))) return false;
+  return isNum(st.goal) && st.goal > 0;
+}

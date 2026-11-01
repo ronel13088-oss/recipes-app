@@ -27,7 +27,7 @@ const tabs = {
     const out = h('ul', { class: 'cards' });
     const run = () => { pantry = ta.value; out.replaceChildren(...L.rankByPantry(R, pantry).map(x => card(x.r, h('div', { class: 'meta' }, `יש לך ${x.hit} מתוך ${x.total} מצרכים`)))); };
     ta.addEventListener('input', run); run();
-    return [h('h1', {}, 'מה יש בבית?'), h('p', { class: 'hint' }, 'כתוב מצרכים מופרדים בפסיק. המתכונים מדורגים לפי אחוז ההתאמה.'), ta, out]; },
+    return [h('h1', {}, 'מה יש בבית?'), h('p', { class: 'hint' }, 'כתוב מצרכים מופרדים בפסיק. המתכונים מדורגים לפי מספר המצרכים שיש לך.'), ta, out]; },
   plan() { const list = L.shoppingList(R, S.plan);
     return [h('h1', {}, 'תוכנית שבועית'),
       S.plan.length ? h('ul', { class: 'cards' }, S.plan.map((id, i) => { const r = R.find(x => x.id === id); return r ? card(r, h('button', { class: 'small', onclick: () => { S.plan.splice(i, 1); save(); show('plan'); } }, 'הסר')) : null; }))
@@ -46,10 +46,10 @@ const tabs = {
   settings() { const goal = h('input', { type: 'number', min: 1, value: S.goal, 'aria-label': 'יעד יומי' });
     const file = h('input', { type: 'file', accept: 'application/json', 'aria-label': 'ייבוא גיבוי' });
     file.addEventListener('change', async () => { try { const o = JSON.parse(await file.files[0].text()); if (!L.validBackup(o)) throw 0;
-      if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { S = { ...load(), ...o.state }; save(); show('settings'); } } catch { alert('קובץ גיבוי לא תקין'); } });
+      if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { S = { plan: o.state.plan, log: o.state.log, goal: o.state.goal }; save(); show('settings'); } } catch { alert('קובץ גיבוי לא תקין'); } });
     return [h('h1', {}, 'הגדרות'), h('label', {}, 'יעד חלבון יומי (גרם) ', goal), h('button', { onclick: () => { if (+goal.value > 0) { S.goal = +goal.value; save(); show('protein'); } } }, 'שמור'),
       h('h2', {}, 'גיבוי'), h('button', { onclick: () => { const b = new Blob([JSON.stringify({ app: 'recipes-app', exported: new Date().toISOString(), state: S })], { type: 'application/json' });
-        const a = h('a', { href: URL.createObjectURL(b), download: `recipes-${L.dayKey(new Date())}.json` }); a.click(); } }, 'ייצוא גיבוי'), h('p', {}, 'ייבוא: ', file),
+        const url = URL.createObjectURL(b); const a = h('a', { href: url, download: `recipes-${L.dayKey(new Date())}.json` }); a.click(); setTimeout(() => URL.revokeObjectURL(url), 0); } }, 'ייצוא גיבוי'), h('p', {}, 'ייבוא: ', file),
       h('p', { class: 'hint' }, 'הנתונים נשמרים רק במכשיר הזה.')]; },
   recipe(id) { const r = R.find(x => x.id === id); if (!r) return [h('p', {}, 'מתכון לא נמצא')]; const inPlan = S.plan.includes(id);
     return [h('button', { class: 'small', onclick: () => show('list') }, 'חזרה'), h('h1', {}, r.title),

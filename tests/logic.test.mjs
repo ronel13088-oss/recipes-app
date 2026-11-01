@@ -53,3 +53,14 @@ test('real data: 15-minute filter puts 30/25 over limit and null-time in unknown
   const F = { maxPrep: 15 }, main = L.filterRecipes(R, F).map(r => r.id), unk = L.unknownPrep(R, F).map(r => r.id);
   for (const id of ['one-pot-bolognese', 'tuna-egg-corn-salad']) { assert.ok(!main.includes(id) && !unk.includes(id)); }
   assert.deepEqual(unk.sort(), R.filter(r => r.prepMinutes == null).map(r => r.id).sort()); assert.equal(unk.length, RAW.filter(r => r.active_minutes == null).length); });
+test('validBackup deep validation', () => { const ok = { plan: ['a'], log: { '2026-11-01': [{ g: 30, label: 'x' }] }, goal: 150 }; const w = st => ({ app: 'recipes-app', state: st });
+  assert.equal(L.validBackup(w(ok)), true); assert.equal(L.validBackup(w({ plan: [], log: {}, goal: 1 })), true);
+  for (const bad of [null, [], 'x', { ...ok, plan: 'a' }, { ...ok, plan: [1] }, { ...ok, plan: [null] }, { ...ok, log: null }, { ...ok, log: [] }, { ...ok, log: { d: 'x' } }, { ...ok, log: { d: [null] } }, { ...ok, log: { d: [{ g: '30' }] } },
+    { ...ok, log: { d: [{ g: NaN }] } }, { ...ok, log: { d: [{ g: Infinity }] } }, { ...ok, log: { d: [{}] } }, { ...ok, goal: 0 }, { ...ok, goal: -5 }, { ...ok, goal: '150' }, { ...ok, goal: Infinity }, { plan: [], log: {} }])
+    assert.equal(L.validBackup(w(bad)), false, JSON.stringify(bad));
+  assert.equal(L.validBackup({ app: 'other', state: ok }), false); assert.equal(L.validBackup(null), false); assert.equal(L.validBackup({ app: 'recipes-app' }), false); });
+test('pantry: whole-word match only', () => { const rs = [{ id: 'p', title: 'P', ingredients: [L.parseIngredient('½ כוס אבקת חלבון')] }, { id: 'm', title: 'M', ingredients: [L.parseIngredient('1 כוס חלב')] }, { id: 'y', title: 'Y', ingredients: [L.parseIngredient('1 גביע יוגורט יווני')] }];
+  assert.deepEqual(L.rankByPantry(rs, 'חלב').map(x => x.r.id), ['m']); assert.deepEqual(L.rankByPantry(rs, 'אבקת חלבון').map(x => x.r.id), ['p']);
+  assert.deepEqual(L.rankByPantry(rs, 'יוגורט').map(x => x.r.id), ['y']); assert.deepEqual(L.rankByPantry(rs, 'יוגורט יווני').map(x => x.r.id), ['y']); assert.deepEqual(L.rankByPantry(rs, 'יוג').length, 0); });
+test('no-time recipe under 5-minute filter lands in unknown group', () => { const rs = L.normalize([{ id: 'n', active_minutes: null }, { id: 'f', active_minutes: 5 }, { id: 's', active_minutes: 6 }]);
+  assert.deepEqual(L.filterRecipes(rs, { maxPrep: 5 }).map(r => r.id), ['f']); assert.deepEqual(L.unknownPrep(rs, { maxPrep: 5 }).map(r => r.id), ['n']); });
