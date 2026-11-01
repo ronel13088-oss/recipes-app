@@ -1,0 +1,15 @@
+{
+  "name": "app-starter",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/ && node scripts/check-vendor-provenance.mjs",
+    "check": "node scripts/check-no-real-data.mjs",
+    "prepare": "node scripts/install-hooks.mjs",
+    "setup": "node scripts/install-hooks.mjs",
+    "build:data": "node scripts/build-data.mjs",
+    "version:sw": "node scripts/build-version.mjs",
+    "serve": "python3 -m http.server 8080",
+    "check:vendor": "node scripts/check-vendor-provenance.mjs"
+  }
+}

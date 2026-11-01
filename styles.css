@@ -1,0 +1,25 @@
+/* Neutral placeholder styling — גד will design the look. */
+body { font-family: system-ui, sans-serif; margin: 0; background: #fafafa; color: #222; }
+main { max-width: 640px; margin: 0 auto; padding: 16px; }
+h1 { font-size: 1.4rem; margin: 8px 0 12px; } h2 { font-size: 1.1rem; }
+.tabs { position: sticky; top: 0; display: flex; overflow-x: auto; background: #fff; border-bottom: 1px solid #ddd; z-index: 1; }
+.tabs button { flex: 1 0 auto; padding: 12px 10px; border: 0; background: none; font: inherit; cursor: pointer; border-bottom: 2px solid transparent; }
+.tabs button.on { border-bottom-color: #333; font-weight: 600; }
+button { font: inherit; padding: 8px 14px; border: 1px solid #bbb; border-radius: 8px; background: #fff; cursor: pointer; margin: 4px 0; }
+button.small { padding: 4px 10px; font-size: .9rem; }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; } .filters label { display: flex; flex-direction: column; font-size: .85rem; gap: 2px; }
+select, input, textarea { font: inherit; padding: 6px; border: 1px solid #bbb; border-radius: 6px; box-sizing: border-box; }
+textarea { width: 100%; }
+.cards { list-style: none; padding: 0; } .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+.card .title { border: 0; padding: 0; margin: 0; font-weight: 600; text-align: start; background: none; }
+.meta, .hint { color: #555; font-size: .9rem; } .qty { color: #555; }
+.note-box { background: #f0f0f0; border-inline-start: 3px solid #888; padding: 8px 10px; border-radius: 6px; }
+.note-box.est { border-inline-start-color: #c58b00; }
+.shop { list-style: none; padding: 0; } .shop li { padding: 6px 0; border-bottom: 1px solid #eee; }
+.row { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; } .row select { flex: 1 1 100%; } .row input { width: 110px; }
+.big { font-size: 2rem; font-weight: 700; margin: 4px 0; } progress { width: 100%; height: 14px; }
+.note { background: #333; color: #fff; padding: 10px 16px; text-align: center; }
+.link { background: none; border: 0; color: #ffd27a; text-decoration: underline; font: inherit; cursor: pointer; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
