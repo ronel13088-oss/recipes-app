@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T19:27:31.286Z",
+ "generated": "2026-11-01T19:35:13.134Z",
  "sources": [
   "recipes-batch2.json",
   "recipes.json"
@@ -42,7 +42,8 @@
     }
    ],
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "matkonit-protein-pancake-banana",
@@ -87,7 +88,8 @@
    ],
    "protein_note": "לפנקייק, לפי העמוד",
    "device_min": 4,
-   "device_max": 6
+   "device_max": 6,
+   "device_partial": false
   },
   {
    "id": "wellnessmama-oat-protein-pancake",
@@ -145,7 +147,8 @@
    ],
    "protein_note": "למנה (3 פנקייקים), לפי העמוד",
    "device_min": 4,
-   "device_max": 7
+   "device_max": 7,
+   "device_partial": false
   },
   {
    "id": "microwave-omelette-2min",
@@ -193,7 +196,8 @@
     }
    ],
    "device_min": 2,
-   "device_max": 2
+   "device_max": 2,
+   "device_partial": false
   },
   {
    "id": "greek-yogurt-oat-berry-bowl",
@@ -232,7 +236,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "date-oat-protein-balls",
@@ -277,7 +282,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": 1,
-   "device_max": 1
+   "device_max": 1,
+   "device_partial": false
   },
   {
    "id": "no-bake-protein-balls",
@@ -318,7 +324,8 @@
    ],
    "protein_note": "לכדור, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "protein-muffins-yogurt",
@@ -385,7 +392,8 @@
    ],
    "ninja_note": "אפייה בנינג'ה (Bake/Roast) במקום תנור: כ-10–20 מעלות פחות מהמתכון ובדיקה מוקדמת — הערכה, לא מהמקור.",
    "device_min": 15,
-   "device_max": 18
+   "device_max": 18,
+   "device_partial": false
   },
   {
    "id": "sarig-banana-kale-shake",
@@ -415,7 +423,8 @@
     }
    ],
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "cottage-strawberry-protein-shake",
@@ -455,7 +464,8 @@
    ],
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "greek-yogurt-raspberry-shake",
@@ -497,7 +507,8 @@
    ],
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "choc-pb-protein-shake",
@@ -536,7 +547,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "proffee-protein-coffee",
@@ -568,7 +580,8 @@
    ],
    "protein_note": "בערך, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "banana-cream-protein-shake",
@@ -601,7 +614,8 @@
    ],
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "sarig-ninja-chicken-5min",
@@ -663,7 +677,8 @@
     }
    ],
    "device_min": 5,
-   "device_max": 5
+   "device_max": 5,
+   "device_partial": false
   },
   {
    "id": "gila-ninja-pargit-soy-silan",
@@ -711,7 +726,8 @@
     }
    ],
    "device_min": 19,
-   "device_max": 21
+   "device_max": 21,
+   "device_partial": false
   },
   {
    "id": "matkonit-ninja-pargit",
@@ -753,7 +769,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": 14,
-   "device_max": 14
+   "device_max": 14,
+   "device_partial": false
   },
   {
    "id": "gila-beef-patties-pan",
@@ -794,7 +811,8 @@
     }
    ],
    "device_min": 6,
-   "device_max": 8
+   "device_max": 8,
+   "device_partial": false
   },
   {
    "id": "parsa-patties-ninja",
@@ -849,7 +867,8 @@
     }
    ],
    "device_min": 17,
-   "device_max": 17
+   "device_max": 17,
+   "device_partial": false
   },
   {
    "id": "ninja-chilli-con-carne",
@@ -921,7 +940,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": 10,
-   "device_max": 10
+   "device_max": 10,
+   "device_partial": true
   },
   {
    "id": "ninja-chicken-pineapple-rice",
@@ -969,7 +989,8 @@
     }
    ],
    "device_min": 20,
-   "device_max": 20
+   "device_max": 20,
+   "device_partial": false
   },
   {
    "id": "chickpea-tuna-stew-10min",
@@ -1004,7 +1025,8 @@
     }
    ],
    "device_min": 7,
-   "device_max": 7
+   "device_max": 7,
+   "device_partial": false
   },
   {
    "id": "matkonit-red-lentil-dal",
@@ -1057,7 +1079,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": 20,
-   "device_max": 22
+   "device_max": 22,
+   "device_partial": false
   },
   {
    "id": "gila-ninja-schnitzel",
@@ -1112,7 +1135,8 @@
     }
    ],
    "device_min": 11,
-   "device_max": 12
+   "device_max": 12,
+   "device_partial": false
   },
   {
    "id": "marcwiner-air-fryer-salmon",
@@ -1168,7 +1192,8 @@
    ],
    "protein_note": "למנה, לפי העמוד",
    "device_min": 7,
-   "device_max": 9
+   "device_max": 9,
+   "device_partial": false
   },
   {
    "id": "honey-mustard-pistachio-salmon",
@@ -1227,7 +1252,8 @@
     }
    ],
    "device_min": 15,
-   "device_max": 20
+   "device_max": 20,
+   "device_partial": false
   },
   {
    "id": "air-fryer-burger",
@@ -1305,7 +1331,8 @@
     }
    ],
    "device_min": 8,
-   "device_max": 10
+   "device_max": 10,
+   "device_partial": false
   },
   {
    "id": "ninja-pargiot-chili-honey",
@@ -1351,7 +1378,8 @@
     }
    ],
    "device_min": 8,
-   "device_max": 8
+   "device_max": 8,
+   "device_partial": true
   },
   {
    "id": "gila-chicken-stir-fry",
@@ -1408,7 +1436,8 @@
     }
    ],
    "device_min": 9,
-   "device_max": 12
+   "device_max": 12,
+   "device_partial": false
   },
   {
    "id": "beef-stir-fry-green-beans",
@@ -1477,7 +1506,8 @@
     }
    ],
    "device_min": 10,
-   "device_max": 14
+   "device_max": 14,
+   "device_partial": false
   },
   {
    "id": "tuna-fish-cakes-pan",
@@ -1531,7 +1561,8 @@
     }
    ],
    "device_min": 4,
-   "device_max": 4
+   "device_max": 4,
+   "device_partial": false
   },
   {
    "id": "gila-tofu-stir-fry",
@@ -1584,7 +1615,8 @@
     }
    ],
    "device_min": 7,
-   "device_max": 10
+   "device_max": 10,
+   "device_partial": true
   },
   {
    "id": "orange-crispy-tofu-airfryer",
@@ -1640,7 +1672,8 @@
     }
    ],
    "device_min": 15,
-   "device_max": 18
+   "device_max": 18,
+   "device_partial": false
   },
   {
    "id": "tilapia-fillet-baked",
@@ -1679,7 +1712,8 @@
    ],
    "ninja_note": "אפייה בנינג'ה (Bake/Roast) במקום תנור: כ-10–20 מעלות פחות מהמתכון ובדיקה מוקדמת — הערכה, לא מהמקור.",
    "device_min": 12,
-   "device_max": 15
+   "device_max": 15,
+   "device_partial": false
   },
   {
    "id": "chickpea-spinach-stew",
@@ -1724,7 +1758,8 @@
     }
    ],
    "device_min": 14,
-   "device_max": 14
+   "device_max": 14,
+   "device_partial": true
   },
   {
    "id": "protein-cookies-oat-choc",
@@ -1783,7 +1818,8 @@
    "time_note": "לא צוין במקור",
    "protein_note": "לעוגייה, לפי העמוד",
    "device_min": 10,
-   "device_max": 12
+   "device_max": 12,
+   "device_partial": false
   },
   {
    "id": "today-soft-protein-cookies",
@@ -1840,7 +1876,8 @@
    "total_minutes": 20,
    "protein_basis": null,
    "device_min": 8,
-   "device_max": 11
+   "device_max": 11,
+   "device_partial": false
   },
   {
    "id": "cottage-veg-muffins",
@@ -1916,7 +1953,8 @@
    },
    "protein_verified": false,
    "device_min": 20,
-   "device_max": 25
+   "device_max": 25,
+   "device_partial": false
   },
   {
    "id": "greek-egg-muffins",
@@ -2004,7 +2042,8 @@
    },
    "protein_verified": false,
    "device_min": 25,
-   "device_max": 30
+   "device_max": 30,
+   "device_partial": false
   },
   {
    "id": "greek-yogurt-banana-shake",
@@ -2096,7 +2135,8 @@
    },
    "protein_verified": false,
    "device_min": 1,
-   "device_max": 2
+   "device_max": 2,
+   "device_partial": false
   },
   {
    "id": "banana-pb-cocoa-shake",
@@ -2142,7 +2182,8 @@
    "time_note": "בדף כתוב 5-10 דק'; ב-schema prepTime=10",
    "protein_basis": null,
    "device_min": 1,
-   "device_max": 1
+   "device_max": 1,
+   "device_partial": false
   },
   {
    "id": "ninja-chicken-rice",
@@ -2198,7 +2239,8 @@
    "total_minutes": 23,
    "protein_basis": "source",
    "device_min": 21,
-   "device_max": 21
+   "device_max": 21,
+   "device_partial": false
   },
   {
    "id": "ninja-bolognese",
@@ -2267,7 +2309,8 @@
    "total_minutes": 35,
    "protein_basis": null,
    "device_min": 10,
-   "device_max": 10
+   "device_max": 10,
+   "device_partial": false
   },
   {
    "id": "one-pot-bolognese",
@@ -2333,7 +2376,8 @@
    "time_note": "מתוך נתוני schema בדף (prepTime 30, totalTime 1H); לא מוצג בטקסט הגלוי",
    "protein_basis": null,
    "device_min": 15,
-   "device_max": 15
+   "device_max": 15,
+   "device_partial": true
   },
   {
    "id": "air-fryer-chicken-meatballs",
@@ -2400,7 +2444,8 @@
    "total_minutes": 60,
    "protein_basis": null,
    "device_min": 12,
-   "device_max": 15
+   "device_max": 15,
+   "device_partial": false
   },
   {
    "id": "tuna-egg-pickle-salad",
@@ -2470,7 +2515,8 @@
    },
    "protein_verified": false,
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "tuna-egg-corn-salad",
@@ -2586,7 +2632,8 @@
    },
    "protein_verified": false,
    "device_min": null,
-   "device_max": null
+   "device_max": null,
+   "device_partial": false
   },
   {
    "id": "ninja-drumsticks",
@@ -2640,7 +2687,8 @@
    "time_note": "בדף גם \"משך הכנה: 35-40 דקות\"; totalTime=50 מה-schema",
    "protein_basis": null,
    "device_min": 20,
-   "device_max": 25
+   "device_max": 25,
+   "device_partial": false
   },
   {
    "id": "air-fryer-chicken-breast",
@@ -2697,7 +2745,8 @@
    "total_minutes": 20,
    "protein_note": "למנה, לפי טבלת הערכים בעמוד",
    "device_min": 12,
-   "device_max": 15
+   "device_max": 15,
+   "device_partial": false
   },
   {
    "id": "shakshuka-10min",
@@ -2746,7 +2795,8 @@
    "total_minutes": 30,
    "protein_basis": null,
    "device_min": 12,
-   "device_max": 13
+   "device_max": 13,
+   "device_partial": false
   }
  ]
 }
