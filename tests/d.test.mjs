@@ -3,10 +3,10 @@ import * as L from '../js/logic.js'; import * as P from '../js/protein.js';
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const RAW = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/recipes.json'), 'utf8')).recipes; const R = L.normalize(RAW);
 test('steps: strings (old) and {text,timer_min} objects both accepted', () => {
-  assert.deepEqual(L.normalizeSteps(['a', ' b ']), [{ text: 'a', timer_min: null }, { text: 'b', timer_min: null }]);
-  assert.deepEqual(L.normalizeSteps([{ text: 'x', timer_min: 12 }, 'y']), [{ text: 'x', timer_min: 12 }, { text: 'y', timer_min: null }]); });
+  assert.deepEqual(L.normalizeSteps(['a', ' b ']), [{ text: 'a', timer_min: null, timer_max: null }, { text: 'b', timer_min: null, timer_max: null }]);
+  assert.deepEqual(L.normalizeSteps([{ text: 'x', timer_min: 12 }, 'y']), [{ text: 'x', timer_min: 12, timer_max: null }, { text: 'y', timer_min: null, timer_max: null }]); });
 test('steps: missing/empty text skipped, garbage no crash', () => {
-  assert.deepEqual(L.normalizeSteps([{ timer_min: 5 }, { text: '' }, { text: '   ' }, '', null, 5, [], { text: 7 }, { text: 'ok' }]), [{ text: 'ok', timer_min: null }]);
+  assert.deepEqual(L.normalizeSteps([{ timer_min: 5 }, { text: '' }, { text: '   ' }, '', null, 5, [], { text: 7 }, { text: 'ok' }]), [{ text: 'ok', timer_min: null, timer_max: null }]);
   assert.deepEqual(L.normalizeSteps(null), []); assert.deepEqual(L.normalizeSteps('x'), []); });
 test('steps: timer_min missing / non-positive / NaN / string -> null (no dial)', () => {
   for (const t of [undefined, null, 0, -3, NaN, Infinity, '10', 601, {}]) assert.equal(L.normalizeSteps([{ text: 'a', timer_min: t }])[0].timer_min, null, String(t));
@@ -58,8 +58,12 @@ test('backup v2: rejects bad goal/entries/recent/free', () => {
     { recent: 'x' }, { recent: Array.from({ length: 9 }, (_, i) => ({ name: 'n' + i, g: 1 })) }, { free: [{ text: 'a', done: 'no', ts: 1 }] }, { free: undefined }, { checked: [1] }])
     assert.equal(L.validBackup(v2(bad)), false, JSON.stringify(bad)); });
 test('backup v1 (old) still imports; legacy goal kept only if valid', () => { const o = { app: 'recipes-app', state: { plan: ['a'], log: { '2026-11-01': [{ g: 30, label: 'x' }] }, goal: 150 } };
-  assert.equal(L.validBackup(o), true); const s = L.importState(o); assert.equal(s.goal, 150); assert.equal(s.log['2026-11-01'][0].type, 'custom'); assert.ok(s.log['2026-11-01'].every(P.validEntry)); });
+  assert.equal(L.validBackup(o), true); const s = L.importState(o); assert.equal(s.goal, null); assert.equal(s.log['2026-11-01'][0].type, 'custom'); assert.ok(s.log['2026-11-01'].every(P.validEntry)); });
 test('no innerHTML / outerHTML / insertAdjacentHTML in app code', () => { for (const f of ['app.js', 'logic.js', 'protein.js', 'store.js']) assert.doesNotMatch(fs.readFileSync(path.join(ROOT, 'js', f), 'utf8'), /innerHTML|outerHTML|insertAdjacentHTML|document\.write/, f); });
 test('sw precaches all js, font and used icons', () => { const sw = fs.readFileSync(path.join(ROOT, 'sw.js'), 'utf8'); const css = fs.readFileSync(path.join(ROOT, 'styles.css'), 'utf8');
   for (const f of ['js/protein.js', 'js/store.js', 'fonts/rubik/Rubik-VariableFont_wght.woff2']) assert.ok(sw.includes(`'${f}'`), f);
   for (const m of css.matchAll(/url\((icons\/lucide\/[\w-]+\.svg)\)/g)) assert.ok(sw.includes(`'${m[1]}'`), m[1]); });
+test('timer_max: kept only when valid and > timer_min; never without timer_min', () => { const t = (a, b) => L.normalizeSteps([{ text: 'a', timer_min: a, timer_max: b }])[0];
+  assert.deepEqual([t(12, 15).timer_min, t(12, 15).timer_max], [12, 15]); assert.equal(t(12, 12).timer_max, null); assert.equal(t(12, 10).timer_max, null);
+  assert.equal(t(null, 15).timer_max, null); assert.equal(t(12, -1).timer_max, null); assert.equal(t(12, '15').timer_max, null); assert.equal(t(12, NaN).timer_max, null); });
+test('v1 backup: legacy goal never imported (no-default rule)', () => { for (const goal of [150, 120, 1]) assert.equal(L.importState({ app: 'recipes-app', state: { plan: [], log: {}, goal } }).goal, null); });

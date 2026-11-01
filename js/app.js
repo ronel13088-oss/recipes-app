@@ -121,7 +121,7 @@ const screens = {
       r.ninjaBake ? h('p', { class: 'note-box' }, 'אין תנור: אופים בנינג׳ה (Bake / Air Crisp) בחום נמוך ב־10–20 מעלות מהמתכון.') : null,
       r.ninjaNote ? h('p', { class: 'note-box est' }, h('strong', {}, 'הערכה שלנו: '), r.ninjaNote) : null,
       h('section', { class: 'card', id: 'ingredients' }, h('h2', {}, 'מצרכים'), h('ul', {}, ingr.map(t => h('li', {}, t)))),
-      h('section', {}, h('h2', {}, 'הוראות'), r.steps.length ? h('ol', { class: 'steps' }, r.steps.map(s => h('li', {}, s.text, s.timer_min != null ? h('span', { class: 'badge', title: 'זמן לשלב לפי המקור' }, bdi(s.timer_min + '′')) : null))) : h('p', { class: 'hint' }, 'אין שלבים, ראה במקור.')),
+      h('section', {}, h('h2', {}, 'הוראות'), r.steps.length ? h('ol', { class: 'steps' }, r.steps.map(s => h('li', {}, s.text, s.timer_min != null ? h('span', { class: 'badge', title: 'זמן לשלב לפי המקור' }, bdi(s.timer_max != null ? `${s.timer_min}–${s.timer_max}` : String(s.timer_min)), ' דק׳') : null))) : h('p', { class: 'hint' }, 'אין שלבים, ראה במקור.')),
       h('div', { class: 'actions' },
         h('button', { class: 'btn', 'aria-pressed': String(inPlan), onclick: () => { const p = St.plan(); p.plan = inPlan ? p.plan.filter(x => x !== id) : [...p.plan, id]; St.savePlan(p); render(); toast([inPlan ? 'הוסר מהקניות' : 'נוסף לקניות']); } }, ic(inPlan ? 'check' : 'plus'), inPlan ? 'בקניות' : 'לקניות'),
         h('button', { class: 'btn primary', id: 'eat', onclick: eat }, 'אכלתי', ic('check')))];

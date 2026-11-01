@@ -102,14 +102,16 @@ export function validBackup(o) {
 export function importState(o) { const st = o.state;
   if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: structuredClone(st.log), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])] };
   const log = {}; for (const [k, v] of Object.entries(st.log)) log[k] = v.map((e, i) => ({ type: 'custom', name: (typeof e.label === 'string' && e.label.replace(/\s+/g, ' ').trim().slice(0, 60)) || 'ידני', g: e.g >= 0 && e.g <= 300 ? Math.round(e.g * 10) / 10 : null, servings: 1, ts: i }));
-  return { v: 2, plan: [...st.plan], goal: parseGoal(st.goal), log, recent: [], free: [], checked: [] }; }
+  return { v: 2, plan: [...st.plan], goal: null, log, recent: [], free: [], checked: [] }; } // v1 goal dropped: no-default rule
 
 // Steps: accepts strings (old) or {text, timer_min} objects (new). Empty/missing text -> skipped. timer_min must be a positive finite number (<=600) else null.
 const posMin = (x, max = 600) => typeof x === 'number' && Number.isFinite(x) && x > 0 && x <= max ? x : null;
 export function normalizeSteps(steps) {
   if (!Array.isArray(steps)) return [];
-  return steps.map(s => typeof s === 'string' ? { text: s.trim(), timer_min: null }
-    : s && typeof s === 'object' && typeof s.text === 'string' ? { text: s.text.trim(), timer_min: posMin(s.timer_min ?? s.timer_minutes) } : null)
+  return steps.map(s => { if (typeof s === 'string') return { text: s.trim(), timer_min: null, timer_max: null };
+    if (!s || typeof s !== 'object' || typeof s.text !== 'string') return null;
+    const a = posMin(s.timer_min ?? s.timer_minutes), b = a == null ? null : posMin(s.timer_max);
+    return { text: s.text.trim(), timer_min: a, timer_max: b != null && b > a ? b : null }; }) // countdown (cook mode) starts from timer_min
     .filter(s => s && s.text);
 }
 // Device time: only from device_min/device_max fields (never derived). Single value -> min=max. Invalid -> null (block hidden).
