@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 node scripts/check-no-real-data.mjs --staged
-node --test tests/ >/dev/null || { echo "tests failed"; exit 1; }
+env -u GIT_DIR -u GIT_WORK_TREE -u GIT_INDEX_FILE -u GIT_OBJECT_DIRECTORY -u GIT_COMMON_DIR -u GIT_PREFIX node --test tests/ >/dev/null || { echo "tests failed"; exit 1; }
 node scripts/check-vendor-provenance.mjs >/dev/null || { echo "vendor provenance failed"; exit 1; }
 node scripts/build-version.mjs
 git add sw.js

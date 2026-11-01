@@ -1,6 +1,8 @@
 import test from 'node:test'; import assert from 'node:assert/strict'; import fs from 'node:fs'; import os from 'node:os'; import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { scanText } from '../scripts/check-no-real-data.mjs';
+// Strip GIT_* repo vars inherited from a git hook so scratch repos never write into the real repo.
+export const CLEAN_ENV = Object.fromEntries(Object.entries(process.env).filter(([k]) => !/^GIT_(DIR|WORK_TREE|INDEX_FILE|OBJECT_DIRECTORY|ALTERNATE_OBJECT_DIRECTORIES|COMMON_DIR|PREFIX|NAMESPACE|CEILING_DIRECTORIES|DISCOVERY_ACROSS_FILESYSTEM)$/.test(k)));
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 // All values below are synthetic test numbers (Luhn/checksum-valid but fake).
 const FAKE_CARD = ['4111', '1111', '1111', '1111'].join(' ');
@@ -17,8 +19,8 @@ test('guard ignores ordinary numbers and example emails', () => {
 test('staged guard blocks a staged file with a fake card number', () => {
   const d = fs.mkdtempSync(path.join(os.tmpdir(), 'stg-')); fs.mkdirSync(path.join(d, 'scripts'));
   fs.copyFileSync(path.join(ROOT, 'scripts/check-no-real-data.mjs'), path.join(d, 'scripts/check-no-real-data.mjs'));
-  const g = (...a) => execFileSync('git', a, { cwd: d }); g('init', '-q');
-  const run = () => spawnSync('node', ['scripts/check-no-real-data.mjs', '--staged'], { cwd: d }).status;
+  const g = (...a) => execFileSync('git', a, { cwd: d, env: CLEAN_ENV }); g('init', '-q');
+  const run = () => spawnSync('node', ['scripts/check-no-real-data.mjs', '--staged'], { cwd: d, env: CLEAN_ENV }).status;
   fs.writeFileSync(path.join(d, 'a.txt'), `card ${FAKE_CARD}\n`); g('add', 'a.txt'); fs.writeFileSync(path.join(d, 'a.txt'), 'clean\n');
   assert.equal(run(), 1, 'staged bad content must block even if working tree is clean');
   g('add', 'a.txt'); assert.equal(run(), 0);
@@ -33,8 +35,8 @@ test('guard: phone written as (0XX) XXX XXXX', () => { assert.ok(scanText('tel (
 test('guard: unexpected binary outside icons/ fonts/ is blocked; text inside allowed binaries is scanned', () => {
   const d = fs.mkdtempSync(path.join(os.tmpdir(), 'bin-')); fs.mkdirSync(path.join(d, 'scripts')); fs.mkdirSync(path.join(d, 'icons'));
   fs.copyFileSync(path.join(ROOT, 'scripts/check-no-real-data.mjs'), path.join(d, 'scripts/check-no-real-data.mjs'));
-  const g = (...a) => execFileSync('git', a, { cwd: d }); g('init', '-q');
-  const run = () => spawnSync('node', ['scripts/check-no-real-data.mjs', '--staged'], { cwd: d, encoding: 'utf8' });
+  const g = (...a) => execFileSync('git', a, { cwd: d, env: CLEAN_ENV }); g('init', '-q');
+  const run = () => spawnSync('node', ['scripts/check-no-real-data.mjs', '--staged'], { cwd: d, encoding: 'utf8', env: CLEAN_ENV });
   fs.writeFileSync(path.join(d, 'blob.bin'), Buffer.from([0, 1, 2, 3])); g('add', 'blob.bin');
   let r = run(); assert.equal(r.status, 1); assert.match(r.stderr, /unexpected binary/); g('rm', '-q', '--cached', 'blob.bin');
   fs.writeFileSync(path.join(d, 'icons/x.png'), Buffer.concat([Buffer.from([137, 80, 0, 0]), Buffer.from(`tEXt ${FAKE_CARD} `), Buffer.from([0])])); g('add', 'icons/x.png');
