@@ -9,8 +9,8 @@ const h = (tag, attrs = {}, ...kids) => { const e = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) { if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else if (v !== false && v != null) e.setAttribute(k, v === true ? '' : v); }
   for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : String(c)); return e; };
 const view = $('#view'); const F = { meal: '', device: '', maxPrep: null }; let pantry = '';
-const prot = r => r.protein_g == null ? 'חלבון: לא ידוע' : `חלבון: ${r.protein_g} ג׳${r.proteinCalculated ? ' (מחושב)' : ''}${r.proteinBasis ? ' (' + r.proteinBasis + ')' : ''}`;
-const prep = r => r.prepMinutes == null ? 'זמן עבודה: לא ידוע' : `${r.prepMinutes} דק׳ עבודה`;
+const prot = L.proteinLabel;
+const prep = r => (r.prepMinutes == null ? 'זמן עבודה: לא ידוע' + (r.timeNote ? ` (${r.timeNote})` : '') : `${r.prepMinutes} דק׳ עבודה`) + (r.totalMinutes ? ` · סה״כ ${r.totalMinutes} דק׳` : '');
 const card = (r, extra) => h('li', { class: 'card' }, h('button', { class: 'title', onclick: () => show('recipe', r.id) }, r.title),
   h('div', { class: 'meta' }, `${L.MEALS[r.meal] || r.meal} · ${prep(r)} · ${prot(r)}`), extra || null);
 const sel = (label, val, opts, on) => h('label', {}, label, h('select', { onchange: e => on(e.target.value) },
@@ -55,7 +55,11 @@ const tabs = {
     return [h('button', { class: 'small', onclick: () => show('list') }, 'חזרה'), h('h1', {}, r.title),
       h('p', { class: 'meta' }, `${L.MEALS[r.meal] || r.meal} · ${prep(r)}${r.servings ? ' · מנות: ' + r.servings : ''}`),
       h('p', { class: 'meta' }, r.devices.map(d => L.DEVICES[d] || d).join(' · ') || 'בלי ציוד'),
-      h('p', {}, prot(r)), r.note ? h('p', { class: 'note-box' }, r.note) : null,
+      h('p', {}, prot(r)),
+      r.proteinCalc ? h('details', { class: 'calc' }, h('summary', {}, 'פירוט חישוב החלבון'),
+        h('ul', {}, r.proteinCalc.items.map(x => h('li', {}, `${x.ingredient}: ${x.grams ?? '?'} ג׳ × ${x.per100 ?? '?'}/100 = ${x.protein_g ?? '?'} ג׳ חלבון`))),
+        h('p', { class: 'hint' }, `סה״כ ${r.proteinCalc.total_g ?? '?'} ג׳${r.proteinCalc.servings ? ` ל־${r.proteinCalc.servings} מנות` : ''} (USDA)`)) : null,
+      r.note ? h('p', { class: 'note-box' }, r.note) : null,
       r.ninjaBake ? h('p', { class: 'note-box' }, 'אין תנור: אופים בנינג׳ה (Bake / Air Crisp) בחום נמוך ב־10–20 מעלות מהמתכון.') : null,
       r.ninjaNote ? h('p', { class: 'note-box est' }, h('strong', {}, 'הערכה שלנו: '), r.ninjaNote) : null,
       h('button', { onclick: () => { inPlan ? S.plan = S.plan.filter(x => x !== id) : S.plan.push(id); save(); show('recipe', id); } }, inPlan ? 'הסר מהתוכנית השבועית' : 'הוסף לתוכנית השבועית'),

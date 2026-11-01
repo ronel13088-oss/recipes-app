@@ -8,7 +8,10 @@ test('schema-tolerant: old keys, bare array, garbage', () => {
   const r = L.normalize([{ id: 'a', title: 'x', meal: 'ערב', devices: ['מחבת'], prepMinutes: 7, ingredients: [{ name: 'ביצים', qty: 2 }], sourceUrl: 'https://e.example' }, null, 5]);
   assert.equal(r.length, 1); assert.equal(r[0].meal, 'dinner'); assert.deepEqual(r[0].devices, ['pan']); assert.equal(r[0].protein_g, null);
   assert.deepEqual(L.normalize({}), []); assert.equal(L.normalize([{ id: 1, url: 'javascript:alert(1)' }])[0].sourceUrl, ''); });
-test('protein stays null unless numeric in source', () => { assert.equal(R.filter(r => r.protein_g != null).length, 2); });
+const RAW = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/recipes.json'), 'utf8')).recipes;
+test('protein stays null unless numeric in source', () => { assert.equal(R.filter(r => r.protein_g != null).length, RAW.filter(r => typeof r.protein_g === 'number').length); });
+test('free-text / odd protein_basis never crashes and becomes a note', () => { const [a, b] = L.normalize([{ id: 'a', protein_g: 5, protein_basis: 'לפי העמוד' }, { id: 'b', protein_g: 5, protein_basis: { x: 1 } }]);
+  assert.equal(L.proteinLabel(a), 'חלבון: 5 ג׳ (לפי העמוד)'); assert.equal(L.proteinLabel(b), 'חלבון: 5 ג׳'); });
 test('ingredient parsing', () => { assert.deepEqual(L.parseIngredient('500 גרם בשר טחון'), { name: 'בשר טחון', qty: '500 גרם', amount: 500, unit: 'גרם' });
   assert.equal(L.parseIngredient('½ כוס חלב').amount, .5); assert.equal(L.parseIngredient('מלח ופלפל').qty, null); assert.equal(L.parseIngredient('2–3 ביצים').amount, null); });
 test('filter: unknown prep excluded only when max set', () => { const all = L.filterRecipes(R, {}); assert.equal(all.length, R.length);
@@ -41,3 +44,12 @@ test('protein_basis: source/calculated/free text/missing', () => {
   const [a, b, c, d] = L.normalize([{ id: 'a', protein_g: 20, protein_basis: 'calculated' }, { id: 'b', protein_g: 20, protein_basis: 'source' }, { id: 'c', protein_g: 5, protein_basis: 'לעוגייה' }, { id: 'd' }]);
   assert.equal(a.proteinCalculated, true); assert.equal(a.proteinBasis, ''); assert.equal(b.proteinCalculated, false); assert.equal(b.proteinBasis, '');
   assert.equal(c.proteinBasis, 'לעוגייה'); assert.equal(d.protein_g, null); assert.equal(d.proteinCalculated, false); });
+test('protein schema v2: calculated_usda, verified flag, protein_note, calc breakdown', () => {
+  const [a, b, c] = L.normalize([{ id: 'a', protein_g: 11, protein_basis: 'calculated_usda', protein_verified: false, protein_calc: { servings: 6, total_g: 63.8, items: [{ ingredient: 'ביצים', grams: 300, usda_protein_per_100g: 12.56, protein_g: 37.7 }, null] } },
+    { id: 'b', protein_g: 8, protein_basis: 'source', protein_note: 'לעוגייה' }, { id: 'c', protein_g: 9, protein_basis: 'calculated_usda', protein_verified: true }]);
+  assert.equal(L.proteinLabel(a), 'חלבון: 11 ג׳ (מחושב, לא מאומת)'); assert.equal(a.proteinCalc.items.length, 1);
+  assert.equal(L.proteinLabel(b), 'חלבון: 8 ג׳ (לעוגייה)'); assert.equal(L.proteinLabel(c), 'חלבון: 9 ג׳ (מחושב)'); });
+test('real data: 15-minute filter puts 30/25 over limit and null-time in unknown group', () => {
+  const F = { maxPrep: 15 }, main = L.filterRecipes(R, F).map(r => r.id), unk = L.unknownPrep(R, F).map(r => r.id);
+  for (const id of ['one-pot-bolognese', 'tuna-egg-corn-salad']) { assert.ok(!main.includes(id) && !unk.includes(id)); }
+  assert.deepEqual(unk.sort(), R.filter(r => r.prepMinutes == null).map(r => r.id).sort()); assert.equal(unk.length, RAW.filter(r => r.active_minutes == null).length); });

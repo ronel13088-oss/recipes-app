@@ -1,4 +1,9 @@
 // Pure logic (no DOM) — tested in tests/logic.test.mjs
+export function proteinLabel(r) {
+  if (r.protein_g == null) return 'חלבון: לא ידוע';
+  const tag = r.proteinCalculated ? (r.proteinVerified === false ? ' (מחושב, לא מאומת)' : ' (מחושב)') : '';
+  return `חלבון: ${r.protein_g} ג׳${tag}${r.proteinBasis ? ' (' + r.proteinBasis + ')' : ''}`;
+}
 export const MEALS = { breakfast: 'בוקר', shake: 'שייק', lunchbox: 'קופסה לעבודה', dinner: 'ערב' };
 export const DEVICES = { ninja_foodi: "נינג'ה פודי", blender: "מיקסר נינג'ה", microwave: 'מיקרו', pan: 'מחבת', stovetop: 'כירה' };
 const FR = { '½': .5, '¼': .25, '¾': .75, '⅓': 1 / 3, '⅔': 2 / 3 };
@@ -29,7 +34,11 @@ export function normalize(raw) {
       steps: Array.isArray(r.steps) ? r.steps.map(String) : [],
       sourceUrl: typeof (r.url ?? r.sourceUrl) === 'string' && /^https:\/\//.test(r.url ?? r.sourceUrl) ? (r.url ?? r.sourceUrl) : '',
       protein_g: typeof p === 'number' && p >= 0 ? p : null,
-      proteinCalculated: r.protein_basis === 'calculated', proteinBasis: ['source', 'calculated'].includes(r.protein_basis) ? '' : (typeof r.protein_basis === 'string' ? r.protein_basis : ''),
+      proteinCalculated: /^calculated/.test(String(r.protein_basis || '')), proteinVerified: typeof r.protein_verified === 'boolean' ? r.protein_verified : null,
+      proteinBasis: typeof r.protein_note === 'string' ? r.protein_note : (typeof r.protein_basis === 'string' && !/^(source|calculated)/.test(r.protein_basis) ? r.protein_basis : ''),
+      proteinCalc: r.protein_calc && Array.isArray(r.protein_calc.items) ? { servings: r.protein_calc.servings ?? null, total_g: r.protein_calc.total_g ?? null,
+        items: r.protein_calc.items.filter(x => x && typeof x === 'object').map(x => ({ ingredient: String(x.ingredient ?? ''), grams: x.grams ?? null, per100: x.usda_protein_per_100g ?? null, protein_g: x.protein_g ?? null })) } : null,
+      totalMinutes: Number.isFinite(r.total_minutes) ? r.total_minutes : null, timeNote: typeof r.time_note === 'string' ? r.time_note : '',
       servings: r.servings ?? null, note: r.short_note || r.notes || '', ninjaBake: !!r.ninja_bake_adaptation, ninjaNote: typeof r.ninja_note === 'string' ? r.ninja_note : '' };
   });
 }
