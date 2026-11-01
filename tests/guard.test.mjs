@@ -42,3 +42,8 @@ test('guard: unexpected binary outside icons/ fonts/ is blocked; text inside all
   fs.writeFileSync(path.join(d, 'icons/x.png'), Buffer.from([137, 80, 0, 0, 1, 2])); g('add', 'icons/x.png'); assert.equal(run().status, 0);
   fs.rmSync(d, { recursive: true, force: true });
 });
+test('guard: sha256 hashes masked, but a real-looking ID next to one is still caught', async () => {
+  const { scanText } = await import('../scripts/check-no-real-data.mjs');
+  assert.deepEqual(scanText('| pencil.svg | `7724d9b160c18aa2214e6031157af650f3b78881d832b38381182e9c19b4e860` |'), []);
+  assert.equal(scanText('7724d9b160c18aa2214e6031157af650f3b78881d832b38381182e9c19b4e860 38381182').length, 1); // allow-fake-data
+  });

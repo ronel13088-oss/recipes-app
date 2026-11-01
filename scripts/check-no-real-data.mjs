@@ -22,7 +22,9 @@ export const RULES = [
 export const isBinary = buf => buf.includes(0);
 export const binaryText = buf => (buf.toString('latin1').match(/[\x20-\x7e]{6,}/g) || []).join('\n');
 export function scanText(text) {
+  // sha256 provenance hashes (exactly 64 hex chars incl. at least one a-f letter) can contain checksum-valid digit runs; mask only those tokens.
   const hits = []; text.split('\n').forEach((line, i) => { if (line.includes('allow-fake-data')) return;
+    line = line.replace(/(?<![0-9a-fA-F])(?=[0-9a-f]*[a-f])[0-9a-f]{64}(?![0-9a-fA-F])/g, '#');
     for (const [name, re, ok] of RULES) for (const m of line.matchAll(re)) if (ok(m[0])) hits.push(`line ${i + 1}: ${name}`); });
   return hits;
 }

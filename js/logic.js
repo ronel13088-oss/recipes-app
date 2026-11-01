@@ -1,3 +1,4 @@
+import { validEntry, validRecent, validFree, parseGoal } from './protein.js';
 // Pure logic (no DOM) — tested in tests/logic.test.mjs
 export function proteinLabel(r) {
   if (r.protein_g == null) return 'חלבון: לא ידוע';
@@ -31,7 +32,7 @@ export function normalize(raw) {
     return { id, title: String(r.name ?? r.title ?? 'ללא שם'), meal, devices: devs,
       prepMinutes: Number.isFinite(+pm) && pm !== null && pm !== '' ? +pm : null,
       ingredients: (Array.isArray(r.ingredients) ? r.ingredients : []).map(parseIngredient).filter(x => x.name),
-      steps: Array.isArray(r.steps) ? r.steps.map(String) : [],
+      steps: normalizeSteps(r.steps), ...deviceRange(r),
       sourceUrl: typeof (r.url ?? r.sourceUrl) === 'string' && /^https:\/\//.test(r.url ?? r.sourceUrl) ? (r.url ?? r.sourceUrl) : '',
       protein_g: typeof p === 'number' && p >= 0 ? p : null,
       proteinCalculated: /^calculated/.test(String(r.protein_basis || '')), proteinVerified: typeof r.protein_verified === 'boolean' ? r.protein_verified : null,
@@ -89,6 +90,40 @@ export function validBackup(o) {
   const st = o.state; if (!st || typeof st !== 'object' || Array.isArray(st)) return false;
   if (!Array.isArray(st.plan) || !st.plan.every(x => typeof x === 'string')) return false;
   if (!st.log || typeof st.log !== 'object' || Array.isArray(st.log)) return false;
-  for (const v of Object.values(st.log)) if (!Array.isArray(v) || !v.every(e => e && typeof e === 'object' && !Array.isArray(e) && isNum(e.g))) return false;
+  for (const v of Object.values(st.log)) if (!Array.isArray(v) || !v.every(e => e && typeof e === 'object' && !Array.isArray(e) && (st.v === 2 || isNum(e.g)))) return false;
+  if (st.v === 2) { if (!(st.goal === null || parseGoal(st.goal) === st.goal)) return false;
+    if (!validRecent(st.recent) || !validFree(st.free)) return false;
+    if (st.checked !== undefined && !(Array.isArray(st.checked) && st.checked.every(x => typeof x === 'string'))) return false;
+    for (const [k, v] of Object.entries(st.log)) if (!/^\d{4}-\d\d-\d\d$/.test(k) || !v.every(validEntry)) return false;
+    return true; }
   return isNum(st.goal) && st.goal > 0;
 }
+// Convert a validated backup (v1 or v2) into current state shape.
+export function importState(o) { const st = o.state;
+  if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: structuredClone(st.log), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])] };
+  const log = {}; for (const [k, v] of Object.entries(st.log)) log[k] = v.map((e, i) => ({ type: 'custom', name: (typeof e.label === 'string' && e.label.replace(/\s+/g, ' ').trim().slice(0, 60)) || 'ידני', g: e.g >= 0 && e.g <= 300 ? Math.round(e.g * 10) / 10 : null, servings: 1, ts: i }));
+  return { v: 2, plan: [...st.plan], goal: parseGoal(st.goal), log, recent: [], free: [], checked: [] }; }
+
+// Steps: accepts strings (old) or {text, timer_min} objects (new). Empty/missing text -> skipped. timer_min must be a positive finite number (<=600) else null.
+const posMin = (x, max = 600) => typeof x === 'number' && Number.isFinite(x) && x > 0 && x <= max ? x : null;
+export function normalizeSteps(steps) {
+  if (!Array.isArray(steps)) return [];
+  return steps.map(s => typeof s === 'string' ? { text: s.trim(), timer_min: null }
+    : s && typeof s === 'object' && typeof s.text === 'string' ? { text: s.text.trim(), timer_min: posMin(s.timer_min ?? s.timer_minutes) } : null)
+    .filter(s => s && s.text);
+}
+// Device time: only from device_min/device_max fields (never derived). Single value -> min=max. Invalid -> null (block hidden).
+export function deviceRange(r) {
+  let a = posMin(r?.device_min), b = posMin(r?.device_max);
+  if (a == null && b == null) return { deviceMin: null, deviceMax: null, devicePartial: false };
+  if (a == null) a = b; if (b == null) b = a; if (a > b) [a, b] = [b, a];
+  return { deviceMin: a, deviceMax: b, devicePartial: r.device_partial === true };
+}
+// Dial: stops 5/10/20/30; 30 = "הכול" (no max).
+export const STOPS = [5, 10, 20, 30];
+export const snapStop = v => STOPS.reduce((best, s) => Math.abs(s - v) < Math.abs(best - v) ? s : best, STOPS[0]);
+export const stopToMax = s => s >= 30 ? null : s;
+export const stepStop = (cur, dir) => STOPS[Math.max(0, Math.min(STOPS.length - 1, STOPS.indexOf(snapStop(cur)) + dir))];
+// angle (deg, 0 = 12 o'clock, clockwise) -> minutes 0..30
+export const angleToMinutes = deg => ((deg % 360) + 360) % 360 / 360 * 30;
+export const fmtRange = (a, b) => a === b ? `${a}′` : `${a}–${b}′`;
