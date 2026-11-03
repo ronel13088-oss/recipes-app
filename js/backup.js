@@ -21,3 +21,9 @@ export async function deliver(json, name, env) { const { doc, nav, win, URL: U, 
   if (F && nav.canShare && nav.share) { const f = new F([json], name, { type: 'application/json' });
     if (nav.canShare({ files: [f] })) { await nav.share({ files: [f], title: name }); return 'share'; } }
   const url = U.createObjectURL(blob); win.open(url, '_blank'); notify?.('הקובץ נפתח בלשונית חדשה. לחץ על "שתף" ובחר "שמור בקבצים".'); return 'tab'; }
+// Outcome of an export attempt -> what the app should do. 'tab' never auto-marks: user must confirm 'שמרתי'.
+export const isAbort = e => e?.name === 'AbortError';
+export const marksDone = method => method === 'download' || method === 'share';
+export const FAIL_MSG = 'הגיבוי נכשל, נסה שוב';
+// Re-check reminder when the app becomes visible again (iOS home-screen apps rarely reopen).
+export function onVisible(doc, fn) { const h = () => { if (doc.visibilityState === 'visible') fn(); }; doc.addEventListener('visibilitychange', h); return h; }

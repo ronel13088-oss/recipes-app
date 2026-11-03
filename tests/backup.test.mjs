@@ -33,3 +33,16 @@ test('deliver: iOS standalone -> share File when canShare', async () => { const 
   assert.equal(await B.deliver('{}', 'f.json', e), 'share'); assert.deepEqual(log.at(-1), ['share', 'f.json']); });
 test('deliver: no download, no share -> new tab + Hebrew instruction', async () => { const { log, e } = env({ download: false, canShare: () => false });
   assert.equal(await B.deliver('{}', 'f.json', e), 'tab'); assert.deepEqual(log.find(x => x[0] === 'open'), ['open', '_blank']); assert.match(log.find(x => x[0] === 'note')[1], /שמור בקבצים/); });
+test('W1: only AbortError is silent', () => { assert.equal(B.isAbort(Object.assign(new Error('x'), { name: 'AbortError' })), true);
+  for (const e of [new Error('x'), new TypeError('t'), Object.assign(new Error(), { name: 'NotAllowedError' }), null, undefined]) assert.equal(B.isAbort(e), false);
+  assert.equal(B.FAIL_MSG, 'הגיבוי נכשל, נסה שוב'); });
+test('W2: tab path never auto-marks backup done', async () => { assert.equal(B.marksDone('tab'), false); assert.equal(B.marksDone(undefined), false);
+  assert.equal(B.marksDone('download'), true); assert.equal(B.marksDone('share'), true);
+  const { e } = env({ download: false }); assert.equal(B.marksDone(await B.deliver('{}', 'f.json', e)), false); });
+test('W2/W1 in app: tab -> שמרתי/לא confirm, failure toast', async () => { const src = (await import('node:fs')).readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
+  assert.match(src, /'שמרתי'/); assert.match(src, /'לא'\)/); assert.match(src, /m === 'tab'\) confirmSaved\(\)/); assert.match(src, /if \(!B\.isAbort\(e\)\) toast\(\[B\.FAIL_MSG\]\)/);
+  assert.doesNotMatch(src, /catch \{ \/\* share cancelled/); });
+test('W3: onVisible fires only when becoming visible; banner deduped', async () => { let calls = 0, h; const doc = { visibilityState: 'hidden', addEventListener: (t, f) => { assert.equal(t, 'visibilitychange'); h = f; } };
+  B.onVisible(doc, () => calls++); h(); assert.equal(calls, 0); doc.visibilityState = 'visible'; h(); h(); assert.equal(calls, 2);
+  const src = (await import('node:fs')).readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
+  assert.match(src, /B\.onVisible\(document, backupBanner\)/); assert.match(src, /function backupBanner\(\) \{ \$\('#bkp'\)\?\.remove\(\)/); });

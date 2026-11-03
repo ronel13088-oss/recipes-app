@@ -211,16 +211,21 @@ function openSheet(editUid) { const cur = editUid != null ? St.today().find(x =>
 let day = P.dayKey(new Date());
 const tick = () => { const d = P.dayKey(new Date()); if (d !== day) { day = d; St.prune(); if (route.tab === 'protein') render(); } };
 setInterval(tick, 60000); document.addEventListener('visibilitychange', tick);
-async function doExport() { const json = JSON.stringify(B.payload(St.exportState()));
-  try { const m = await B.deliver(json, B.fileName(), { doc: document, nav: navigator, win: window, URL, Blob, File: window.File, notify: t => toast([t]) });
-    localStorage.setItem(B.LAST_KEY, new Date().toISOString()); localStorage.removeItem(B.SNOOZE_KEY); $('#bkp')?.remove(); return m; } catch { /* share cancelled: not a backup */ } }
+const markBackup = () => { localStorage.setItem(B.LAST_KEY, new Date().toISOString()); localStorage.removeItem(B.SNOOZE_KEY); $('#bkp')?.remove(); $('#bkp-ok')?.remove(); };
+function confirmSaved() { $('#bkp-ok')?.remove(); const b = h('div', { id: 'bkp-ok', class: 'bkp', role: 'status', 'aria-live': 'polite' }, h('span', {}, 'שמרת את קובץ הגיבוי?'),
+    h('span', { class: 'bkp-act' }, h('button', { class: 'btn primary', 'aria-label': 'שמרתי את קובץ הגיבוי', onclick: markBackup }, 'שמרתי'), h('button', { class: 'btn', 'aria-label': 'לא שמרתי', onclick: () => b.remove() }, 'לא')));
+  document.body.prepend(b); }
+async function doExport() { const json = JSON.stringify(B.payload(St.exportState())); let m;
+  try { m = await B.deliver(json, B.fileName(), { doc: document, nav: navigator, win: window, URL, Blob, File: window.File, notify: t => toast([t]) }); }
+  catch (e) { if (!B.isAbort(e)) toast([B.FAIL_MSG]); return; }
+  if (B.marksDone(m)) markBackup(); else if (m === 'tab') confirmSaved(); return m; }
 function backupBanner() { $('#bkp')?.remove(); const last = localStorage.getItem(B.LAST_KEY);
   if (!B.shouldRemind({ hasData: St.hasData(), last, snooze: localStorage.getItem(B.SNOOZE_KEY) })) return;
   const b = h('div', { id: 'bkp', class: 'bkp', role: 'status', 'aria-live': 'polite' }, h('span', {}, B.message(last)),
     h('span', { class: 'bkp-act' }, h('button', { class: 'btn primary', 'aria-label': 'גבה עכשיו: שמור קובץ גיבוי', onclick: doExport }, 'גבה עכשיו'),
       h('button', { class: 'btn', 'aria-label': 'הזכר לי מחר על הגיבוי', onclick: () => { localStorage.setItem(B.SNOOZE_KEY, new Date(Date.now() + 864e5).toISOString()); b.remove(); } }, 'הזכר לי מחר')));
   document.body.prepend(b); }
-render(); backupBanner();
+render(); backupBanner(); B.onVisible(document, backupBanner);
 window.__app = { go };
 if ('serviceWorker' in navigator) {
   const banner = w => { if ($('#upd')) return; const b = document.createElement('div'); b.id = 'upd'; b.className = 'note';
