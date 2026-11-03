@@ -28,3 +28,4 @@ export function importState(st, ls = localStorage) { const keys = []; for (let i
     for (const [d, v] of Object.entries(st.log)) ls.setItem(P.LOG_PREFIX + d, JSON.stringify(v));
     ls.setItem(P.RECENT_KEY, JSON.stringify(st.recent)); ls.setItem(P.FREE_KEY, JSON.stringify(st.free));
   } catch (e) { try { wipe(); for (const [k, v] of snap) ls.setItem(k, v); } catch {} throw e; } }
+export function hasData(ls = localStorage) { for (let i = 0; i < ls.length; i++) if (ownKey(ls.key(i))) return true; return false; }

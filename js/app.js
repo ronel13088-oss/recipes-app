@@ -1,6 +1,7 @@
 import * as L from './logic.js';
 import * as P from './protein.js';
 import * as St from './store.js';
+import * as B from './backup.js';
 const $ = s => document.querySelector(s);
 let R = [];
 const view = $('#view');
@@ -178,8 +179,7 @@ const screens = {
     file.addEventListener('change', async () => { try { const o = JSON.parse(await file.files[0].text()); if (!L.validBackup(o)) throw 0;
       if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { try { St.importState(L.importState(o)); } catch { alert('הייבוא נכשל (אין מספיק מקום?). הנתונים הקודמים שוחזרו.'); return; } go('home'); } } catch { alert('קובץ גיבוי לא תקין'); } });
     return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה')), h('h1', {}, 'גיבוי'),
-      h('button', { class: 'btn dark', onclick: () => { const b = new Blob([JSON.stringify({ app: 'recipes-app', exported: new Date().toISOString(), state: St.exportState() })], { type: 'application/json' });
-        const url = URL.createObjectURL(b); const a = h('a', { href: url, download: `recipes-${P.dayKey(new Date())}.json` }); a.click(); setTimeout(() => URL.revokeObjectURL(url), 0); } }, 'ייצוא גיבוי'),
+      h('button', { class: 'btn dark', onclick: doExport }, 'ייצוא גיבוי'),
       h('p', {}, 'ייבוא: ', file), h('p', { class: 'hint' }, 'הנתונים נשמרים רק במכשיר הזה.')]; },
 };
 
@@ -211,7 +211,16 @@ function openSheet(editUid) { const cur = editUid != null ? St.today().find(x =>
 let day = P.dayKey(new Date());
 const tick = () => { const d = P.dayKey(new Date()); if (d !== day) { day = d; St.prune(); if (route.tab === 'protein') render(); } };
 setInterval(tick, 60000); document.addEventListener('visibilitychange', tick);
-render();
+async function doExport() { const json = JSON.stringify(B.payload(St.exportState()));
+  try { const m = await B.deliver(json, B.fileName(), { doc: document, nav: navigator, win: window, URL, Blob, File: window.File, notify: t => toast([t]) });
+    localStorage.setItem(B.LAST_KEY, new Date().toISOString()); localStorage.removeItem(B.SNOOZE_KEY); $('#bkp')?.remove(); return m; } catch { /* share cancelled: not a backup */ } }
+function backupBanner() { $('#bkp')?.remove(); const last = localStorage.getItem(B.LAST_KEY);
+  if (!B.shouldRemind({ hasData: St.hasData(), last, snooze: localStorage.getItem(B.SNOOZE_KEY) })) return;
+  const b = h('div', { id: 'bkp', class: 'bkp', role: 'status', 'aria-live': 'polite' }, h('span', {}, B.message(last)),
+    h('span', { class: 'bkp-act' }, h('button', { class: 'btn primary', 'aria-label': 'גבה עכשיו: שמור קובץ גיבוי', onclick: doExport }, 'גבה עכשיו'),
+      h('button', { class: 'btn', 'aria-label': 'הזכר לי מחר על הגיבוי', onclick: () => { localStorage.setItem(B.SNOOZE_KEY, new Date(Date.now() + 864e5).toISOString()); b.remove(); } }, 'הזכר לי מחר')));
+  document.body.prepend(b); }
+render(); backupBanner();
 window.__app = { go };
 if ('serviceWorker' in navigator) {
   const banner = w => { if ($('#upd')) return; const b = document.createElement('div'); b.id = 'upd'; b.className = 'note';

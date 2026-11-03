@@ -92,3 +92,5 @@ dialog.sheet::backdrop { background: rgba(38,34,28,.45); }
 }
 .tag-partial { font: 500 11.5px Rubik; color: var(--ink-muted); margin-inline-end: 6px; vertical-align: 2px; }
 .after-cd { font-weight: 300; color: var(--ink-muted); }
+.bkp { display: flex; flex-wrap: wrap; gap: var(--gap); align-items: center; justify-content: space-between; background: var(--surface); color: var(--ink); border-inline-start: 4px solid var(--accent); padding: var(--card-pad); margin: var(--gap) var(--page); border-radius: var(--r-card); font: 500 14px Rubik; }
+.bkp-act { display: flex; gap: var(--gap); }
