@@ -60,3 +60,12 @@ test('canon_any: one suffices; canon_all: each required; any wins when both give
 test('build-aliases: ambiguous variant dropped, not thrown', async () => { const { buildAliases } = await import('../scripts/build-aliases.mjs');
   const o = buildAliases([{ canon: 'חלב', variants: ['חלב או סויה', 'חלב'] }, { canon: 'חלב סויה', variants: ['חלב או סויה'] }]);
   assert.deepEqual(o.aliases, { 'חלב': 'חלב' }); assert.deepEqual(o.conflicts, ['חלב או סויה']); });
+test('S5: maqaf becomes a space, other niqqud stripped', async () => {
+  const { cleanName } = await import('../js/pantry.js');
+  assert.equal(cleanName('בָּצָל־ירוק'), 'בצל ירוק'); assert.ok(!cleanName('חצי־כוס סוכר').includes('חציכוס'));
+});
+test('S6: build-data warns on canon_any + canon_all line', async () => {
+  const { anyAllWarnings } = await import('../scripts/build-data.mjs');
+  assert.equal(anyAllWarnings({ ingredients: [{ canon_any: ['a', 'b'], canon_all: ['c'] }, { canon_any: ['a'] }, { canon_all: ['c'], canon_any: [] }] }, 'x').length, 1);
+  assert.equal(anyAllWarnings({}, 'x').length, 0);
+});

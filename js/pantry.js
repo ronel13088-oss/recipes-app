@@ -5,7 +5,7 @@ const QTY_WORDS = /^(?:(?:חצי|רבע|שליש|קורט|קמצוץ|מעט|קצ
 const DESC = /\s+(?:קצוצ(?:ה|ים|ות)?|קצוץ|דק|פרוס(?:ה|ים|ות)?|חתוכ(?:ה|ים|ות)?|חתוך|מגורד(?:ת)?|כתוש(?:ה|ות)?|טרי(?:ה|ים|ות)?|קפוא(?:ה|ים|ות)?|מבושל(?:ים|ת)?|לפי הטעם|לקישוט|להגשה|גס|גרוס|טחון)\b.*$/;
 // Interim normalization: strip parentheses, text after comma/dash/colon, leading quantity words and trailing prep descriptors.
 export function cleanName(name) {
-  let s = String(name ?? '').replace(/[\u0591-\u05C7]/g, '').replace(/\([^)]*\)/g, ' ').replace(/[׳'`’]/g, '׳').split(/[,–:]| - |\//)[0];
+  let s = String(name ?? '').replace(/\u05BE/g, ' ').replace(/[\u0591-\u05BD\u05BF-\u05C7]/g, '').replace(/\([^)]*\)/g, ' ').replace(/[׳'`’]/g, '׳').split(/[,–:]| - |\//)[0];
   s = s.replace(/^[\d.,½¼¾⅓⅔\s-]+/, '').replace(QTY_WORDS, '').replace(/\s+/g, ' ').trim();
   return s.replace(DESC, '').trim();
 }
