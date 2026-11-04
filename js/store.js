@@ -15,7 +15,8 @@ export const setRecent = v => set(P.RECENT_KEY, v);
 export const free = () => { const v = get(P.FREE_KEY); return P.validFree(v) ? v : []; };
 export const setFree = v => set(P.FREE_KEY, v);
 export const pantry = () => { const v = get(PANTRY_KEY); return validPantry(v) ? v : []; };
-export const setPantry = v => set(PANTRY_KEY, v);
+// Returns false (nothing written) on QuotaExceededError etc.; caller shows a toast.
+export const setPantry = (v, ls = localStorage) => { try { ls.setItem(PANTRY_KEY, JSON.stringify(v)); return true; } catch { return false; } };
 export function prune(d = new Date()) { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); P.staleKeys(keys, d).forEach(k => localStorage.removeItem(k)); }
 export function exportState() { const log = {}; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith(P.LOG_PREFIX)) { const v = get(k); if (Array.isArray(v)) log[k.slice(P.LOG_PREFIX.length)] = v.filter(P.validEntry); } }
   const p = plan(); return { v: 2, plan: p.plan, checked: p.checked, goal: goal(), log, recent: recent(), free: free(), pantry: pantry() }; }

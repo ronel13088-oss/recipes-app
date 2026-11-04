@@ -175,8 +175,8 @@ const screens = {
   pantry() { const have = St.pantry(); const vocab = Pn.vocabulary(R, AL); const q = h('input', { type: 'search', placeholder: 'חיפוש מצרך', 'aria-label': 'חיפוש מצרך' }); q.value = pq;
     const chips = h('div', { class: 'chips', role: 'group', 'aria-label': 'מצרכים' }); const res = h('div', {});
     // Removal only by an explicit tap on the chip (toggle). Nothing removes pantry items automatically.
-    const tap = n => { St.setPantry(Pn.toggle(St.pantry(), n)); vib(); draw(); };
-    const draw = () => { const cur = St.pantry(); const list = Pn.filterVocab(vocab, q.value);
+    const tap = n => { if (!St.setPantry(Pn.toggle(St.pantry(), n))) toast(['אין מספיק מקום בשמירה']); else vib(); draw(); };
+    const draw = () => { const cur = St.pantry(); const list = Pn.filterVocab(Pn.pickerItems(vocab, cur), q.value);
       chips.replaceChildren(...list.map(v => h('button', { class: 'chip', 'aria-pressed': String(cur.includes(v.name)), 'aria-label': `${v.name}: ${cur.includes(v.name) ? 'יש בבית' : 'אין בבית'}`, onclick: () => tap(v.name) }, v.name)));
       const rk = Pn.rank(R, cur, AL); const full = rk.filter(x => !x.missing.length), part = rk.filter(x => x.missing.length);
       const li = x => { const el = block(x.r); if (x.missing.length) el.firstChild.append(h('span', { class: 's' }, 'חסר: ', x.missing.join(', '))); return el; };

@@ -4,7 +4,7 @@
 import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export function merge(srcDir) {
-  const files = fs.readdirSync(srcDir).filter(f => /^recipes.*\.json$/.test(f)).sort();
+  const files = fs.readdirSync(srcDir).filter(f => /^recipes.*\.json$/.test(f) && !/draft/i.test(f)) // drafts excluded.sort();
   if (!files.length) throw new Error(`no recipes*.json in ${srcDir}`);
   const out = [], seen = new Map();
   for (const f of files) {

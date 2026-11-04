@@ -36,3 +36,27 @@ test('store: export -> import round trip writes pantry_items', async () => {
   St.setPantry(['ביצה']); assert.equal(Pn.PANTRY_KEY, 'pantry_items'); const exp = St.exportState(); assert.deepEqual(exp.pantry, ['ביצה']);
   const file = JSON.parse(JSON.stringify({ app: 'recipes-app', version: 2, state: exp })); assert.equal(L.validBackup(file), true);
   m.clear(); St.importState(L.importState(file)); assert.deepEqual(St.pantry(), ['ביצה']); delete globalThis.localStorage; });
+test('W1: prototype names never resolve via alias map', () => { const A2 = Pn.loadAliases({ aliases: { 'ביצה': 'ביצה' } });
+  for (const n of ['constructor', 'toString', '__proto__', 'hasOwnProperty']) { const c = Pn.canonOf({ name: n, raw: n }, A2); assert.equal(c.via, 'interim'); assert.equal(typeof c.canon, 'string'); assert.equal(c.canon, n); }
+  assert.equal(Object.getPrototypeOf(A2.aliases), null); });
+test('W2: saved items missing from vocabulary still listed (removable by tap)', () => { const v = [{ name: 'ביצה', count: 2 }];
+  assert.deepEqual(Pn.pickerItems(v, ['ביצה', 'ישן']).map(x => x.name), ['ישן', 'ביצה']);
+  const src = fs.readFileSync(new URL('../js/app.js', import.meta.url), 'utf8'); assert.match(src, /pickerItems\(vocab, cur\)/); });
+test('S1: all-staples recipe never shows', () => { const r = L.normalize({ recipes: [{ id: 's', title: 'מלח', ingredients: ['קורט מלח'] }] }); assert.deepEqual(Pn.rank(r, ['ביצה'], A), []); });
+test('S3: niqqud stripped in name cleanup', () => { assert.equal(Pn.cleanName('בֵּיצָה'), 'ביצה'); assert.equal(Pn.cleanName('חָלָב קַר'), 'חלב קר'); });
+test('S4: importing v2 backup without pantry resets pantry to empty', async () => {
+  const m = new Map([['pantry_items', '["ביצה"]']]); const ls = { get length() { return m.size; }, key: i => [...m.keys()][i] ?? null, getItem: k => m.has(k) ? m.get(k) : null, setItem: (k, v) => m.set(k, String(v)), removeItem: k => m.delete(k) };
+  globalThis.localStorage = ls; const St = await import('../js/store.js'); St.importState(L.importState(v2({})), ls); assert.equal(m.get('pantry_items'), '[]'); delete globalThis.localStorage; });
+test('setPantry: quota error -> false, no throw; app shows Hebrew toast', async () => { const St = await import('../js/store.js');
+  const ls = { setItem() { const e = new Error('q'); e.name = 'QuotaExceededError'; throw e; } }; assert.equal(St.setPantry(['a'], ls), false);
+  const m = new Map(); assert.equal(St.setPantry(['a'], { setItem: (k, v) => m.set(k, v) }), true); assert.equal(m.get('pantry_items'), '["a"]');
+  assert.match(fs.readFileSync(new URL('../js/app.js', import.meta.url), 'utf8'), /setPantry\([^;]*\)\)\) toast\(\['אין מספיק מקום בשמירה'\]\)/); });
+test('canon_any: one suffices; canon_all: each required; any wins when both given (teammate format)', () => {
+  const r = L.normalize({ recipes: [
+    { id: 'a', title: 'א', ingredients: [{ text: 'חמאת שקדים או בוטנים', canon: 'חמאת בוטנים', pantry_basic: false, canon_all: ['חמאת שקדים', 'חמאת בוטנים'], canon_any: ['חמאת שקדים', 'חמאת בוטנים'] }] },
+    { id: 'b', title: 'ב', ingredients: [{ text: 'מלח ופלפל וטונה', canon: 'טונה', pantry_basic: false, canon_all: ['טונה', 'בצל'], canon_any: [] }] }] });
+  const A0 = Pn.loadAliases({}); assert.deepEqual(Pn.rank(r, ['חמאת שקדים'], A0).map(x => [x.r.id, x.missing]), [['a', []]]);
+  assert.deepEqual(Pn.rank(r, ['טונה'], A0).map(x => [x.r.id, x.missing]), [['b', ['בצל']]]); });
+test('build-aliases: ambiguous variant dropped, not thrown', async () => { const { buildAliases } = await import('../scripts/build-aliases.mjs');
+  const o = buildAliases([{ canon: 'חלב', variants: ['חלב או סויה', 'חלב'] }, { canon: 'חלב סויה', variants: ['חלב או סויה'] }]);
+  assert.deepEqual(o.aliases, { 'חלב': 'חלב' }); assert.deepEqual(o.conflicts, ['חלב או סויה']); });

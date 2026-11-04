@@ -5,19 +5,21 @@ import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath }
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export function buildAliases(list) {
   if (!Array.isArray(list)) throw new Error('canon list must be an array');
-  const aliases = {}, staples = new Set();
+  const aliases = Object.create(null), staples = new Set(), conflicts = new Set();
   for (const [i, e] of list.entries()) {
     if (!e || typeof e.canon !== 'string' || !e.canon.trim() || !Array.isArray(e.variants)) throw new Error(`entry ${i}: needs canon + variants`);
     const c = e.canon.trim(); if (e.pantry_basic === true) staples.add(c);
     for (const v of e.variants) { if (typeof v !== 'string') continue; const k = v.trim();
-      if (aliases[k] && aliases[k] !== c) throw new Error(`variant "${k}" maps to both "${aliases[k]}" and "${c}"`); aliases[k] = c; }
+      // Ambiguous variant (e.g. 'חלב רזה או חלב סויה'): dropped from the map; per-line canon_any in recipe data covers it.
+      if (conflicts.has(k)) continue; if (Object.hasOwn(aliases, k) && aliases[k] !== c) { conflicts.add(k); delete aliases[k]; continue; } aliases[k] = c; }
   }
-  return { staples: [...staples].sort((a, b) => a.localeCompare(b, 'he')), aliases };
+  return { staples: [...staples].sort((a, b) => a.localeCompare(b, 'he')), aliases: { ...aliases }, conflicts: [...conflicts].sort() };
 }
 if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
   const src = path.join(process.argv[2] || '/workspace/health', 'canon_ingredients.json');
   try { const out = { source: path.basename(src), ...buildAliases(JSON.parse(fs.readFileSync(src, 'utf8'))) };
     fs.writeFileSync(path.join(ROOT, 'data/ingredient-aliases.json'), JSON.stringify(out, null, 1) + '\n');
+    if (out.conflicts.length) console.warn(`WARN ambiguous variants dropped: ${out.conflicts.join(' | ')}`);
     console.log(`aliases: ${Object.keys(out.aliases).length} raw -> ${new Set(Object.values(out.aliases)).size} canon, ${out.staples.length} staples`);
   } catch (e) { console.error('BUILD-ALIASES FAILED:', e.message); process.exit(1); }
 }
