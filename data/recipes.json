@@ -1,5 +1,4 @@
 {
- "generated": "2026-11-04T10:25:47.762Z",
  "sources": [
   "recipes-batch2.json",
   "recipes.json"
@@ -918,6 +917,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -1584,6 +1584,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "grill",
      "ninja_foodi"
     ]
    ]
@@ -2092,6 +2093,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "grill",
      "ninja_foodi"
     ]
    ]
@@ -4154,6 +4156,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -4423,6 +4426,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -4560,6 +4564,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -4700,6 +4705,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -4895,6 +4901,7 @@
    "device_partial": false,
    "equipment_any": [
     [
+     "oven",
      "ninja_foodi"
     ]
    ]
@@ -5864,7 +5871,9 @@
    "name": "סלט טונה עם ביצים קשות, מלפפונים חמוצים ושמיר",
    "url": "https://gilacooking.co.il/tuna-salad-recipe-how-to-make/",
    "meal": "lunchbox",
-   "equipment": [],
+   "equipment": [
+    "stovetop"
+   ],
    "active_minutes": 15,
    "servings": 4,
    "protein_g": 21,
@@ -6006,7 +6015,9 @@
    "name": "סלט טונה קלאסי עם ביצים ותירס",
    "url": "https://taimeta.co.il/tuna-salad-with-protein/",
    "meal": "lunchbox",
-   "equipment": [],
+   "equipment": [
+    "stovetop"
+   ],
    "active_minutes": 25,
    "servings": 4,
    "protein_g": 25,

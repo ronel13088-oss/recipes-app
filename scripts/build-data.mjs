@@ -7,14 +7,16 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Any value not listed here fails the build.
 export const EQUIP = { 'כיריים': 'stovetop', 'סיר': 'stovetop', 'מחבת': 'pan', 'בלנדר': 'blender', 'מעבד מזון': 'blender', 'מיקרוגל': 'microwave',
   "סיר רב תכליתי נינג'ה": 'ninja_foodi', 'אייר פרייר': 'ninja_foodi', 'תנור': null, 'גריל': null, 'מקרר בלבד': null };
+// Inside equipment_any groups oven/grill stay as display-only tokens (not filter keys), so [תנור,נינג'ה] differs from required ninja.
+export const ANY_DISPLAY = { 'תנור': 'oven', 'גריל': 'grill' };
 const KEYS = new Set(['stovetop', 'pan', 'blender', 'microwave', 'ninja_foodi']);
-const key = (v, where) => { if (KEYS.has(v)) return v; if (typeof v !== 'string' || !Object.hasOwn(EQUIP, v)) throw new Error(`${where}: unmapped equipment "${v}"`); return EQUIP[v]; };
+const key = (v, where, inAny = false) => { if (inAny && typeof v === 'string' && Object.hasOwn(ANY_DISPLAY, v)) return ANY_DISPLAY[v]; if (KEYS.has(v)) return v; if (typeof v !== 'string' || !Object.hasOwn(EQUIP, v)) throw new Error(`${where}: unmapped equipment "${v}"`); return EQUIP[v]; };
 const uniq = a => [...new Set(a.filter(Boolean))];
 // equipment -> unique keys; equipment_any -> groups of keys (any one suffices), empty groups dropped.
 export function mapEquipment(r, where) { const o = { ...r };
   if (r.equipment !== undefined) { if (!Array.isArray(r.equipment)) throw new Error(`${where}: equipment not an array`); o.equipment = uniq(r.equipment.map(v => key(v, where))); }
   if (r.equipment_any !== undefined) { if (!Array.isArray(r.equipment_any) || !r.equipment_any.every(Array.isArray)) throw new Error(`${where}: equipment_any must be array of arrays`);
-    o.equipment_any = r.equipment_any.map(g => uniq(g.map(v => key(v, where)))).filter(g => g.length); }
+    o.equipment_any = r.equipment_any.map(g => uniq(g.map(v => key(v, where, true)))).filter(g => g.length); }
   return o; }
 // Runtime (js/pantry.js needs) uses canon_any when non-empty and ignores canon_all on the same line: warn at build time.
 export function anyAllWarnings(r, where) { return (Array.isArray(r?.ingredients) ? r.ingredients : []).flatMap((g, i) =>
@@ -36,7 +38,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.a
   const src = process.argv[2] || '/workspace/health';
   try { const { files, recipes, warnings } = merge(src);
     for (const w of warnings) console.warn('WARN:', w); if (warnings.length) console.warn(`WARN: ${warnings.length} line(s) with both canon_any and canon_all`);
-    fs.writeFileSync(path.join(ROOT, 'data/recipes.json'), JSON.stringify({ generated: new Date().toISOString(), sources: files, count: recipes.length, recipes }, null, 1) + '\n');
+    fs.writeFileSync(path.join(ROOT, 'data/recipes.json'), JSON.stringify({ sources: files, count: recipes.length, recipes }, null, 1) + '\n');
     console.log(`merged ${recipes.length} recipes from ${files.join(', ')}`);
   } catch (e) { console.error('BUILD-DATA FAILED:', e.message); process.exit(1); }
 }

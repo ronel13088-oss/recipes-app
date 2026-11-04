@@ -98,8 +98,8 @@ const screens = {
   },
   recipe(id) { const r = R.find(x => x.id === id); if (!r) return [h('p', {}, 'מתכון לא נמצא')];
     const P0 = St.plan(); const inPlan = P0.plan.includes(id); const hasDev = r.deviceMin != null;
-    const devName = r.devices.map(d => L.DEVICES[d] || d).join(' · ') || 'בלי ציוד';
-    const devKey = r.devices.find(d => DEV_WORK[d]);
+    const devName = L.deviceText(r);
+    const devKey = L.deviceKey(r, DEV_WORK);
     const meta = h('p', { class: 'sub' }, `${L.MEALS[r.meal] || 'אחר'} · ${devName}`, r.servings ? [' · ', bdi(String(r.servings)), ' מנות'] : '', ' · חלבון: ',
       r.protein_g == null ? 'לא ידוע' : [bdi(protText(r)), ' ג׳ ', r.proteinCalculated ? '(מחושב, לא מאומת)' : '(מהמקור)']);
     const dial = Dial({ value: r.prepMinutes, mode: 'display', cls: 'recipe', label: r.prepMinutes == null ? 'זמן עבודה לא ידוע' : `${r.prepMinutes} דקות עבודה שלך`,

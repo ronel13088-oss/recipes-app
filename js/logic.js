@@ -29,7 +29,14 @@ function parseText(s) {
 }
 // Schema-tolerant: accepts {recipes:[...]} or [...], old (title/devices/prepMinutes/sourceUrl) or new (name/equipment/active_minutes/url) keys.
 // Recipe fits tool d if d is required (equipment) or is one option of an equipment_any group.
-export const usesDevice = (r, d) => r.devices.includes(d) || (r.deviceAny || []).some(g => g.includes(d));
+// Display-only tokens that may appear inside equipment_any groups (never filter keys).
+export const DISPLAY_ONLY = { oven: 'תנור', grill: 'גריל' };
+const devLabel = d => DEVICES[d] || DISPLAY_ONLY[d] || d;
+// Recipe-page equipment text: required tools joined by ' · ', each any-group as 'X או Y'.
+export const deviceText = r => [...r.devices.map(devLabel), ...(r.deviceAny || []).map(g => g.map(devLabel).join(' או '))].join(' · ') || 'בלי ציוד';
+// First tool with a work label, searching required tools then any-groups.
+export const deviceKey = (r, work) => [...r.devices, ...(r.deviceAny || []).flat()].find(d => Object.hasOwn(work, d));
+export const usesDevice = (r, d) => Object.hasOwn(DEVICES, d) && (r.devices.includes(d) || (r.deviceAny || []).some(g => g.includes(d)));
 export function normalize(raw) {
   const list = Array.isArray(raw) ? raw : (raw && Array.isArray(raw.recipes) ? raw.recipes : []);
   const seen = new Set();
