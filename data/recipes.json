@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T19:35:13.134Z",
+ "generated": "2026-11-04T10:22:37.481Z",
  "sources": [
   "recipes-batch2.json",
   "recipes.json"
@@ -12,18 +12,71 @@
    "url": "https://www.onebody.co.il/pancake-protein/",
    "meal": "breakfast",
    "equipment": [
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": null,
    "servings": "6 פנקייקים",
    "protein_g": null,
    "ingredients": [
-    "2 ביצים",
-    "60 גרם קמח שיבולת שועל (אפשר לטחון שיבולת שועל בבלנדר)",
-    "1 סקופ אבקת חלבון",
-    "חצי כוס חלב רגיל / סויה",
-    "קורט מלח",
-    "כפית אבקת אפייה"
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "60 גרם קמח שיבולת שועל (אפשר לטחון שיבולת שועל בבלנדר)",
+     "canon": "קמח שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "קמח שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת חלבון",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס חלב רגיל / סויה",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב",
+      "חלב סויה"
+     ],
+     "canon_any": [
+      "חלב",
+      "חלב סויה"
+     ]
+    },
+    {
+     "text": "קורט מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "בלילה בקערה אחת, מחבת. חלבון לא מצוין.",
    "ninja_bake_adaptation": false,
@@ -43,7 +96,8 @@
    ],
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "matkonit-protein-pancake-banana",
@@ -51,22 +105,86 @@
    "url": "https://matkonit.com/%D7%A4%D7%A0%D7%A7%D7%99%D7%99%D7%A7-%D7%97%D7%9C%D7%91%D7%95%D7%9F-%D7%A2%D7%9D-%D7%A9%D7%99%D7%91%D7%95%D7%9C%D7%AA-%D7%A9%D7%95%D7%A2%D7%9C-%D7%A7%D7%95%D7%95%D7%90%D7%A7%D7%A8/",
    "meal": "breakfast",
    "equipment": [
-    "blender",
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 5,
    "servings": "10 פנקייקים",
    "protein_g": 5,
    "protein_basis": "source",
    "ingredients": [
-    "5 כפות שיבולת שועל",
-    "1 סקופ אבקת חלבון בטעם וניל או שוקולד",
-    "1 בננה",
-    "2 ביצים",
-    "1 כף חמאת בוטנים",
-    "1 כף יוגורט פרו 1.5% שומן",
-    "⅓ כוס מיץ תפוזים",
-    "1 כפית קינמון"
+    {
+     "text": "5 כפות שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת חלבון בטעם וניל או שוקולד",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בננה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חמאת בוטנים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף יוגורט פרו 1.5% שומן",
+     "canon": "יוגורט",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "⅓ כוס מיץ תפוזים",
+     "canon": "תפוז",
+     "pantry_basic": false,
+     "canon_all": [
+      "תפוז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית קינמון",
+     "canon": "קינמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "קינמון"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "טוחנים הכול בבלנדר ומטגנים. 15 דק' בסך הכול.",
    "ninja_bake_adaptation": false,
@@ -89,7 +207,12 @@
    "protein_note": "לפנקייק, לפי העמוד",
    "device_min": 4,
    "device_max": 6,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "blender"
+    ]
+   ]
   },
   {
    "id": "wellnessmama-oat-protein-pancake",
@@ -98,23 +221,108 @@
    "meal": "breakfast",
    "equipment": [
     "blender",
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 5,
    "servings": 3,
    "protein_g": 26,
    "protein_basis": "source",
    "ingredients": [
-    "1 כוס שיבולת שועל",
-    "3 כפיות אבקת אפייה",
-    "⅓ כוס אבקת חלבון וניל",
-    "2 ביצים גדולות",
-    "⅓ כוס יוגורט יווני",
-    "1 סקופ אבקת קולגן (לא חובה)",
-    "1 כפית תמצית וניל",
-    "1 כף סירופ מייפל (או יותר לפי הטעם)",
-    "1 כף שמן זית (או שמן קוקוס)",
-    "½ כפית קינמון טחון"
+    {
+     "text": "1 כוס שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפיות אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "⅓ כוס אבקת חלבון וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "⅓ כוס יוגורט יווני",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת קולגן (לא חובה)",
+     "canon": "אבקת קולגן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת קולגן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף סירופ מייפל (או יותר לפי הטעם)",
+     "canon": "סירופ מייפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "סירופ מייפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף שמן זית (או שמן קוקוס)",
+     "canon": "שמן זית",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן זית",
+      "שמן קוקוס"
+     ],
+     "canon_any": [
+      "שמן זית",
+      "שמן קוקוס"
+     ]
+    },
+    {
+     "text": "½ כפית קינמון טחון",
+     "canon": "קינמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "קינמון"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור באנגלית, תורגם. כולל יוגורט יווני.",
    "ninja_bake_adaptation": false,
@@ -148,7 +356,8 @@
    "protein_note": "למנה (3 פנקייקים), לפי העמוד",
    "device_min": 4,
    "device_max": 7,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "microwave-omelette-2min",
@@ -162,10 +371,43 @@
    "servings": 1,
    "protein_g": null,
    "ingredients": [
-    "מעט תרסיס שמן",
-    "2 ביצים",
-    "1 כף גבינה 5%",
-    "קצת מלח ופלפל שחור"
+    {
+     "text": "מעט תרסיס שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף גבינה 5%",
+     "canon": "גבינה לבנה",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינה לבנה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קצת מלח ופלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "2 ביצים וכף גבינה 5%, הכי מהיר שיש.",
    "ninja_bake_adaptation": false,
@@ -197,7 +439,8 @@
    ],
    "device_min": 2,
    "device_max": 2,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "greek-yogurt-oat-berry-bowl",
@@ -210,13 +453,69 @@
    "protein_g": 34,
    "protein_basis": "source",
    "ingredients": [
-    "250 גרם יוגורט יווני 0%",
-    "4 כפות שיבולת שועל",
-    "½ כוס אוכמניות טריות או קפואות",
-    "1 כף זרעי צ'יה",
-    "3 חצאים אגוזי מלך, שבורים",
-    "1 כפית גדושה דבש",
-    "קינמון, קורט"
+    {
+     "text": "250 גרם יוגורט יווני 0%",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 כפות שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס אוכמניות טריות או קפואות",
+     "canon": "אוכמניות",
+     "pantry_basic": false,
+     "canon_all": [
+      "אוכמניות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף זרעי צ'יה",
+     "canon": "זרעי צ׳יה",
+     "pantry_basic": false,
+     "canon_all": [
+      "זרעי צ׳יה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 חצאים אגוזי מלך, שבורים",
+     "canon": "אגוזי מלך",
+     "pantry_basic": false,
+     "canon_all": [
+      "אגוזי מלך"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית גדושה דבש",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קינמון, קורט",
+     "canon": "קינמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "קינמון"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "בלי בישול בכלל.",
    "ninja_bake_adaptation": false,
@@ -237,28 +536,87 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "date-oat-protein-balls",
    "name": "כדורי תמרים, שיבולת שועל וחלבון",
    "url": "https://dailybis.com/recipes/date-oat-protein-balls/",
    "meal": "breakfast",
-   "equipment": [
-    "blender"
-   ],
+   "equipment": [],
    "active_minutes": 15,
    "servings": "6 מנות (12 כדורים)",
    "protein_g": 13,
    "protein_basis": "source",
    "ingredients": [
-    "8 תמרי מג'הול, בלי גלעינים",
-    "¾ כוס שיבולת שועל",
-    "2 סקופים אבקת חלבון מי גבינה, וניל או שוקולד",
-    "4 כפות חמאת בוטנים",
-    "2 כפות אבקת קקאו",
-    "2 כפות מים או חלב, לפי הצורך",
-    "מלח, קורט"
+    {
+     "text": "8 תמרי מג'הול, בלי גלעינים",
+     "canon": "תמר",
+     "pantry_basic": false,
+     "canon_all": [
+      "תמר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¾ כוס שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 סקופים אבקת חלבון מי גבינה, וניל או שוקולד",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 כפות חמאת בוטנים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות אבקת קקאו",
+     "canon": "אבקת קקאו",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת קקאו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מים או חלב, לפי הצורך",
+     "canon": "מים",
+     "pantry_basic": false,
+     "canon_all": [
+      "מים",
+      "חלב"
+     ],
+     "canon_any": [
+      "מים",
+      "חלב"
+     ]
+    },
+    {
+     "text": "מלח, קורט",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "להכנה מראש לשבוע; ליד הקפה. דורש טחינה (בלנדר/מעבד מזון).",
    "ninja_bake_adaptation": false,
@@ -283,7 +641,12 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": 1,
    "device_max": 1,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "blender"
+    ]
+   ]
   },
   {
    "id": "no-bake-protein-balls",
@@ -296,11 +659,51 @@
    "protein_g": 8.1,
    "protein_basis": "source",
    "ingredients": [
-    "1 כוס חמאת בוטנים (ללא מלח) (הערה 1)",
-    "3/4 כוס אבקת חלבון וניל (הערה 2)",
-    "1/4 כוס סירופ מייפל (הערה 3)",
-    "1/2 כוס קינואה תפוחה (הערה 4)",
-    "1/4 כוס שוקולד צ'יפס מריר ללא מוצרי חלב (הערה 5)"
+    {
+     "text": "1 כוס חמאת בוטנים (ללא מלח) (הערה 1)",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3/4 כוס אבקת חלבון וניל (הערה 2)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/4 כוס סירופ מייפל (הערה 3)",
+     "canon": "סירופ מייפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "סירופ מייפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כוס קינואה תפוחה (הערה 4)",
+     "canon": "קינואה",
+     "pantry_basic": false,
+     "canon_all": [
+      "קינואה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/4 כוס שוקולד צ'יפס מריר ללא מוצרי חלב (הערה 5)",
+     "canon": "שוקולד מריר",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוקולד מריר"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "4–5 מרכיבים, ערבוב בקערה. אפשר שיבולת שועל במקום קינואה תפוחה.",
    "ninja_bake_adaptation": false,
@@ -325,33 +728,152 @@
    "protein_note": "לכדור, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "protein-muffins-yogurt",
    "name": "מאפינס חלבון עם יוגורט ושוקולד מריר",
    "url": "https://tastyandsweet.co.il/protein-muffins-recipe/",
    "meal": "breakfast",
-   "equipment": [
-    "ninja_foodi"
-   ],
+   "equipment": [],
    "active_minutes": null,
    "servings": "12 מאפינס",
    "protein_g": null,
    "ingredients": [
-    "200 גרם קמח כוסמין מלא (אפשר 100 גרם כוסמין + 100 גרם קמח שקדים)",
-    "100 גרם אבקת חלבון וניל (או שוקולד)",
-    "2 כפיות אבקת אפייה",
-    "1/2 כפית סודה לשתייה",
-    "1/4 כפית מלח דק",
-    "2 ביצים גדולות",
-    "120 גרם יוגורט יווני דל שומן (1/2 כוס)",
-    "60 מ\"ל שמן קוקוס מומס (1/4 כוס)",
-    "120 מ\"ל חלב שקדים/רגיל (1/2 כוס)",
-    "50 מ\"ל דבש/סירופ מייפל (1/4 כוס)",
-    "1 כפית תמצית וניל",
-    "50 גרם שוקולד מריר 85% קצוץ (לא חובה)",
-    "30 גרם אגוזי לוז/פקאן קלויים קצוצים"
+    {
+     "text": "200 גרם קמח כוסמין מלא (אפשר 100 גרם כוסמין + 100 גרם קמח שקדים)",
+     "canon": "קמח כוסמין",
+     "pantry_basic": false,
+     "canon_all": [
+      "קמח כוסמין",
+      "קמח שקדים"
+     ],
+     "canon_any": [
+      "קמח כוסמין",
+      "קמח שקדים"
+     ]
+    },
+    {
+     "text": "100 גרם אבקת חלבון וניל (או שוקולד)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית סודה לשתייה",
+     "canon": "סודה לשתייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "סודה לשתייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/4 כפית מלח דק",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "120 גרם יוגורט יווני דל שומן (1/2 כוס)",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "60 מ\"ל שמן קוקוס מומס (1/4 כוס)",
+     "canon": "שמן קוקוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן קוקוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "120 מ\"ל חלב שקדים/רגיל (1/2 כוס)",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב שקדים",
+      "חלב"
+     ],
+     "canon_any": [
+      "חלב שקדים",
+      "חלב"
+     ]
+    },
+    {
+     "text": "50 מ\"ל דבש/סירופ מייפל (1/4 כוס)",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש",
+      "סירופ מייפל"
+     ],
+     "canon_any": [
+      "דבש",
+      "סירופ מייפל"
+     ]
+    },
+    {
+     "text": "1 כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "50 גרם שוקולד מריר 85% קצוץ (לא חובה)",
+     "canon": "שוקולד מריר",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוקולד מריר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "30 גרם אגוזי לוז/פקאן קלויים קצוצים",
+     "canon": "אגוזי לוז",
+     "pantry_basic": false,
+     "canon_all": [
+      "אגוזי לוז",
+      "פקאן"
+     ],
+     "canon_any": [
+      "אגוזי לוז",
+      "פקאן"
+     ]
+    }
    ],
    "short_note": "לטבילה בקפה; נשמר 3 ימים ומוקפא היטב. מקור לתנור.",
    "ninja_bake_adaptation": true,
@@ -393,7 +915,12 @@
    "ninja_note": "אפייה בנינג'ה (Bake/Roast) במקום תנור: כ-10–20 מעלות פחות מהמתכון ובדיקה מוקדמת — הערכה, לא מהמקור.",
    "device_min": 15,
    "device_max": 18,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "sarig-banana-kale-shake",
@@ -407,12 +934,64 @@
    "servings": 2,
    "protein_g": null,
    "ingredients": [
-    "3/4 כוס קייל",
-    "חצי כוס חלב קוקוס",
-    "כף אחת של אבקת חלבון בטעם שוקולד",
-    "בננה אחת קפואה",
-    "3/4 כוס קרח",
-    "2 כפות חמאת בוטנים או חמאת שקדים"
+    {
+     "text": "3/4 כוס קייל",
+     "canon": "קייל",
+     "pantry_basic": false,
+     "canon_all": [
+      "קייל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס חלב קוקוס",
+     "canon": "חלב קוקוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב קוקוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף אחת של אבקת חלבון בטעם שוקולד",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בננה אחת קפואה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3/4 כוס קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות חמאת בוטנים או חמאת שקדים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים",
+      "חמאת שקדים"
+     ],
+     "canon_any": [
+      "חמאת בוטנים",
+      "חמאת שקדים"
+     ]
+    }
    ],
    "short_note": "מתכון נינג'ה (כפתור SMOOTHIE).",
    "ninja_bake_adaptation": false,
@@ -424,7 +1003,8 @@
    ],
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "cottage-strawberry-protein-shake",
@@ -439,12 +1019,72 @@
    "protein_g": 42.1,
    "protein_basis": "source",
    "ingredients": [
-    "½ כוס קוטג' דל שומן",
-    "1 סקופ אבקת חלבון וניל",
-    "½ כוס תותים קפואים",
-    "½–¾ כוס קוביות קרח",
-    "1 כוס חלב רזה (או חלב סויה / חלב שקדים מועשר בחלבון)",
-    "1 כף ממתיק (אריתריטול, מייפל או דבש)"
+    {
+     "text": "½ כוס קוטג' דל שומן",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת חלבון וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס תותים קפואים",
+     "canon": "תות",
+     "pantry_basic": false,
+     "canon_all": [
+      "תות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½–¾ כוס קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס חלב רזה (או חלב סויה / חלב שקדים מועשר בחלבון)",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב",
+      "חלב סויה",
+      "חלב שקדים"
+     ],
+     "canon_any": [
+      "חלב",
+      "חלב סויה",
+      "חלב שקדים"
+     ]
+    },
+    {
+     "text": "1 כף ממתיק (אריתריטול, מייפל או דבש)",
+     "canon": "ממתיק",
+     "pantry_basic": false,
+     "canon_all": [
+      "ממתיק",
+      "סירופ מייפל",
+      "דבש"
+     ],
+     "canon_any": [
+      "ממתיק",
+      "סירופ מייפל",
+      "דבש"
+     ]
+    }
    ],
    "short_note": "מקור באנגלית, תורגם. טעם של עוגת גבינה.",
    "ninja_bake_adaptation": false,
@@ -465,7 +1105,8 @@
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "greek-yogurt-raspberry-shake",
@@ -480,14 +1121,94 @@
    "protein_g": 40.4,
    "protein_basis": "source",
    "ingredients": [
-    "1/2 כוס יוגורט יווני רגיל",
-    "כף אחת של אבקת חלבון וניל",
-    "1/2 כוס פטל קפוא (או תערובת פירות יער)",
-    "1/2-3/4 כוס קוביות קרח",
-    "1 כוס חלב רזה (או חלב סויה או חלב שקדים מועשר בחלבון)",
-    "כפית אחת של זרעי צ'יה",
-    "כפית אחת של חמאת שקדים",
-    "כף אחת של ממתיק (דבש או סירופ מייפל ללא סוכר)"
+    {
+     "text": "1/2 כוס יוגורט יווני רגיל",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף אחת של אבקת חלבון וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כוס פטל קפוא (או תערובת פירות יער)",
+     "canon": "פטל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטל",
+      "פירות יער"
+     ],
+     "canon_any": [
+      "פטל",
+      "פירות יער"
+     ]
+    },
+    {
+     "text": "1/2-3/4 כוס קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס חלב רזה (או חלב סויה או חלב שקדים מועשר בחלבון)",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב",
+      "חלב סויה",
+      "חלב שקדים"
+     ],
+     "canon_any": [
+      "חלב",
+      "חלב סויה",
+      "חלב שקדים"
+     ]
+    },
+    {
+     "text": "כפית אחת של זרעי צ'יה",
+     "canon": "זרעי צ׳יה",
+     "pantry_basic": false,
+     "canon_all": [
+      "זרעי צ׳יה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית אחת של חמאת שקדים",
+     "canon": "חמאת שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת שקדים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף אחת של ממתיק (דבש או סירופ מייפל ללא סוכר)",
+     "canon": "ממתיק",
+     "pantry_basic": false,
+     "canon_all": [
+      "ממתיק",
+      "דבש",
+      "סירופ מייפל"
+     ],
+     "canon_any": [
+      "ממתיק",
+      "דבש",
+      "סירופ מייפל"
+     ]
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -508,7 +1229,8 @@
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "choc-pb-protein-shake",
@@ -523,11 +1245,51 @@
    "protein_g": 30.5,
    "protein_basis": "source",
    "ingredients": [
-    "1 כף (30 גרם) אבקת חלבון בטעם שוקולד",
-    "1 כף (15 גרם) חמאת בוטנים טבעית",
-    "1/2 בננה (50 גרם)",
-    "200 מ\"ל חלב שקדים לא ממותק",
-    "3–4 קוביות קרח"
+    {
+     "text": "1 כף (30 גרם) אבקת חלבון בטעם שוקולד",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף (15 גרם) חמאת בוטנים טבעית",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 בננה (50 גרם)",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "200 מ\"ל חלב שקדים לא ממותק",
+     "canon": "חלב שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב שקדים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3–4 קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -548,7 +1310,8 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "proffee-protein-coffee",
@@ -561,10 +1324,42 @@
    "protein_g": 28,
    "protein_basis": "source",
    "ingredients": [
-    "סקופ אבקת חלבון בטעם קפה (או וניל)",
-    "שוט אספרסו מצונן או כוס קפה קר",
-    "חצי כוס חלב",
-    "קרח"
+    {
+     "text": "סקופ אבקת חלבון בטעם קפה (או וניל)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שוט אספרסו מצונן או כוס קפה קר",
+     "canon": "קפה",
+     "pantry_basic": false,
+     "canon_all": [
+      "קפה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס חלב",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "קפה + חלבון בכוס, בשייקר. בעמוד עוד 6 שייקים.",
    "ninja_bake_adaptation": false,
@@ -581,7 +1376,8 @@
    "protein_note": "בערך, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "banana-cream-protein-shake",
@@ -596,13 +1392,73 @@
    "protein_g": 39,
    "protein_basis": "source",
    "ingredients": [
-    "240 מ\"ל חלב או תחליף חלב",
-    "1 סקופ אבקת חלבון וניל",
-    "1 בננה בינונית",
-    "½ כפית תמצית וניל",
-    "½ כוס קוטג' ללא שומן",
-    "1 מנה פודינג אינסטנט בטעם בננה ללא סוכר",
-    "1 כוס קרח"
+    {
+     "text": "240 מ\"ל חלב או תחליף חלב",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב",
+      "תחליף חלב"
+     ],
+     "canon_any": [
+      "חלב",
+      "תחליף חלב"
+     ]
+    },
+    {
+     "text": "1 סקופ אבקת חלבון וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בננה בינונית",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס קוטג' ללא שומן",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 מנה פודינג אינסטנט בטעם בננה ללא סוכר",
+     "canon": "פודינג אינסטנט",
+     "pantry_basic": false,
+     "canon_all": [
+      "פודינג אינסטנט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור באנגלית, תורגם. פודינג אינסטנט בננה לא תמיד זמין בארץ.",
    "ninja_bake_adaptation": false,
@@ -615,26 +1471,73 @@
    "protein_note": "לשייק, לפי העמוד",
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "sarig-ninja-chicken-5min",
    "name": "חזה עוף ב-5 דקות בנינג'ה (דבש-דיז'ון)",
    "url": "https://sarig.com/recipe/%D7%97%D7%96%D7%94-%D7%A2%D7%95%D7%A3-%D7%91-5-%D7%93%D7%A7%D7%95%D7%AA/",
    "meal": "lunchbox",
-   "equipment": [
-    "ninja_foodi"
-   ],
+   "equipment": [],
    "active_minutes": null,
    "servings": "4-5",
    "protein_g": null,
    "ingredients": [
-    "מגש חזה עוף (כ-1 ק\"ג)",
-    "2 כפות דבש",
-    "½ כוס חרדל דיז'ון",
-    "1 כף פטרוזיליה קצוצה (אופציונלי)",
-    "1 כפית פפריקה מתוקה",
-    "קורט מלח"
+    {
+     "text": "מגש חזה עוף (כ-1 ק\"ג)",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות דבש",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס חרדל דיז'ון",
+     "canon": "חרדל",
+     "pantry_basic": false,
+     "canon_all": [
+      "חרדל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף פטרוזיליה קצוצה (אופציונלי)",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור לנינג'ה גריל; בפודי – Air Crisp (התאמה שלנו).",
    "ninja_bake_adaptation": false,
@@ -678,7 +1581,12 @@
    ],
    "device_min": 5,
    "device_max": 5,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "gila-ninja-pargit-soy-silan",
@@ -692,17 +1600,109 @@
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "800 גרם פרגית טרייה, חתוכה לרצועות או נתחים בגודל בינוני",
-    "3 כפות שמן זית",
-    "2 כפות רוטב סויה",
-    "1 כף סילאן טבעי",
-    "1 כפית פפריקה מתוקה",
-    "1 כפית שום גבישי או שן שום כתושה",
-    "חצי כפית כמון",
-    "חצי כפית מלח (או לפי הטעם)",
-    "רבע כפית פלפל שחור גרוס",
-    "מיץ מחצי לימון",
-    "ענפי טימין טרי או יבש (לא חובה, אבל מוסיף מאוד)"
+    {
+     "text": "800 גרם פרגית טרייה, חתוכה לרצועות או נתחים בגודל בינוני",
+     "canon": "פרגית",
+     "pantry_basic": false,
+     "canon_all": [
+      "פרגית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף סילאן טבעי",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שום גבישי או שן שום כתושה",
+     "canon": "אבקת שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת שום",
+      "שום"
+     ],
+     "canon_any": [
+      "אבקת שום",
+      "שום"
+     ]
+    },
+    {
+     "text": "חצי כפית כמון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כפית מלח (או לפי הטעם)",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ מחצי לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "ענפי טימין טרי או יבש (לא חובה, אבל מוסיף מאוד)",
+     "canon": "טימין",
+     "pantry_basic": true,
+     "canon_all": [
+      "טימין"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "Air Crisp 200°, 18–20 דק'.",
    "ninja_bake_adaptation": false,
@@ -727,7 +1727,8 @@
    ],
    "device_min": 19,
    "device_max": 21,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "matkonit-ninja-pargit",
@@ -742,14 +1743,82 @@
    "protein_g": 36,
    "protein_basis": "source",
    "ingredients": [
-    "1 קילו פרגיות",
-    "2 כפות שמן קנולה או זית",
-    "2 שיני שום כתושות",
-    "1 כפית דבש",
-    "2 כפות מים",
-    "1 כפית פפריקה מתוקה",
-    "1 כפית פילדלפיה (לא חובה)",
-    "מלח פלפל לפי הטעם"
+    {
+     "text": "1 קילו פרגיות",
+     "canon": "פרגית",
+     "pantry_basic": false,
+     "canon_all": [
+      "פרגית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן קנולה או זית",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן",
+      "שמן זית"
+     ],
+     "canon_any": [
+      "שמן",
+      "שמן זית"
+     ]
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית דבש",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פילדלפיה (לא חובה)",
+     "canon": "גבינת שמנת",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינת שמנת"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח פלפל לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -770,7 +1839,8 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": 14,
    "device_max": 14,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "gila-beef-patties-pan",
@@ -778,24 +1848,125 @@
    "url": "https://gilacooking.co.il/beef-meatballs-in-10-minutes/",
    "meal": "lunchbox",
    "equipment": [
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 15,
    "servings": 6,
    "protein_g": null,
    "ingredients": [
-    "500 גרם בשר בקר טחון",
-    "1 ביצה",
-    "1 בצל קטן (100 גרם) מגורר דק",
-    "2 שיני שום כתושות",
-    "3 כפות פירורי לחם",
-    "חופן קטן של פטרוזיליה קצוצה דק",
-    "½ כפית כמון",
-    "¼ כפית פפריקה מתוקה",
-    "¼ כפית פלפל שחור טחון",
-    "¾ כפית מלח",
-    "2 כפות מים קרים (לריכוך)",
-    "2 כפות שמן לטיגון (אפשר גם שמן זית עדין או קנולה)"
+    {
+     "text": "500 גרם בשר בקר טחון",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 ביצה",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קטן (100 גרם) מגורר דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות פירורי לחם",
+     "canon": "פירורי לחם",
+     "pantry_basic": false,
+     "canon_all": [
+      "פירורי לחם"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חופן קטן של פטרוזיליה קצוצה דק",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית כמון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית פלפל שחור טחון",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¾ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מים קרים (לריכוך)",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן לטיגון (אפשר גם שמן זית עדין או קנולה)",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן",
+      "שמן זית"
+     ],
+     "canon_any": [
+      "שמן",
+      "שמן זית"
+     ]
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -812,7 +1983,8 @@
    ],
    "device_min": 6,
    "device_max": 8,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "parsa-patties-ninja",
@@ -820,19 +1992,68 @@
    "url": "https://www.10dakot.co.il/recipe/%d7%a7%d7%a6%d7%99%d7%a6%d7%95%d7%aa-%d7%a4%d7%a8%d7%a1%d7%94-%d7%91%d7%a0%d7%99%d7%a0%d7%92%d7%94/",
    "meal": "lunchbox",
    "equipment": [
-    "ninja_foodi",
     "stovetop"
    ],
    "active_minutes": 10,
    "servings": "25 קציצות",
    "protein_g": null,
    "ingredients": [
-    "500 גרם בשר בקר טחון",
-    "1.5 כרישה גדולה (400-500 ג') חתוכה לעיגולים",
-    "בצל קטן מטוגן עד להזהבה קלה",
-    "ביצה גדולה או 2 ביצים S או M",
-    "שליש כוס קמח מצות",
-    "כפית מלח, חצי כפית כמון, מעט פלפל שחור"
+    {
+     "text": "500 גרם בשר בקר טחון",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1.5 כרישה גדולה (400-500 ג') חתוכה לעיגולים",
+     "canon": "כרישה",
+     "pantry_basic": false,
+     "canon_all": [
+      "כרישה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בצל קטן מטוגן עד להזהבה קלה",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "ביצה גדולה או 2 ביצים S או M",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שליש כוס קמח מצות",
+     "canon": "קמח מצות",
+     "pantry_basic": false,
+     "canon_all": [
+      "קמח מצות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית מלח, חצי כפית כמון, מעט פלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "כמון",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -868,7 +2089,12 @@
    ],
    "device_min": 17,
    "device_max": 17,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "ninja-chilli-con-carne",
@@ -883,20 +2109,133 @@
    "protein_g": 46,
    "protein_basis": "source",
    "ingredients": [
-    "1 כף שמן",
-    "500 גרם בשר בקר טחון",
-    "1 בצל קצוץ",
-    "2 שיני שום כתושות",
-    "1 פלפל ירוק פרוס",
-    "1 פלפל אדום פרוס",
-    "1 קופסה (400 גרם) עגבניות קצוצות",
-    "2 כפות רסק עגבניות",
-    "1 קופסה (400 גרם) שעועית אדומה, מסוננת ושטופה",
-    "2 כפות אבקת צ'ילי",
-    "1 כפית כמון טחון",
-    "1/2 כפית פפריקה",
-    "250 מ\"ל ציר בקר",
-    "מלח ופלפל לפי הטעם"
+    {
+     "text": "1 כף שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "500 גרם בשר בקר טחון",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קצוץ",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פלפל ירוק פרוס",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פלפל אדום פרוס",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 קופסה (400 גרם) עגבניות קצוצות",
+     "canon": "עגבניות מרוסקות בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניות מרוסקות בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות רסק עגבניות",
+     "canon": "רסק עגבניות",
+     "pantry_basic": false,
+     "canon_all": [
+      "רסק עגבניות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 קופסה (400 גרם) שעועית אדומה, מסוננת ושטופה",
+     "canon": "שעועית אדומה",
+     "pantry_basic": false,
+     "canon_all": [
+      "שעועית אדומה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות אבקת צ'ילי",
+     "canon": "צ׳ילי גרוס",
+     "pantry_basic": true,
+     "canon_all": [
+      "צ׳ילי גרוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית כמון טחון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית פפריקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "250 מ\"ל ציר בקר",
+     "canon": "ציר בקר",
+     "pantry_basic": false,
+     "canon_all": [
+      "ציר בקר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור באנגלית, תורגם. בקר + שעועית אדומה; מצוין לבישול מרוכז.",
    "ninja_bake_adaptation": false,
@@ -941,7 +2280,8 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": 10,
    "device_max": 10,
-   "device_partial": true
+   "device_partial": true,
+   "equipment_any": []
   },
   {
    "id": "ninja-chicken-pineapple-rice",
@@ -955,14 +2295,83 @@
    "servings": "3-4",
    "protein_g": null,
    "ingredients": [
-    "5-6 שוקי עוף",
-    "5-6 פרוסות אננס מקופסת שימורים",
-    "תיבול:",
-    "כף שמן זית, 2 כפות סילאן, כף רוטב סויה, 3 שיני שום כתושות, שליש כפית מלח, קמצוץ פלפל שחור",
-    "2 כוסות אורז לבן",
-    "3 כפות שמן",
-    "כפית מלאה מלח",
-    "3 כוסות מים רותחים"
+    {
+     "text": "5-6 שוקי עוף",
+     "canon": "שוק עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוק עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "5-6 פרוסות אננס מקופסת שימורים",
+     "canon": "אננס",
+     "pantry_basic": false,
+     "canon_all": [
+      "אננס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תיבול:",
+     "canon": "תיבול",
+     "pantry_basic": true,
+     "canon_all": [
+      "תיבול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף שמן זית, 2 כפות סילאן, כף רוטב סויה, 3 שיני שום כתושות, שליש כפית מלח, קמצוץ פלפל שחור",
+     "canon": "מרינדת סילאן-סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן זית",
+      "סילאן",
+      "רוטב סויה",
+      "שום",
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כוסות אורז לבן",
+     "canon": "אורז לבן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז לבן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית מלאה מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כוסות מים רותחים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "אורז ועוף בבת אחת. מקור לנינג'ה סמארט ליד עם רשת דו-כיוונית.",
    "ninja_bake_adaptation": false,
@@ -990,7 +2399,8 @@
    ],
    "device_min": 20,
    "device_max": 20,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "chickpea-tuna-stew-10min",
@@ -1004,17 +2414,105 @@
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "4 כפות שמן זית",
-    "1 בצל סגול בינוני",
-    "3 שיני שום",
-    "1 פלפל צ’ילי ירוק קטן",
-    "1 כף אורגנו טרי",
-    "3 כוסות גרגירי חומוס מבושלים",
-    "1 כפית מלח דק",
-    "1/2 כפית פלפל שחור גרוס",
-    "2 קופסאות שימורים טונה בשמן",
-    "1/4 כוס מיץ לימון",
-    "1 חופן פטרוזיליה"
+    {
+     "text": "4 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל סגול בינוני",
+     "canon": "בצל סגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל סגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 שיני שום",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פלפל צ’ילי ירוק קטן",
+     "canon": "פלפל חריף",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל חריף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף אורגנו טרי",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כוסות גרגירי חומוס מבושלים",
+     "canon": "חומוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח דק",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 קופסאות שימורים טונה בשמן",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/4 כוס מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 חופן פטרוזיליה",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "קטניות + טונה משימורים. הערך התזונתי בעמוד ללא יחידה ברורה, לכן לא הוזן.",
    "ninja_bake_adaptation": false,
@@ -1026,7 +2524,8 @@
    ],
    "device_min": 7,
    "device_max": 7,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "matkonit-red-lentil-dal",
@@ -1042,19 +2541,123 @@
    "protein_g": 12,
    "protein_basis": "source",
    "ingredients": [
-    "2 כוסות מים רותחים",
-    "1 כוס עדשים כתומות",
-    "3 כפות שמן",
-    "2 בצלים סגולים קצוצים",
-    "4 שיני שום קצוצות",
-    "2 כוסות עגבניות מרוסקות",
-    "2 כפות קארי",
-    "1 כפית כורכום",
-    "½ כפית ג'ינג'ר",
-    "קורט מלח",
-    "¼ צרור כוסברה קצוצה",
-    "3 כפות יוגורט",
-    "3 עגבניות שרי חתוכות לרבעים"
+    {
+     "text": "2 כוסות מים רותחים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס עדשים כתומות",
+     "canon": "עדשים כתומות",
+     "pantry_basic": false,
+     "canon_all": [
+      "עדשים כתומות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 בצלים סגולים קצוצים",
+     "canon": "בצל סגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל סגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 שיני שום קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כוסות עגבניות מרוסקות",
+     "canon": "עגבניות מרוסקות בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניות מרוסקות בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות קארי",
+     "canon": "קארי",
+     "pantry_basic": true,
+     "canon_all": [
+      "קארי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית כורכום",
+     "canon": "כורכום",
+     "pantry_basic": true,
+     "canon_all": [
+      "כורכום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית ג'ינג'ר",
+     "canon": "ג׳ינג׳ר טרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "ג׳ינג׳ר טרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ צרור כוסברה קצוצה",
+     "canon": "כוסברה",
+     "pantry_basic": false,
+     "canon_all": [
+      "כוסברה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות יוגורט",
+     "canon": "יוגורט",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 עגבניות שרי חתוכות לרבעים",
+     "canon": "עגבניית שרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניית שרי"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "עדשים מתבשלות לבד ~20 דק'.",
    "ninja_bake_adaptation": false,
@@ -1080,7 +2683,8 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": 20,
    "device_max": 22,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "gila-ninja-schnitzel",
@@ -1094,16 +2698,96 @@
    "servings": 6,
    "protein_g": null,
    "ingredients": [
-    "1 ק\"ג חזה עוף פרוס דק לשניצלים (בערך 12-14 פרוסות)",
-    "3 ביצים גדולות",
-    "1 כף חרדל דיז'ון או רגיל",
-    "2 כפות מים",
-    "1.5 כוסות פירורי לחם (אפשר גם פנקו לפריכות מוגברת)",
-    "1/2 כוס קמח לבן",
-    "1 כפית מלח",
-    "1/2 כפית פלפל שחור גרוס",
-    "1/2 כפית פפריקה מתוקה",
-    "מעט תרסיס שמן (שמן קנולה או שירצה)"
+    {
+     "text": "1 ק\"ג חזה עוף פרוס דק לשניצלים (בערך 12-14 פרוסות)",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 ביצים גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חרדל דיז'ון או רגיל",
+     "canon": "חרדל",
+     "pantry_basic": false,
+     "canon_all": [
+      "חרדל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1.5 כוסות פירורי לחם (אפשר גם פנקו לפריכות מוגברת)",
+     "canon": "פירורי לחם",
+     "pantry_basic": false,
+     "canon_all": [
+      "פירורי לחם"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כוס קמח לבן",
+     "canon": "קמח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קמח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מעט תרסיס שמן (שמן קנולה או שירצה)",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "הציפוי לוקח עבודה; קילו בבת אחת לכל השבוע.",
    "ninja_bake_adaptation": false,
@@ -1136,7 +2820,8 @@
    ],
    "device_min": 11,
    "device_max": 12,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "marcwiner-air-fryer-salmon",
@@ -1151,14 +2836,78 @@
    "protein_g": 34,
    "protein_basis": "source",
    "ingredients": [
-    "2 נתחי פילה סלמון (כ-170 גרם כל אחד)",
-    "0.5 כף שמן זית",
-    "0.5 כפית אבקת שום",
-    "0.25 כפית פפריקה",
-    "0.25 כפית מלח",
-    "0.25 כפית פלפל שחור",
-    "פלחי לימון (להגשה)",
-    "רוטב טרטר (להגשה)"
+    {
+     "text": "2 נתחי פילה סלמון (כ-170 גרם כל אחד)",
+     "canon": "סלמון",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.5 כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.5 כפית אבקת שום",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.25 כפית פפריקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.25 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.25 כפית פלפל שחור",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פלחי לימון (להגשה)",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רוטב טרטר (להגשה)",
+     "canon": "רוטב טרטר",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב טרטר"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "10 דקות בסך הכול.",
    "ninja_bake_adaptation": false,
@@ -1193,7 +2942,8 @@
    "protein_note": "למנה, לפי העמוד",
    "device_min": 7,
    "device_max": 9,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "honey-mustard-pistachio-salmon",
@@ -1207,12 +2957,67 @@
    "servings": 2,
    "protein_g": null,
    "ingredients": [
-    "2 נתחי פילה סלמון בינוניים",
-    "2 כפיות חרדל",
-    "2 כפיות דבש",
-    "פפריקה (בערך כפית וחצי)",
-    "מלח, פלפל שחור לפי הטעם",
-    "פיסטוק גרוס (אפשר גם שקדים וקשיו)"
+    {
+     "text": "2 נתחי פילה סלמון בינוניים",
+     "canon": "סלמון",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות חרדל",
+     "canon": "חרדל",
+     "pantry_basic": false,
+     "canon_all": [
+      "חרדל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות דבש",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פפריקה (בערך כפית וחצי)",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח, פלפל שחור לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פיסטוק גרוס (אפשר גם שקדים וקשיו)",
+     "canon": "פיסטוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "פיסטוק",
+      "שקדים",
+      "קשיו"
+     ],
+     "canon_any": [
+      "פיסטוק",
+      "שקדים",
+      "קשיו"
+     ]
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -1253,7 +3058,8 @@
    ],
    "device_min": 15,
    "device_max": 20,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "air-fryer-burger",
@@ -1267,10 +3073,42 @@
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "4 קציצות המבורגר מבשר בקר טחון (125 גרם כל אחת, בעובי 1,5 עד 2 ס״מ, 15 % שומן)",
-    "1 כפית שמן זית",
-    "0,5 כפית מלח",
-    "0,5 כפית פלפל (טחון טרי)"
+    {
+     "text": "4 קציצות המבורגר מבשר בקר טחון (125 גרם כל אחת, בעובי 1,5 עד 2 ס״מ, 15 % שומן)",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0,5 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0,5 כפית פלפל (טחון טרי)",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "קציצות מוכנות מהסופר, מלח ופלפל.",
    "ninja_bake_adaptation": false,
@@ -1332,7 +3170,8 @@
    ],
    "device_min": 8,
    "device_max": 10,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "ninja-pargiot-chili-honey",
@@ -1346,12 +3185,66 @@
    "servings": "3-4",
    "protein_g": null,
    "ingredients": [
-    "600 גרם פרגיות חתוכות ל 4X4 ס”מ",
-    "כף גדושה קורנפלור או קמח רגיל",
-    "3 שיני שום פרוסות",
-    "תיבול:",
-    "3 כפות רוטב צ’ילי מתוק, 2 כפות דבש, 3 כפות רוטב סויה",
-    "חצי כוס בצל ירוק קצוץ (החלק הלבן + הירוק)"
+    {
+     "text": "600 גרם פרגיות חתוכות ל 4X4 ס”מ",
+     "canon": "פרגית",
+     "pantry_basic": false,
+     "canon_all": [
+      "פרגית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף גדושה קורנפלור או קמח רגיל",
+     "canon": "קורנפלור",
+     "pantry_basic": true,
+     "canon_all": [
+      "קורנפלור",
+      "קמח"
+     ],
+     "canon_any": [
+      "קורנפלור",
+      "קמח"
+     ]
+    },
+    {
+     "text": "3 שיני שום פרוסות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תיבול:",
+     "canon": "תיבול",
+     "pantry_basic": true,
+     "canon_all": [
+      "תיבול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות רוטב צ’ילי מתוק, 2 כפות דבש, 3 כפות רוטב סויה",
+     "canon": "רוטב צ׳ילי מתוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב צ׳ילי מתוק",
+      "דבש",
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס בצל ירוק קצוץ (החלק הלבן + הירוק)",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "טיגון באוויר ואז זיגוג באותו סיר.",
    "ninja_bake_adaptation": false,
@@ -1379,7 +3272,8 @@
    ],
    "device_min": 8,
    "device_max": 8,
-   "device_partial": true
+   "device_partial": true,
+   "equipment_any": []
   },
   {
    "id": "gila-chicken-stir-fry",
@@ -1387,26 +3281,149 @@
    "url": "https://gilacooking.co.il/chicken-stir-fry-recipe/",
    "meal": "dinner",
    "equipment": [
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 15,
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "500 גרם חזה עוף חתוך לרצועות דקות",
-    "2 כפות שמן (שומשום או קנולה)",
-    "1 גזר גדול, חתוך לגפרורים",
-    "1 פלפל אדום חתוך לרצועות דקות",
-    "1 בצל סגול חתוך לרצועות",
-    "1 קישוא קטן חתוך לגפרורים",
-    "3 שיני שום כתושות",
-    "1/2 כפית ג'ינג'ר טרי מגורד",
-    "3 כפות רוטב סויה",
-    "1 כף סילאן או דבש",
-    "1 כף חומץ אורז",
-    "1 כף קורנפלור מעורבב עם 2 כפות מים",
-    "מלח ופלפל לפי הטעם",
-    "שומשום קלוי ובצל ירוק (לקישוט)"
+    {
+     "text": "500 גרם חזה עוף חתוך לרצועות דקות",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן (שומשום או קנולה)",
+     "canon": "שמן",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן שומשום",
+      "שמן"
+     ],
+     "canon_any": [
+      "שמן שומשום",
+      "שמן"
+     ]
+    },
+    {
+     "text": "1 גזר גדול, חתוך לגפרורים",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פלפל אדום חתוך לרצועות דקות",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל סגול חתוך לרצועות",
+     "canon": "בצל סגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל סגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 קישוא קטן חתוך לגפרורים",
+     "canon": "קישוא",
+     "pantry_basic": false,
+     "canon_all": [
+      "קישוא"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית ג'ינג'ר טרי מגורד",
+     "canon": "ג׳ינג׳ר טרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "ג׳ינג׳ר טרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף סילאן או דבש",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן",
+      "דבש"
+     ],
+     "canon_any": [
+      "סילאן",
+      "דבש"
+     ]
+    },
+    {
+     "text": "1 כף חומץ אורז",
+     "canon": "חומץ אורז",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומץ אורז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף קורנפלור מעורבב עם 2 כפות מים",
+     "canon": "קורנפלור",
+     "pantry_basic": true,
+     "canon_all": [
+      "קורנפלור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שומשום קלוי ובצל ירוק (לקישוט)",
+     "canon": "שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שומשום",
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -1437,7 +3454,8 @@
    ],
    "device_min": 9,
    "device_max": 12,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "beef-stir-fry-green-beans",
@@ -1452,12 +3470,60 @@
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "לבשר ולירקות 500 גרם סינטה/שייטל/אנטריקוט פרוס דק מאוד נגד הסיבים",
-    "400–500 גרם שעועית ירוקה (טרייה או קפואה)",
-    "1 בצל סגול בינוני פרוס לחצי טבעות דק",
-    "2 שיני שום קצוצות",
-    "1 כפית ג'ינג'ר טרי מגורר (אופציונלי אבל מושלם)",
-    "2–3 כפות שמן ניטרלי להקפצה (קנולה/בוטנים/חמניות)"
+    {
+     "text": "לבשר ולירקות 500 גרם סינטה/שייטל/אנטריקוט פרוס דק מאוד נגד הסיבים",
+     "canon": "סינטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "סינטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "400–500 גרם שעועית ירוקה (טרייה או קפואה)",
+     "canon": "שעועית ירוקה",
+     "pantry_basic": false,
+     "canon_all": [
+      "שעועית ירוקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל סגול בינוני פרוס לחצי טבעות דק",
+     "canon": "בצל סגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל סגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית ג'ינג'ר טרי מגורר (אופציונלי אבל מושלם)",
+     "canon": "ג׳ינג׳ר טרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "ג׳ינג׳ר טרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2–3 כפות שמן ניטרלי להקפצה (קנולה/בוטנים/חמניות)",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "כמויות הרוטב מופיעות בעמוד בשלבים בלבד; פתח את המקור לכמויות.",
    "ninja_bake_adaptation": false,
@@ -1507,7 +3573,8 @@
    ],
    "device_min": 10,
    "device_max": 14,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "tuna-fish-cakes-pan",
@@ -1515,22 +3582,111 @@
    "url": "https://momflavours.co.il/tuna-fish-cakes-10-minutes-recipe/",
    "meal": "dinner",
    "equipment": [
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 10,
    "servings": null,
    "protein_g": null,
    "ingredients": [
-    "2 קופסאות טונה בשמן (סה\"כ 280 גרם מסונן)",
-    "2 ביצים בגודל L",
-    "1 בצל בינוני קצוץ דק (כ-80 גר')",
-    "2 כפות פירורי לחם (או קמח תפוח אדמה לגרסת ללא גלוטן)",
-    "רבע כוס פטרוזיליה קצוצה (כ-10 גר')",
-    "1 שן שום כתושה",
-    "מלח – חצי כפית",
-    "פלפל שחור – רבע כפית",
-    "מיץ מחצי לימון",
-    "שמן לטיגון (שמן קנולה/זית לבחירה, כ-3 כפות למחבת שטוחה)"
+    {
+     "text": "2 קופסאות טונה בשמן (סה\"כ 280 גרם מסונן)",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים בגודל L",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל בינוני קצוץ דק (כ-80 גר')",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות פירורי לחם (או קמח תפוח אדמה לגרסת ללא גלוטן)",
+     "canon": "פירורי לחם",
+     "pantry_basic": false,
+     "canon_all": [
+      "פירורי לחם",
+      "קמח תפוח אדמה"
+     ],
+     "canon_any": [
+      "פירורי לחם",
+      "קמח תפוח אדמה"
+     ]
+    },
+    {
+     "text": "רבע כוס פטרוזיליה קצוצה (כ-10 גר')",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 שן שום כתושה",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח – חצי כפית",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פלפל שחור – רבע כפית",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ מחצי לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שמן לטיגון (שמן קנולה/זית לבחירה, כ-3 כפות למחבת שטוחה)",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן",
+      "שמן זית"
+     ],
+     "canon_any": [
+      "שמן",
+      "שמן זית"
+     ]
+    }
    ],
    "short_note": "מטונה משימורים וביצים.",
    "ninja_bake_adaptation": false,
@@ -1562,7 +3718,8 @@
    ],
    "device_min": 4,
    "device_max": 4,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "gila-tofu-stir-fry",
@@ -1570,26 +3727,143 @@
    "url": "https://gilacooking.co.il/stir-fried-tofu-with-vegetables/",
    "meal": "dinner",
    "equipment": [
-    "pan"
+    "pan",
+    "stovetop"
    ],
    "active_minutes": 20,
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "300 גרם טופו קשה, חתוך לקוביות בגודל 2 ס\"מ",
-    "2 כפות שמן קנולה או שומשום",
-    "1 גזר, חתוך לגפרורים דקים",
-    "½ פלפל אדום, חתוך לרצועות",
-    "½ פלפל צהוב, חתוך לרצועות",
-    "1 קישוא קטן, חתוך לרצועות דקות",
-    "2 שיני שום כתושות",
-    "½ כפית ג'ינג'ר טרי מגורד",
-    "3 כפות רוטב סויה",
-    "1 כף סילאן",
-    "1 כף חומץ אורז",
-    "½ כפית שמן שומשום",
-    "½ כפית שומשום קלוי",
-    "בצל ירוק פרוס לטבעות (לקישוט)"
+    {
+     "text": "300 גרם טופו קשה, חתוך לקוביות בגודל 2 ס\"מ",
+     "canon": "טופו",
+     "pantry_basic": false,
+     "canon_all": [
+      "טופו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן קנולה או שומשום",
+     "canon": "שמן",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן",
+      "שמן שומשום"
+     ],
+     "canon_any": [
+      "שמן",
+      "שמן שומשום"
+     ]
+    },
+    {
+     "text": "1 גזר, חתוך לגפרורים דקים",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ פלפל אדום, חתוך לרצועות",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ פלפל צהוב, חתוך לרצועות",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 קישוא קטן, חתוך לרצועות דקות",
+     "canon": "קישוא",
+     "pantry_basic": false,
+     "canon_all": [
+      "קישוא"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית ג'ינג'ר טרי מגורד",
+     "canon": "ג׳ינג׳ר טרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "ג׳ינג׳ר טרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף סילאן",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חומץ אורז",
+     "canon": "חומץ אורז",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומץ אורז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית שמן שומשום",
+     "canon": "שמן שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן שומשום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית שומשום קלוי",
+     "canon": "שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שומשום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בצל ירוק פרוס לטבעות (לקישוט)",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": null,
    "ninja_bake_adaptation": false,
@@ -1616,7 +3890,8 @@
    ],
    "device_min": 7,
    "device_max": 10,
-   "device_partial": true
+   "device_partial": true,
+   "equipment_any": []
   },
   {
    "id": "orange-crispy-tofu-airfryer",
@@ -1624,26 +3899,134 @@
    "url": "https://www.makorrishon.co.il/vegetarian/article/311770",
    "meal": "dinner",
    "equipment": [
-    "ninja_foodi",
-    "microwave"
+    "microwave",
+    "ninja_foodi"
    ],
    "active_minutes": null,
    "servings": "2-3",
    "protein_g": null,
    "ingredients": [
-    "חבילה (400 גרם) טופו קשה במיוחד",
-    "1 כף רוטב סויה",
-    "1 כף שמן שומשום",
-    "¼ כפית מלח",
-    "קמצוץ פלפל",
-    "2 כפות קורנפלור",
-    "לרוטב: גרידה מתפוז אחד",
-    "6 כפות מיץ תפוזים טרי",
-    "¼ כוס דבש או סירופ אגבה",
-    "1 כפית חומץ תפוחים",
-    "¼ כפית ג'ינג'ר טחון",
-    "¼ כפית פתיתי צ'ילי",
-    "להגשה: אורז לבן"
+    {
+     "text": "חבילה (400 גרם) טופו קשה במיוחד",
+     "canon": "טופו",
+     "pantry_basic": false,
+     "canon_all": [
+      "טופו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף שמן שומשום",
+     "canon": "שמן שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן שומשום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קמצוץ פלפל",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות קורנפלור",
+     "canon": "קורנפלור",
+     "pantry_basic": true,
+     "canon_all": [
+      "קורנפלור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "לרוטב: גרידה מתפוז אחד",
+     "canon": "תפוז",
+     "pantry_basic": false,
+     "canon_all": [
+      "תפוז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "6 כפות מיץ תפוזים טרי",
+     "canon": "תפוז",
+     "pantry_basic": false,
+     "canon_all": [
+      "תפוז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כוס דבש או סירופ אגבה",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש",
+      "סירופ אגבה"
+     ],
+     "canon_any": [
+      "דבש",
+      "סירופ אגבה"
+     ]
+    },
+    {
+     "text": "1 כפית חומץ תפוחים",
+     "canon": "חומץ תפוחים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומץ תפוחים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית ג'ינג'ר טחון",
+     "canon": "ג׳ינג׳ר טחון",
+     "pantry_basic": true,
+     "canon_all": [
+      "ג׳ינג׳ר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית פתיתי צ'ילי",
+     "canon": "צ׳ילי גרוס",
+     "pantry_basic": true,
+     "canon_all": [
+      "צ׳ילי גרוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "להגשה: אורז לבן",
+     "canon": "אורז לבן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז לבן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "כ-40 דקות בסך הכול לפי העמוד, רובן המתנה.",
    "ninja_bake_adaptation": false,
@@ -1673,25 +4056,75 @@
    ],
    "device_min": 15,
    "device_max": 18,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "tilapia-fillet-baked",
    "name": "פילה אמנון אפוי",
    "url": "https://www.10dakot.co.il/recipe/%D7%A4%D7%99%D7%9C%D7%94-%D7%90%D7%9E%D7%A0%D7%95%D7%9F-%D7%91%D7%AA%D7%A0%D7%95%D7%A8/",
    "meal": "dinner",
-   "equipment": [
-    "ninja_foodi"
-   ],
+   "equipment": [],
    "active_minutes": 10,
    "servings": 2,
    "protein_g": null,
    "ingredients": [
-    "4 נתחי פילה אמנון (כ-500 גרם)",
-    "4 כפות מיץ לימון טרי",
-    "רבע כפית מלח",
-    "תיבול לפילה:",
-    "2 כפות שמן זית, 3 שיני שום כתושות, חצי כפית פפריקה מתוקה, חצי כפית כמון, חצי כפית שטוחה כורכום, חצי כפית תבלין מיובש של כוסברה/פטרוזיליה, חצי כפית שטוחה מלח, פלפל שחור לפי הטעם."
+    {
+     "text": "4 נתחי פילה אמנון (כ-500 גרם)",
+     "canon": "אמנון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אמנון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 כפות מיץ לימון טרי",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תיבול לפילה:",
+     "canon": "תיבול",
+     "pantry_basic": true,
+     "canon_all": [
+      "תיבול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית, 3 שיני שום כתושות, חצי כפית פפריקה מתוקה, חצי כפית כמון, חצי כפית שטוחה כורכום, חצי כפית תבלין מיובש של כוסברה/פטרוזיליה, חצי כפית שטוחה מלח, פלפל שחור לפי הטעם.",
+     "canon": "שמן זית",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן זית",
+      "שום",
+      "פפריקה",
+      "כמון",
+      "כורכום",
+      "כוסברה",
+      "פטרוזיליה",
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": [
+      "כוסברה",
+      "פטרוזיליה"
+     ]
+    }
    ],
    "short_note": "מקור לתנור.",
    "ninja_bake_adaptation": true,
@@ -1713,7 +4146,12 @@
    "ninja_note": "אפייה בנינג'ה (Bake/Roast) במקום תנור: כ-10–20 מעלות פחות מהמתכון ובדיקה מוקדמת — הערכה, לא מהמקור.",
    "device_min": 12,
    "device_max": 15,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "chickpea-spinach-stew",
@@ -1727,15 +4165,94 @@
    "servings": null,
    "protein_g": null,
    "ingredients": [
-    "2 כוסות גרגירי חומוס מבושלים (משקית קפואה)",
-    "1 בצל קטן קצוץ",
-    "100 גרם עלי תרד טריים",
-    "1 עגבניה גדולה מגורדת",
-    "4 עגבניות שרי חצויות / עגבניה קטנה חתוכה גס",
-    "2 שיני שום קצוצות",
-    "חצי כוס מים רותחים",
-    "תיבול:",
-    "חצי כפית מלח, כפית פפריקה מתוקה, שליש כפית כמון, רבע כפית פלפל שחור"
+    {
+     "text": "2 כוסות גרגירי חומוס מבושלים (משקית קפואה)",
+     "canon": "חומוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קטן קצוץ",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "100 גרם עלי תרד טריים",
+     "canon": "תרד",
+     "pantry_basic": false,
+     "canon_all": [
+      "תרד"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 עגבניה גדולה מגורדת",
+     "canon": "עגבנייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבנייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 עגבניות שרי חצויות / עגבניה קטנה חתוכה גס",
+     "canon": "עגבניית שרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניית שרי",
+      "עגבנייה"
+     ],
+     "canon_any": [
+      "עגבניית שרי",
+      "עגבנייה"
+     ]
+    },
+    {
+     "text": "2 שיני שום קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס מים רותחים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תיבול:",
+     "canon": "תיבול",
+     "pantry_basic": true,
+     "canon_all": [
+      "תיבול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כפית מלח, כפית פפריקה מתוקה, שליש כפית כמון, רבע כפית פלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פפריקה",
+      "כמון",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "משקית חומוס קפוא. טבעוני.",
    "ninja_bake_adaptation": false,
@@ -1759,30 +4276,109 @@
    ],
    "device_min": 14,
    "device_max": 14,
-   "device_partial": true
+   "device_partial": true,
+   "equipment_any": []
   },
   {
    "id": "protein-cookies-oat-choc",
    "name": "עוגיות חלבון שיבולת שועל ושוקולד צ'יפס (מתוך 7 מתכוני עוגיות חלבון)",
    "url": "https://www.proteins.co.il/nutrition/protein-cookies/",
    "meal": "breakfast",
-   "equipment": [
-    "ninja_foodi"
-   ],
+   "equipment": [],
    "active_minutes": null,
    "servings": null,
    "protein_g": 8,
    "protein_basis": "source",
    "ingredients": [
-    "1 כוס שיבולת שועל",
-    "½ כוס אבקת חלבון (וניל או שוקולד)",
-    "½ כוס חמאת שקדים או חמאת בוטנים",
-    "¼ כוס דבש או סירופ מייפל",
-    "¼ כוס חלב",
-    "¼ כוס שוקולד צ'יפס מריר",
-    "1 כפית תמצית וניל",
-    "½ כפית אבקת אפייה",
-    "¼ כפית מלח"
+    {
+     "text": "1 כוס שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס אבקת חלבון (וניל או שוקולד)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס חמאת שקדים או חמאת בוטנים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת שקדים",
+      "חמאת בוטנים"
+     ],
+     "canon_any": [
+      "חמאת שקדים",
+      "חמאת בוטנים"
+     ]
+    },
+    {
+     "text": "¼ כוס דבש או סירופ מייפל",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש",
+      "סירופ מייפל"
+     ],
+     "canon_any": [
+      "דבש",
+      "סירופ מייפל"
+     ]
+    },
+    {
+     "text": "¼ כוס חלב",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כוס שוקולד צ'יפס מריר",
+     "canon": "שוקולד מריר",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוקולד מריר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "לטבילה בקפה. בעמוד עוד 6 גרסאות, 6–9 גרם חלבון לעוגייה.",
    "ninja_bake_adaptation": true,
@@ -1819,29 +4415,108 @@
    "protein_note": "לעוגייה, לפי העמוד",
    "device_min": 10,
    "device_max": 12,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "today-soft-protein-cookies",
    "name": "עוגיות חלבון רכות (Today)",
    "url": "https://www.today-protein.co.il/recipe13.html",
    "meal": "breakfast",
-   "equipment": [
-    "ninja_foodi"
-   ],
+   "equipment": [],
    "active_minutes": 10,
    "servings": 10,
    "protein_g": null,
    "ingredients": [
-    "½ כוס חמאת בוטנים או שקדים",
-    "⅓ כוס סוכר חום",
-    "1 ביצה",
-    "1 מנת אבקת חלבון TODAY וניל",
-    "½ כוס קמח",
-    "½ כפית אבקת אפייה",
-    "½ כפית תמצית וניל",
-    "קורט מלח",
-    "2 כפות שוקולד צ׳יפס"
+    {
+     "text": "½ כוס חמאת בוטנים או שקדים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים",
+      "חמאת שקדים"
+     ],
+     "canon_any": [
+      "חמאת בוטנים",
+      "חמאת שקדים"
+     ]
+    },
+    {
+     "text": "⅓ כוס סוכר חום",
+     "canon": "סוכר חום",
+     "pantry_basic": false,
+     "canon_all": [
+      "סוכר חום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 ביצה",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 מנת אבקת חלבון TODAY וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כוס קמח",
+     "canon": "קמח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קמח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שוקולד צ׳יפס",
+     "canon": "שוקולד מריר",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוקולד מריר"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "10 עוגיות, לטבילה בקפה.",
    "ninja_bake_adaptation": true,
@@ -1877,7 +4552,12 @@
    "protein_basis": null,
    "device_min": 8,
    "device_max": 11,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "cottage-veg-muffins",
@@ -1885,21 +4565,79 @@
    "url": "https://www.c14.co.il/article/1296611",
    "meal": "breakfast",
    "equipment": [
-    "ninja_foodi",
-    "blender",
-    "microwave"
+    "blender"
    ],
    "active_minutes": 5,
    "servings": 6,
    "protein_g": 11,
    "ingredients": [
-    "6 ביצים L",
-    "1 גביע קוטג' 3% (250 גרם)",
-    "1 גזר קטן מגורד",
-    "2 כפות בצל ירוק קצוץ",
-    "½ גמבה קצוצה",
-    "4–5 פטריות בינוניות קצוצות",
-    "תיבול לפי הטעם: מלח, פלפל, שום, זעתר, פפריקה"
+    {
+     "text": "6 ביצים L",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 גביע קוטג' 3% (250 גרם)",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 גזר קטן מגורד",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות בצל ירוק קצוץ",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ גמבה קצוצה",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4–5 פטריות בינוניות קצוצות",
+     "canon": "פטרייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תיבול לפי הטעם: מלח, פלפל, שום, זעתר, פפריקה",
+     "canon": "תיבול",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור",
+      "שום",
+      "זעתר",
+      "פפריקה"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "טוחנים בבלנדר ואופים. נשמר במקרר עד 5 ימים, מחממים במיקרו.",
    "ninja_bake_adaptation": true,
@@ -1954,34 +4692,140 @@
    "protein_verified": false,
    "device_min": 20,
    "device_max": 25,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "greek-egg-muffins",
    "name": "מאפינס ביצים, ירוקים וגבינה בסגנון יווני",
    "url": "https://www.kikar.co.il/%D7%A7%D7%99%D7%A9%D7%99%D7%9D-%D7%95%D7%A4%D7%A9%D7%98%D7%99%D7%93%D7%95%D7%AA/433032",
    "meal": "breakfast",
-   "equipment": [
-    "ninja_foodi",
-    "microwave"
-   ],
+   "equipment": [],
    "active_minutes": null,
    "servings": 8,
    "protein_g": 10,
    "ingredients": [
-    "שמן זית",
-    "8 ביצים גדולות",
-    "1 כפית אורגנו",
-    "½ כפית פלפל שחור גרוס",
-    "½ כפית פפריקה מתוקה",
-    "¼ כפית אבקת אפייה",
-    "מלח גס",
-    "170 גרם תרד, קצוץ דק",
-    "½ בצל קטן, קצוץ דק",
-    "1 כוס פטרוזיליה, קצוצה דק",
-    "3 כפות עלי נענע, קצוצים דק",
-    "3 שיני שום גדולות, כתושות",
-    "1 כוס גבינת פטה, מפוררת"
+    {
+     "text": "שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "8 ביצים גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית אורגנו",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח גס",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "170 גרם תרד, קצוץ דק",
+     "canon": "תרד",
+     "pantry_basic": false,
+     "canon_all": [
+      "תרד"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ בצל קטן, קצוץ דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס פטרוזיליה, קצוצה דק",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות עלי נענע, קצוצים דק",
+     "canon": "נענע",
+     "pantry_basic": false,
+     "canon_all": [
+      "נענע"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 שיני שום גדולות, כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס גבינת פטה, מפוררת",
+     "canon": "גבינת פטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינת פטה"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "8 מאפינס. נשמר 3–4 ימים במקרר או חודשיים במקפיא.",
    "ninja_bake_adaptation": true,
@@ -2043,7 +4887,12 @@
    "protein_verified": false,
    "device_min": 25,
    "device_max": 30,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": [
+    [
+     "ninja_foodi"
+    ]
+   ]
   },
   {
    "id": "greek-yogurt-banana-shake",
@@ -2057,15 +4906,91 @@
    "servings": null,
    "protein_g": 17,
    "ingredients": [
-    "200 גרם יוגורט יווני 5%",
-    "250 מ\"ל חלב",
-    "120 גרם בננה בשלה קפואה",
-    "30 גרם שיבולת שועל דקה",
-    "15 גרם חמאת בוטנים טבעית",
-    "10 גרם דבש או מייפל (אופציונלי)",
-    "5 מ\"ל תמצית וניל",
-    "1 גרם קינמון (אופציונלי)",
-    "80–120 גרם קוביות קרח"
+    {
+     "text": "200 גרם יוגורט יווני 5%",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "250 מ\"ל חלב",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "120 גרם בננה בשלה קפואה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "30 גרם שיבולת שועל דקה",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "15 גרם חמאת בוטנים טבעית",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "10 גרם דבש או מייפל (אופציונלי)",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש",
+      "סירופ מייפל"
+     ],
+     "canon_any": [
+      "דבש",
+      "סירופ מייפל"
+     ]
+    },
+    {
+     "text": "5 מ\"ל תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 גרם קינמון (אופציונלי)",
+     "canon": "קינמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "קינמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "80–120 גרם קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "בלי אבקת חלבון. לעוד חלבון אפשר להגדיל יוגורט או להוסיף קוטג'.",
    "ninja_bake_adaptation": false,
@@ -2136,7 +5061,8 @@
    "protein_verified": false,
    "device_min": 1,
    "device_max": 2,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "banana-pb-cocoa-shake",
@@ -2150,13 +5076,73 @@
    "servings": 2,
    "protein_g": null,
    "ingredients": [
-    "1 בננה בינונית בשלה",
-    "1 כף חמאת בוטנים טבעית (כ־20 גרם)",
-    "1 כף אבקת קקאו (כ־8 גרם)",
-    "1 כף דבש או סילאן",
-    "1 סקופ אבקת חלבון (כ־30 גרם)",
-    "250 מ\"ל חלב",
-    "5–6 קוביות קרח (לא חובה)"
+    {
+     "text": "1 בננה בינונית בשלה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חמאת בוטנים טבעית (כ־20 גרם)",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף אבקת קקאו (כ־8 גרם)",
+     "canon": "אבקת קקאו",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת קקאו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף דבש או סילאן",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש",
+      "סילאן"
+     ],
+     "canon_any": [
+      "דבש",
+      "סילאן"
+     ]
+    },
+    {
+     "text": "1 סקופ אבקת חלבון (כ־30 גרם)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "250 מ\"ל חלב",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "5–6 קוביות קרח (לא חובה)",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "טעם שוקולד. בלי אבקה: גביע יוגורט יווני במקום.",
    "ninja_bake_adaptation": false,
@@ -2183,7 +5169,8 @@
    "protein_basis": null,
    "device_min": 1,
    "device_max": 1,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "ninja-chicken-rice",
@@ -2197,16 +5184,97 @@
    "servings": null,
    "protein_g": 25,
    "ingredients": [
-    "4 ירכי עוף",
-    "240 מ\"ל אורז חום",
-    "300 מ\"ל ציר עוף",
-    "1 כף שמן זית",
-    "1 כפית בזיליקום",
-    "1 כפית תערובת עשבי תיבול",
-    "1 כף טימין",
-    "1 כף פטרוזיליה",
-    "1 כף אורגנו",
-    "מלח ופלפל"
+    {
+     "text": "4 ירכי עוף",
+     "canon": "ירך עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "ירך עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "240 מ\"ל אורז חום",
+     "canon": "אורז חום",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז חום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "300 מ\"ל ציר עוף",
+     "canon": "ציר עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "ציר עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית בזיליקום",
+     "canon": "בזיליקום",
+     "pantry_basic": true,
+     "canon_all": [
+      "בזיליקום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית תערובת עשבי תיבול",
+     "canon": "עשבי תיבול מיובשים",
+     "pantry_basic": true,
+     "canon_all": [
+      "עשבי תיבול מיובשים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף טימין",
+     "canon": "טימין",
+     "pantry_basic": true,
+     "canon_all": [
+      "טימין"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף פטרוזיליה",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף אורגנו",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור באנגלית. Air Crisp 5 דק' ואז לחץ 16 דק', הכל בסיר אחד.",
    "ninja_bake_adaptation": false,
@@ -2240,7 +5308,8 @@
    "protein_basis": "source",
    "device_min": 21,
    "device_max": 21,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "ninja-bolognese",
@@ -2255,20 +5324,137 @@
    "servings": null,
    "protein_g": null,
    "ingredients": [
-    "1 כף שמן זית",
-    "500 גרם בשר בקר טחון",
-    "1 בצל קצוץ דק",
-    "2 שיני שום כתושות",
-    "2 גזרים קצוצים (אופציונלי)",
-    "2 גבעולי סלרי קצוצים (אופציונלי)",
-    "קופסה (400 גרם) עגבניות מרוסקות או פסאטה",
-    "2 כפות רסק עגבניות",
-    "500 מ\"ל ציר בקר",
-    "1 כפית אורגנו מיובש",
-    "1 כפית בזיליקום מיובש",
-    "מלח ופלפל",
-    "400 גרם ספגטי להגשה",
-    "פרמזן מגורד להגשה"
+    {
+     "text": "1 כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "500 גרם בשר בקר טחון",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קצוץ דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 גזרים קצוצים (אופציונלי)",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 גבעולי סלרי קצוצים (אופציונלי)",
+     "canon": "סלרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קופסה (400 גרם) עגבניות מרוסקות או פסאטה",
+     "canon": "עגבניות מרוסקות בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניות מרוסקות בקופסה",
+      "פסאטה"
+     ],
+     "canon_any": [
+      "עגבניות מרוסקות בקופסה",
+      "פסאטה"
+     ]
+    },
+    {
+     "text": "2 כפות רסק עגבניות",
+     "canon": "רסק עגבניות",
+     "pantry_basic": false,
+     "canon_all": [
+      "רסק עגבניות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "500 מ\"ל ציר בקר",
+     "canon": "ציר בקר",
+     "pantry_basic": false,
+     "canon_all": [
+      "ציר בקר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית אורגנו מיובש",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית בזיליקום מיובש",
+     "canon": "בזיליקום",
+     "pantry_basic": true,
+     "canon_all": [
+      "בזיליקום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "400 גרם ספגטי להגשה",
+     "canon": "פסטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פסטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פרמזן מגורד להגשה",
+     "canon": "פרמזן",
+     "pantry_basic": false,
+     "canon_all": [
+      "פרמזן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "מקור באנגלית. לחץ 10 דק'. הספגטי מבושל בנפרד על הכירה; הרוטב מוקפא במנות.",
    "ninja_bake_adaptation": false,
@@ -2310,7 +5496,8 @@
    "protein_basis": null,
    "device_min": 10,
    "device_max": 10,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "one-pot-bolognese",
@@ -2324,21 +5511,142 @@
    "servings": 7,
    "protein_g": null,
    "ingredients": [
-    "1 כף שמן זית",
-    "2 שיני שום, קצוצות",
-    "1 בצל קצוץ דק",
-    "2 גזרים חתוכים לקוביות",
-    "2 גבעולי סלרי",
-    "500 גרם / 1 ק״ג בשר טחון",
-    "500 גרם רוטב עגבניות",
-    "3 כוסות מים",
-    "2 כפיות עשבי תיבול מיובשים",
-    "צ׳ילי גרוס לפי הטעם",
-    "2 כפיות רוטב ווסטרשייר",
-    "100 גרם רסק עגבניות",
-    "מלח, פלפל",
-    "חבילת פסטה",
-    "להגשה: תחליף פרמז׳ן פרווה"
+    {
+     "text": "1 כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום, קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קצוץ דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 גזרים חתוכים לקוביות",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 גבעולי סלרי",
+     "canon": "סלרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "500 גרם / 1 ק״ג בשר טחון",
+     "canon": "בשר בקר טחון",
+     "pantry_basic": false,
+     "canon_all": [
+      "בשר בקר טחון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "500 גרם רוטב עגבניות",
+     "canon": "רוטב עגבניות",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב עגבניות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כוסות מים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות עשבי תיבול מיובשים",
+     "canon": "עשבי תיבול מיובשים",
+     "pantry_basic": true,
+     "canon_all": [
+      "עשבי תיבול מיובשים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "צ׳ילי גרוס לפי הטעם",
+     "canon": "צ׳ילי גרוס",
+     "pantry_basic": true,
+     "canon_all": [
+      "צ׳ילי גרוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות רוטב ווסטרשייר",
+     "canon": "רוטב ווסטרשייר",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב ווסטרשייר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "100 גרם רסק עגבניות",
+     "canon": "רסק עגבניות",
+     "pantry_basic": false,
+     "canon_all": [
+      "רסק עגבניות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח, פלפל",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חבילת פסטה",
+     "canon": "פסטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פסטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "להגשה: תחליף פרמז׳ן פרווה",
+     "canon": "תחליף פרמזן",
+     "pantry_basic": false,
+     "canon_all": [
+      "תחליף פרמזן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "בלי סינון. העמוד מציין חצי שעה הכנה, יותר מיעד 15 הדק'.",
    "ninja_bake_adaptation": false,
@@ -2377,7 +5685,8 @@
    "protein_basis": null,
    "device_min": 15,
    "device_max": 15,
-   "device_partial": true
+   "device_partial": true,
+   "equipment_any": []
   },
   {
    "id": "air-fryer-chicken-meatballs",
@@ -2391,18 +5700,115 @@
    "servings": null,
    "protein_g": null,
    "ingredients": [
-    "500 גרם בשר פרגית טחון",
-    "1 בצל בינוני קצוץ דק",
-    "2 שיני שום כתושות",
-    "1 כוס פירורי לחם",
-    "1 ביצה",
-    "2 כפות שמן זית",
-    "1 כף פפריקה מתוקה",
-    "1 כפית כמון טחון",
-    "½ כפית קינמון",
-    "מלח ופלפל שחור",
-    "¼ כוס עשבי תיבול טריים קצוצים",
-    "ספריי שמן"
+    {
+     "text": "500 גרם בשר פרגית טחון",
+     "canon": "פרגית טחונה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פרגית טחונה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל בינוני קצוץ דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס פירורי לחם",
+     "canon": "פירורי לחם",
+     "pantry_basic": false,
+     "canon_all": [
+      "פירורי לחם"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 ביצה",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית כמון טחון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית קינמון",
+     "canon": "קינמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "קינמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כוס עשבי תיבול טריים קצוצים",
+     "canon": "עשבי תיבול טריים",
+     "pantry_basic": false,
+     "canon_all": [
+      "עשבי תיבול טריים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "ספריי שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "4–6 סועדים לפי העמוד. 30 דק' במקרר, אפשר להקפיא.",
    "ninja_bake_adaptation": false,
@@ -2445,29 +5851,100 @@
    "protein_basis": null,
    "device_min": 12,
    "device_max": 15,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "tuna-egg-pickle-salad",
    "name": "סלט טונה עם ביצים קשות, מלפפונים חמוצים ושמיר",
    "url": "https://gilacooking.co.il/tuna-salad-recipe-how-to-make/",
    "meal": "lunchbox",
-   "equipment": [
-    "stovetop"
-   ],
+   "equipment": [],
    "active_minutes": 15,
    "servings": 4,
    "protein_g": 21,
    "ingredients": [
-    "2 קופסאות טונה מסוננות (כ־280 גרם)",
-    "3 כפות מיונז",
-    "2 ביצים קשות קצוצות",
-    "3 מלפפונים חמוצים קטנים",
-    "½ בצל קטן קצוץ",
-    "½ כפית מלח",
-    "¼ כפית פלפל שחור",
-    "1 כף מיץ לימון",
-    "שמיר טרי (לא חובה)"
+    {
+     "text": "2 קופסאות טונה מסוננות (כ־280 גרם)",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות מיונז",
+     "canon": "מיונז",
+     "pantry_basic": false,
+     "canon_all": [
+      "מיונז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים קשות קצוצות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 מלפפונים חמוצים קטנים",
+     "canon": "מלפפון חמוץ",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון חמוץ"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ בצל קטן קצוץ",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית פלפל שחור",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שמיר טרי (לא חובה)",
+     "canon": "שמיר",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמיר"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "כירה רק לביצים (או ביצים קשות קנויות). אפשר יוגורט יווני במקום מיונז.",
    "ninja_bake_adaptation": false,
@@ -2516,34 +5993,145 @@
    "protein_verified": false,
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "tuna-egg-corn-salad",
    "name": "סלט טונה קלאסי עם ביצים ותירס",
    "url": "https://taimeta.co.il/tuna-salad-with-protein/",
    "meal": "lunchbox",
-   "equipment": [
-    "stovetop"
-   ],
+   "equipment": [],
    "active_minutes": 25,
    "servings": 4,
    "protein_g": 25,
    "ingredients": [
-    "320 גרם טונה במים מסוננת",
-    "2 ביצים קשות",
-    "150 גרם תירס מתוק",
-    "120 גרם מלפפון",
-    "80 גרם גזר מגורד",
-    "30 גרם פטרוזיליה",
-    "30 גרם בצל ירוק",
-    "40 גרם מיונז",
-    "40 גרם יוגורט טבעי",
-    "20 מ\"ל מיץ לימון",
-    "10 גרם חרדל דיז'ון",
-    "½ כפית מלח",
-    "¼ כפית פלפל שחור",
-    "10 מ\"ל שמן זית"
+    {
+     "text": "320 גרם טונה במים מסוננת",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים קשות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "150 גרם תירס מתוק",
+     "canon": "תירס",
+     "pantry_basic": false,
+     "canon_all": [
+      "תירס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "120 גרם מלפפון",
+     "canon": "מלפפון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "80 גרם גזר מגורד",
+     "canon": "גזר",
+     "pantry_basic": false,
+     "canon_all": [
+      "גזר"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "30 גרם פטרוזיליה",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "30 גרם בצל ירוק",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "40 גרם מיונז",
+     "canon": "מיונז",
+     "pantry_basic": false,
+     "canon_all": [
+      "מיונז"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "40 גרם יוגורט טבעי",
+     "canon": "יוגורט",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "20 מ\"ל מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "10 גרם חרדל דיז'ון",
+     "canon": "חרדל",
+     "pantry_basic": false,
+     "canon_all": [
+      "חרדל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "¼ כפית פלפל שחור",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "10 מ\"ל שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "העמוד מציין 20–25 דק' עבודה, יותר מהיעד. הרבה קיצוץ.",
    "ninja_bake_adaptation": false,
@@ -2633,7 +6221,8 @@
    "protein_verified": false,
    "device_min": null,
    "device_max": null,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "ninja-drumsticks",
@@ -2641,22 +6230,97 @@
    "url": "https://momflavours.co.il/ninja-chicken-drumsticks-recipe/",
    "meal": "dinner",
    "equipment": [
-    "ninja_foodi",
-    "microwave"
+    "ninja_foodi"
    ],
    "active_minutes": 10,
    "servings": 4,
    "protein_g": null,
    "ingredients": [
-    "8 שוקי עוף",
-    "2 כפות שמן זית",
-    "1 כף פפריקה מתוקה",
-    "1 כפית פפריקה חריפה (לא חובה)",
-    "1 כפית שום גבישי",
-    "1 כפית מלח",
-    "½ כפית פלפל שחור",
-    "1 כף סוכר חום או דבש",
-    "1 כף רוזמרין קצוץ"
+    {
+     "text": "8 שוקי עוף",
+     "canon": "שוק עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "שוק עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה חריפה (לא חובה)",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שום גבישי",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית פלפל שחור",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף סוכר חום או דבש",
+     "canon": "סוכר חום",
+     "pantry_basic": false,
+     "canon_all": [
+      "סוכר חום",
+      "דבש"
+     ],
+     "canon_any": [
+      "סוכר חום",
+      "דבש"
+     ]
+    },
+    {
+     "text": "1 כף רוזמרין קצוץ",
+     "canon": "רוזמרין",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוזמרין"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "Air Crisp 200° ל־20–25 דק'. מכינים לכמה ימים ומחממים במיקרו.",
    "ninja_bake_adaptation": false,
@@ -2688,7 +6352,8 @@
    "protein_basis": null,
    "device_min": 20,
    "device_max": 25,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "air-fryer-chicken-breast",
@@ -2703,15 +6368,87 @@
    "protein_g": 48,
    "protein_basis": "source",
    "ingredients": [
-    "450 גרם פילה חזה עוף",
-    "2 כפות שמן זית",
-    "1 כפית פפריקה",
-    "0.25 כפית פפריקה מעושנת",
-    "0.5 כפית אבקת שום",
-    "0.5 כפית אבקת בצל",
-    "1 כפית מלח",
-    "1.5 כפיות סוכר חום",
-    "1 כפית קורנפלור"
+    {
+     "text": "450 גרם פילה חזה עוף",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.25 כפית פפריקה מעושנת",
+     "canon": "פפריקה מעושנת",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה מעושנת"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.5 כפית אבקת שום",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "0.5 כפית אבקת בצל",
+     "canon": "אבקת בצל",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1.5 כפיות סוכר חום",
+     "canon": "סוכר חום",
+     "pantry_basic": false,
+     "canon_all": [
+      "סוכר חום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית קורנפלור",
+     "canon": "קורנפלור",
+     "pantry_basic": true,
+     "canon_all": [
+      "קורנפלור"
+     ],
+     "canon_any": []
+    }
    ],
    "short_note": "200° ל־12 דק'. בסיס לפיתה, סלט או אורז.",
    "ninja_bake_adaptation": false,
@@ -2746,7 +6483,8 @@
    "protein_note": "למנה, לפי טבלת הערכים בעמוד",
    "device_min": 12,
    "device_max": 15,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   },
   {
    "id": "shakshuka-10min",
@@ -2761,15 +6499,92 @@
    "servings": "2-3",
    "protein_g": null,
    "ingredients": [
-    "2 כפות שמן זית",
-    "4–5 עגבניות בשלות בקוביות",
-    "1 בצל קטן קצוץ דק",
-    "1 פלפל חריף (לא חובה)",
-    "2 שיני שום קצוצות",
-    "כפית פפריקה מתוקה",
-    "מלח ופלפל שחור",
-    "3 ביצים",
-    "כוסברה או פטרוזיליה לקישוט"
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4–5 עגבניות בשלות בקוביות",
+     "canon": "עגבנייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבנייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קטן קצוץ דק",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פלפל חריף (לא חובה)",
+     "canon": "פלפל חריף",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל חריף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כוסברה או פטרוזיליה לקישוט",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "כוסברה",
+      "פטרוזיליה"
+     ],
+     "canon_any": [
+      "כוסברה",
+      "פטרוזיליה"
+     ]
+    }
    ],
    "short_note": "מחבת אחת, עם לחם לטבילה.",
    "ninja_bake_adaptation": false,
@@ -2796,7 +6611,8 @@
    "protein_basis": null,
    "device_min": 12,
    "device_max": 13,
-   "device_partial": false
+   "device_partial": false,
+   "equipment_any": []
   }
  ]
 }

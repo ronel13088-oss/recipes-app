@@ -28,6 +28,8 @@ function parseText(s) {
   return { name: rest.trim(), qty: (m[1] + (unit ? ' ' + unit : '')).trim(), amount: num(m[1]), unit };
 }
 // Schema-tolerant: accepts {recipes:[...]} or [...], old (title/devices/prepMinutes/sourceUrl) or new (name/equipment/active_minutes/url) keys.
+// Recipe fits tool d if d is required (equipment) or is one option of an equipment_any group.
+export const usesDevice = (r, d) => r.devices.includes(d) || (r.deviceAny || []).some(g => g.includes(d));
 export function normalize(raw) {
   const list = Array.isArray(raw) ? raw : (raw && Array.isArray(raw.recipes) ? raw.recipes : []);
   const seen = new Set();
@@ -37,7 +39,8 @@ export function normalize(raw) {
     const devs = (r.equipment ?? r.devices ?? []).map(d => DEVICES[d] ? d : (Object.keys(DEVICES).find(k => DEVICES[k] === d) || d));
     const pm = r.active_minutes ?? r.prepMinutes ?? r.prep_minutes ?? null;
     const p = r.protein_g;
-    return { id, title: String(r.name ?? r.title ?? 'ללא שם'), meal, devices: devs,
+    const anyG = Array.isArray(r.equipment_any) ? r.equipment_any.filter(g => Array.isArray(g) && g.length).map(g => g.map(String)) : [];
+    return { id, title: String(r.name ?? r.title ?? 'ללא שם'), meal, devices: devs, deviceAny: anyG,
       prepMinutes: Number.isFinite(+pm) && pm !== null && pm !== '' ? +pm : null,
       ingredients: (Array.isArray(r.ingredients) ? r.ingredients : []).map(parseIngredient).filter(x => x.name),
       steps: normalizeSteps(r.steps), ...deviceRange(r),
@@ -53,12 +56,12 @@ export function normalize(raw) {
 }
 // maxPrep: recipes with unknown prep time are excluded when a max is set (can't confirm they fit).
 export function filterRecipes(rs, { meal = '', device = '', maxPrep = null } = {}) {
-  return rs.filter(r => (!meal || r.meal === meal) && (!device || r.devices.includes(device)) && (maxPrep == null || (r.prepMinutes != null && r.prepMinutes <= maxPrep)));
+  return rs.filter(r => (!meal || r.meal === meal) && (!device || usesDevice(r, device)) && (maxPrep == null || (r.prepMinutes != null && r.prepMinutes <= maxPrep)));
 }
 // When a max time is set: recipes matching meal/device whose time is unknown (shown as a separate group).
 export function unknownPrep(rs, { meal = '', device = '', maxPrep = null } = {}) {
   if (maxPrep == null) return [];
-  return rs.filter(r => (!meal || r.meal === meal) && (!device || r.devices.includes(device)) && r.prepMinutes == null);
+  return rs.filter(r => (!meal || r.meal === meal) && (!device || usesDevice(r, device)) && r.prepMinutes == null);
 }
 const norm = s => s.replace(/[׳'"״]/g, '').replace(/\s+/g, ' ').trim();
 // Simple Hebrew singular/plural folding: ביצה/ביצים, עגבנייה/עגבניות -> same stem (words of 4+ letters only).
