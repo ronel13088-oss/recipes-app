@@ -54,7 +54,7 @@ test('free shopping items: add trims/validates, clearDone keeps unchecked', () =
   l = P.addFree(l, 'לחם', 4); l[0].done = true; assert.deepEqual(P.clearDone(l).map(x => x.text), ['לחם']); assert.ok(P.validFree(l)); assert.equal(P.validFree([{ text: '', done: false, ts: 1 }]), false); });
 const v2 = (o = {}) => ({ app: 'recipes-app', state: { v: 2, plan: ['a'], checked: ['a|0'], goal: null, log: { '2026-11-01': [P.recipeEntry({ id: 'a', protein_g: 48 }, 1), P.customEntry({ name: 'יוגורט', g: '15' }, 2)] }, recent: [{ name: 'יוגורט', g: 15 }], free: [{ text: 'חלב', done: true, ts: 3 }], ...o } });
 test('backup v2: valid roundtrip incl. goal null, custom, recent, free', () => { const b = v2(); assert.equal(L.validBackup(b), true);
-  const back = JSON.parse(JSON.stringify(b)); assert.equal(L.validBackup(back), true); assert.deepEqual(L.importState(back), { v: 2, plan: ['a'], goal: null, log: b.state.log, recent: b.state.recent, free: b.state.free, checked: ['a|0'] });
+  const back = JSON.parse(JSON.stringify(b)); assert.equal(L.validBackup(back), true); assert.deepEqual(L.importState(back), { v: 2, plan: ['a'], goal: null, log: b.state.log, recent: b.state.recent, free: b.state.free, checked: ['a|0'], pantry: [] });
   assert.equal(L.validBackup(v2({ goal: 120 })), true); });
 test('backup v2: rejects bad goal/entries/recent/free', () => {
   for (const bad of [{ goal: 0 }, { goal: 401 }, { goal: '120' }, { log: { 'x': [] } }, { log: { '2026-11-01': [{ type: 'custom', name: '', g: 1, servings: 1, ts: 1 }] } },

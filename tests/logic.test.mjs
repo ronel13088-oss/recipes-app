@@ -12,7 +12,7 @@ const RAW = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/recipes.json'), 'ut
 test('protein stays null unless numeric in source', () => { assert.equal(R.filter(r => r.protein_g != null).length, RAW.filter(r => typeof r.protein_g === 'number').length); });
 test('free-text / odd protein_basis never crashes and becomes a note', () => { const [a, b] = L.normalize([{ id: 'a', protein_g: 5, protein_basis: 'לפי העמוד' }, { id: 'b', protein_g: 5, protein_basis: { x: 1 } }]);
   assert.equal(L.proteinLabel(a), 'חלבון: 5 ג׳ (לפי העמוד)'); assert.equal(L.proteinLabel(b), 'חלבון: 5 ג׳'); });
-test('ingredient parsing', () => { assert.deepEqual(L.parseIngredient('500 גרם בשר טחון'), { name: 'בשר טחון', qty: '500 גרם', amount: 500, unit: 'גרם' });
+test('ingredient parsing', () => { assert.deepEqual(L.parseIngredient('500 גרם בשר טחון'), { name: 'בשר טחון', qty: '500 גרם', amount: 500, unit: 'גרם', raw: '500 גרם בשר טחון' });
   assert.equal(L.parseIngredient('½ כוס חלב').amount, .5); assert.equal(L.parseIngredient('מלח ופלפל').qty, null); assert.equal(L.parseIngredient('2–3 ביצים').amount, null); });
 test('filter: unknown prep excluded only when max set', () => { const all = L.filterRecipes(R, {}); assert.equal(all.length, R.length);
   const f = L.filterRecipes(R, { maxPrep: 10 }); assert.ok(f.every(r => r.prepMinutes != null && r.prepMinutes <= 10));

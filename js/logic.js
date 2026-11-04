@@ -1,3 +1,4 @@
+import { validPantry } from './pantry.js';
 import { validEntry, validRecent, validFree, parseGoal, withUids, uniqueDay, MAX_DAYS, MAX_PER_DAY } from './protein.js';
 // Pure logic (no DOM) — tested in tests/logic.test.mjs
 export function proteinLabel(r) {
@@ -10,9 +11,16 @@ export const DEVICES = { ninja_foodi: "נינג'ה פודי", blender: "מיקס
 const FR = { '½': .5, '¼': .25, '¾': .75, '⅓': 1 / 3, '⅔': 2 / 3 };
 const UNITS = ['גרם', 'ק"ג', 'מ"ל', 'ליטר', 'כוס', 'כוסות', 'כף', 'כפות', 'כפית', 'כפיות', 'שיני', 'שן', 'גביע', 'גביעים', 'יחידות', 'פרוסות', 'קופסה', 'קופסאות', 'קורט'];
 const num = s => { s = s.trim(); let v = 0; for (const p of s.split(/\s+/)) { if (FR[p] != null) v += FR[p]; else if (/^\d+(\.\d+)?$/.test(p)) v += +p; else if (/^\d+[½¼¾⅓⅔]$/.test(p)) v += +p.slice(0, -1) + FR[p.slice(-1)]; else if (/^\d+\/\d+$/.test(p)) { const [a, b] = p.split('/'); v += a / b; } else return null; } return v; };
+const strs = a => Array.isArray(a) && a.length && a.every(x => typeof x === 'string' && x.trim()) ? a.map(x => x.trim()) : null;
 export function parseIngredient(x) {
+  if (x && typeof x === 'object' && typeof x.text === 'string') { const b = parseIngredient(x.text); // new data: {text, canon, pantry_basic}
+    return { ...b, ...(typeof x.canon === 'string' && x.canon.trim() ? { canon: x.canon.trim() } : {}), ...(typeof x.pantry_basic === 'boolean' ? { pantryBasic: x.pantry_basic } : {}),
+      ...(strs(x.canon_all) ? { canonAll: strs(x.canon_all) } : {}), ...(strs(x.canon_any) ? { canonAny: strs(x.canon_any) } : {}) }; }
   if (x && typeof x === 'object') return { name: String(x.name || '').trim(), qty: x.qty ?? null, amount: typeof x.qty === 'number' ? x.qty : null, unit: x.unit || '' };
   const s = String(x || '').trim();
+  return { ...parseText(s), raw: s };
+}
+function parseText(s) {
   const m = s.match(/^((?:\d+(?:[.\/]\d+)?[½¼¾⅓⅔]?|[½¼¾⅓⅔])(?:\s+[½¼¾⅓⅔])?)(?:[–-]\d+)?\s+(.*)$/);
   if (!m || /[–-]\d/.test(s.slice(0, m[1].length + 3))) return { name: s, qty: null, amount: null, unit: '' };
   let rest = m[2], unit = '';
@@ -94,6 +102,7 @@ export function validBackup(o) {
   if (Object.keys(st.log).length > MAX_DAYS || Object.values(st.log).some(v => v.length > MAX_PER_DAY)) return false;
   if (st.v === 2) { if (!(st.goal === null || parseGoal(st.goal) === st.goal)) return false;
     if (!validRecent(st.recent) || !validFree(st.free)) return false;
+    if (st.pantry !== undefined && !validPantry(st.pantry)) return false;
     if (st.checked !== undefined && !(Array.isArray(st.checked) && st.checked.every(x => typeof x === 'string'))) return false;
     for (const [k, v] of Object.entries(st.log)) if (!/^\d{4}-\d\d-\d\d$/.test(k) || v.length > MAX_PER_DAY || !v.every(validEntry) || !uniqueDay(v)) return false;
     return true; }
@@ -101,9 +110,9 @@ export function validBackup(o) {
 }
 // Convert a validated backup (v1 or v2) into current state shape.
 export function importState(o) { const st = o.state;
-  if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: Object.fromEntries(Object.entries(st.log).map(([k, v]) => [k, withUids(v)])), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])] };
+  if (st.v === 2) return { v: 2, plan: [...st.plan], goal: st.goal, log: Object.fromEntries(Object.entries(st.log).map(([k, v]) => [k, withUids(v)])), recent: structuredClone(st.recent), free: structuredClone(st.free), checked: [...(st.checked || [])], pantry: [...(st.pantry || [])] };
   const log = {}; for (const [k, v] of Object.entries(st.log)) log[k] = withUids(v.map((e, i) => ({ type: 'custom', name: (typeof e.label === 'string' && e.label.replace(/\s+/g, ' ').trim().slice(0, 60)) || 'ידני', g: e.g >= 0 && e.g <= 300 ? Math.round(e.g * 10) / 10 : null, servings: 1, ts: i })));
-  return { v: 2, plan: [...st.plan], goal: null, log, recent: [], free: [], checked: [] }; } // v1 goal dropped: no-default rule
+  return { v: 2, plan: [...st.plan], goal: null, log, recent: [], free: [], checked: [], pantry: [] }; } // v1 goal dropped: no-default rule
 
 // Steps: accepts strings (old) or {text, timer_min} objects (new). Empty/missing text -> skipped. timer_min must be a positive finite number (<=600) else null.
 const posMin = (x, max = 600) => typeof x === 'number' && Number.isFinite(x) && x > 0 && x <= max ? x : null;

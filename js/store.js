@@ -1,5 +1,5 @@
 // localStorage persistence using the spec keys. All reads are validated; bad data is ignored, never trusted.
-import * as P from './protein.js';
+import * as P from './protein.js'; import { PANTRY_KEY, validPantry } from './pantry.js';
 const PLAN_KEY = 'recipes-app:v1';
 const get = k => { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } };
 const set = (k, v) => localStorage.setItem(k, JSON.stringify(v));
@@ -14,10 +14,12 @@ export const recent = () => { const v = get(P.RECENT_KEY); return P.validRecent(
 export const setRecent = v => set(P.RECENT_KEY, v);
 export const free = () => { const v = get(P.FREE_KEY); return P.validFree(v) ? v : []; };
 export const setFree = v => set(P.FREE_KEY, v);
+export const pantry = () => { const v = get(PANTRY_KEY); return validPantry(v) ? v : []; };
+export const setPantry = v => set(PANTRY_KEY, v);
 export function prune(d = new Date()) { const keys = []; for (let i = 0; i < localStorage.length; i++) keys.push(localStorage.key(i)); P.staleKeys(keys, d).forEach(k => localStorage.removeItem(k)); }
 export function exportState() { const log = {}; for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (k.startsWith(P.LOG_PREFIX)) { const v = get(k); if (Array.isArray(v)) log[k.slice(P.LOG_PREFIX.length)] = v.filter(P.validEntry); } }
-  const p = plan(); return { v: 2, plan: p.plan, checked: p.checked, goal: goal(), log, recent: recent(), free: free() }; }
-const ownKey = k => k === PLAN_KEY || k === P.GOAL_KEY || k === P.RECENT_KEY || k === P.FREE_KEY || k.startsWith(P.LOG_PREFIX);
+  const p = plan(); return { v: 2, plan: p.plan, checked: p.checked, goal: goal(), log, recent: recent(), free: free(), pantry: pantry() }; }
+const ownKey = k => k === PLAN_KEY || k === P.GOAL_KEY || k === P.RECENT_KEY || k === P.FREE_KEY || k === PANTRY_KEY || k.startsWith(P.LOG_PREFIX);
 // Atomic-ish import: snapshot every app key, write, and on any error (e.g. QuotaExceededError) restore the snapshot and rethrow.
 export function importState(st, ls = localStorage) { const keys = []; for (let i = 0; i < ls.length; i++) keys.push(ls.key(i));
   const snap = keys.filter(ownKey).map(k => [k, ls.getItem(k)]);
@@ -26,6 +28,6 @@ export function importState(st, ls = localStorage) { const keys = []; for (let i
     ls.setItem(PLAN_KEY, JSON.stringify({ ...o, plan: st.plan, checked: st.checked || [] }));
     if (st.goal != null) ls.setItem(P.GOAL_KEY, String(st.goal));
     for (const [d, v] of Object.entries(st.log)) ls.setItem(P.LOG_PREFIX + d, JSON.stringify(v));
-    ls.setItem(P.RECENT_KEY, JSON.stringify(st.recent)); ls.setItem(P.FREE_KEY, JSON.stringify(st.free));
+    ls.setItem(P.RECENT_KEY, JSON.stringify(st.recent)); ls.setItem(P.FREE_KEY, JSON.stringify(st.free)); ls.setItem(PANTRY_KEY, JSON.stringify(st.pantry || []));
   } catch (e) { try { wipe(); for (const [k, v] of snap) ls.setItem(k, v); } catch {} throw e; } }
 export function hasData(ls = localStorage) { for (let i = 0; i < ls.length; i++) if (ownKey(ls.key(i))) return true; return false; }

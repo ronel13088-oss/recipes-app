@@ -2,11 +2,13 @@ import * as L from './logic.js';
 import * as P from './protein.js';
 import * as St from './store.js';
 import * as B from './backup.js';
+import * as Pn from './pantry.js';
 const $ = s => document.querySelector(s);
 let R = [];
 const view = $('#view');
 view.replaceChildren(...[1, 2, 3].map(() => h('div', { class: 'skel' })));
 try { R = L.normalize(await (await fetch('data/recipes.json')).json()); } catch { R = []; }
+let AL = Pn.loadAliases(null); try { AL = Pn.loadAliases(await (await fetch('data/ingredient-aliases.json')).json()); } catch {} // single replaceable alias map
 St.prune();
 // DOM helper: text only via text nodes / setAttribute (no HTML string parsing).
 function h(tag, attrs = {}, ...kids) { const e = document.createElement(tag);
@@ -51,7 +53,7 @@ function Dial({ value, mode = 'picker', cls = '', label, center, onInput, onSnap
 // ---------- State ----------
 const F = { stop: 30, live: null, meals: new Set() };
 let route = { tab: 'home' };
-let pantry = '';
+let pq = '';
 function go(tab, arg) { route = { tab, arg }; render(); scrollTo(0, 0); }
 function nav() { const items = [['home', 'טיימר', 'timer'], ['shop', 'קניות', 'cart'], ['protein', 'חלבון', 'beef']];
   const cur = route.tab === 'recipe' ? 'home' : route.tab;
@@ -170,11 +172,21 @@ const screens = {
         h('span', { class: 'sub' }, bdi(protText(r)), r.protein_g != null ? ' ג׳' : '', ' · ', bdi(r.prepMinutes == null ? '?' : r.prepMinutes + '′')),
         r.protein_g == null ? h('div', { class: 'bar unk', css: { width: '60px' } }) : h('div', { class: 'bar' + (r.proteinCalculated ? ' prot-calc' : ''), css: { width: '60px' } }, h('i', { css: { '--w': (r.protein_g / maxP * 100) + '%' } })))))];
   },
-  pantry() { const ta = h('textarea', { rows: 3, placeholder: 'למשל: ביצים, טונה, יוגורט יווני', 'aria-label': 'מצרכים שיש בבית' }); ta.value = pantry;
-    const out = h('ul', { class: 'tl' });
-    const run = () => { pantry = ta.value; out.replaceChildren(...L.rankByPantry(R, pantry).map(x => { const li = block(x.r); li.firstChild.append(h('span', { class: 's' }, 'יש לך ', bdi(String(x.hit)), ' מתוך ', bdi(String(x.total)), ' מצרכים')); return li; })); };
-    ta.addEventListener('input', run); run();
-    return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה')), h('h1', {}, 'מה יש בבית?'), h('p', { class: 'hint' }, 'כתוב מצרכים מופרדים בפסיק. המתכונים מדורגים לפי מספר המצרכים שיש לך.'), ta, out]; },
+  pantry() { const have = St.pantry(); const vocab = Pn.vocabulary(R, AL); const q = h('input', { type: 'search', placeholder: 'חיפוש מצרך', 'aria-label': 'חיפוש מצרך' }); q.value = pq;
+    const chips = h('div', { class: 'chips', role: 'group', 'aria-label': 'מצרכים' }); const res = h('div', {});
+    // Removal only by an explicit tap on the chip (toggle). Nothing removes pantry items automatically.
+    const tap = n => { St.setPantry(Pn.toggle(St.pantry(), n)); vib(); draw(); };
+    const draw = () => { const cur = St.pantry(); const list = Pn.filterVocab(vocab, q.value);
+      chips.replaceChildren(...list.map(v => h('button', { class: 'chip', 'aria-pressed': String(cur.includes(v.name)), 'aria-label': `${v.name}: ${cur.includes(v.name) ? 'יש בבית' : 'אין בבית'}`, onclick: () => tap(v.name) }, v.name)));
+      const rk = Pn.rank(R, cur, AL); const full = rk.filter(x => !x.missing.length), part = rk.filter(x => x.missing.length);
+      const li = x => { const el = block(x.r); if (x.missing.length) el.firstChild.append(h('span', { class: 's' }, 'חסר: ', x.missing.join(', '))); return el; };
+      res.replaceChildren(!cur.length ? h('p', { class: 'hint' }, 'סמן מה יש לך בבית כדי לראות מתכונים.') : null,
+        cur.length && !rk.length ? h('p', { class: 'hint' }, 'אין מתכון שחסרים בו עד 2 מצרכים.') : null,
+        full.length ? h('h2', {}, 'יש לך הכול') : null, full.length ? h('ul', { class: 'tl' }, full.map(li)) : null,
+        part.length ? h('h2', {}, 'חסרים 1–2 מצרכים') : null, part.length ? h('ul', { class: 'tl' }, part.map(li)) : null); };
+    q.addEventListener('input', () => { pq = q.value; draw(); }); draw();
+    return [h('div', { class: 'hd' }, h('button', { class: 'lnk', onclick: () => go('home') }, ic('back'), 'חזרה')), h('h1', {}, 'מה יש בבית?'),
+      h('p', { class: 'hint' }, 'לחיצה על מצרך מסמנת שיש לך אותו, לחיצה נוספת מורידה. תבלינים בסיסיים נחשבים כקיימים.'), q, chips, res]; },
   settings() { const file = h('input', { type: 'file', accept: 'application/json', 'aria-label': 'ייבוא גיבוי' });
     file.addEventListener('change', async () => { try { const o = JSON.parse(await file.files[0].text()); if (!L.validBackup(o)) throw 0;
       if (confirm('הייבוא יחליף את הנתונים הקיימים. להמשיך?')) { try { St.importState(L.importState(o)); } catch { alert('הייבוא נכשל (אין מספיק מקום?). הנתונים הקודמים שוחזרו.'); return; } go('home'); } } catch { alert('קובץ גיבוי לא תקין'); } });
