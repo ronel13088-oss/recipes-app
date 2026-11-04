@@ -20,7 +20,7 @@ export function mapEquipment(r, where) { const o = { ...r };
 export function anyAllWarnings(r, where) { return (Array.isArray(r?.ingredients) ? r.ingredients : []).flatMap((g, i) =>
   Array.isArray(g?.canon_any) && g.canon_any.length && Array.isArray(g?.canon_all) && g.canon_all.length ? [`${where} ingredient[${i}]: has canon_any and canon_all; canon_all ignored at runtime`] : []); }
 export function merge(srcDir) {
-  const files = fs.readdirSync(srcDir).filter(f => /^recipes.*\.json$/.test(f) && !/draft/i.test(f)) // drafts excluded.sort();
+  const files = fs.readdirSync(srcDir).filter(f => /^recipes.*\.json$/.test(f) && !/draft/i.test(f)).sort(); // drafts excluded
   if (!files.length) throw new Error(`no recipes*.json in ${srcDir}`);
   const out = [], seen = new Map(), warnings = [];
   for (const f of files) {
