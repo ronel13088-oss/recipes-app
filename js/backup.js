@@ -20,7 +20,7 @@ export async function deliver(json, name, env) { const { doc, nav, win, URL: U, 
   if ('download' in a && !(ios && standalone)) { const url = U.createObjectURL(blob); a.href = url; a.download = name; a.click(); setTimeout(() => U.revokeObjectURL(url), 1000); return 'download'; }
   if (F && nav.canShare && nav.share) { const f = new F([json], name, { type: 'application/json' });
     if (nav.canShare({ files: [f] })) { await nav.share({ files: [f], title: name }); return 'share'; } }
-  const url = U.createObjectURL(blob); win.open(url, '_blank'); notify?.('הקובץ נפתח בלשונית חדשה. לחץ על "שתף" ובחר "שמור בקבצים".'); return 'tab'; }
+  const url = U.createObjectURL(blob); const w = win.open(url, '_blank'); if (!w) { U.revokeObjectURL(url); throw new Error('popup blocked'); } notify?.('הקובץ נפתח בלשונית חדשה. לחץ על "שתף" ובחר "שמור בקבצים".'); return 'tab'; }
 // Outcome of an export attempt -> what the app should do. 'tab' never auto-marks: user must confirm 'שמרתי'.
 export const isAbort = e => e?.name === 'AbortError';
 export const marksDone = method => method === 'download' || method === 'share';

@@ -27,7 +27,7 @@ test('round-trip export->import identical, valid, excludes device-local keys', a
 function env({ download = true, ios = false, standalone = false, canShare = null } = {}) { const log = [];
   const a = { click: () => log.push('click') }; if (download) a.download = '';
   return { log, e: { doc: { createElement: () => a }, nav: { userAgent: ios ? 'iPhone' : 'X', standalone, canShare: canShare && (o => { log.push(['canShare', o.files[0].name]); return canShare(); }), share: async o => log.push(['share', o.files[0].name]) },
-    win: { open: (u, t) => log.push(['open', t]), matchMedia: () => ({ matches: false }) }, URL: { createObjectURL: () => 'blob:1', revokeObjectURL() {} }, Blob, File, notify: t => log.push(['note', t]) } }; }
+    win: { open: (u, t) => (log.push(['open', t]), {}), matchMedia: () => ({ matches: false }) }, URL: { createObjectURL: () => 'blob:1', revokeObjectURL() {} }, Blob, File, notify: t => log.push(['note', t]) } }; }
 test('deliver: <a download> path', async () => { const { log, e } = env(); assert.equal(await B.deliver('{}', 'f.json', e), 'download'); assert.deepEqual(log, ['click']); });
 test('deliver: iOS standalone -> share File when canShare', async () => { const { log, e } = env({ ios: true, standalone: true, canShare: () => true });
   assert.equal(await B.deliver('{}', 'f.json', e), 'share'); assert.deepEqual(log.at(-1), ['share', 'f.json']); });
@@ -46,3 +46,7 @@ test('W3: onVisible fires only when becoming visible; banner deduped', async () 
   B.onVisible(doc, () => calls++); h(); assert.equal(calls, 0); doc.visibilityState = 'visible'; h(); h(); assert.equal(calls, 2);
   const src = (await import('node:fs')).readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
   assert.match(src, /B\.onVisible\(document, backupBanner\)/); assert.match(src, /function backupBanner\(\) \{ \$\('#bkp'\)\?\.remove\(\)/); });
+test('W4: popup blocked (window.open null) throws, no success note', async () => { const { log, e } = env({ download: false, canShare: () => false }); e.win.open = () => null;
+  await assert.rejects(B.deliver('{}', 'f.json', e), /popup blocked/); assert.ok(!log.some(x => x[0] === 'note')); });
+test('S2: doExport inFlight guard, reset in finally', async () => { const src = (await import('node:fs')).readFileSync(new URL('../js/app.js', import.meta.url), 'utf8');
+  assert.match(src, /async function doExport\(\) \{ if \(inFlight\) return; inFlight = true; try \{/); assert.match(src, /finally \{ inFlight = false; \} \}/); });
