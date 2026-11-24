@@ -1,9 +1,11 @@
 {
  "sources": [
   "recipes-batch2.json",
+  "recipes-batch4.json",
+  "recipes-batch5.json",
   "recipes.json"
  ],
- "count": 50,
+ "count": 69,
  "recipes": [
   {
    "id": "onebody-protein-pancake",
@@ -4286,6 +4288,2267 @@
    "device_max": 14,
    "device_partial": true,
    "equipment_any": []
+  },
+  {
+   "id": "gila-microwave-eggs-cheese",
+   "name": "ביצים במיקרוגל עם גבינה וירקות",
+   "url": "https://gilacooking.co.il/microwave-scrambled-eggs-recipe/",
+   "meal": "breakfast",
+   "equipment": [
+    "microwave"
+   ],
+   "equipment_any": [],
+   "active_minutes": 3,
+   "servings": 2,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "2 ביצים טריות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות חלב (או תחליף צמחי)",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כוס גבינה מגורדת (צהובה, עיזים או גבינה קשה)",
+     "canon": "גבינה צהובה",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינה צהובה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף ירקות קצוצים דק (בצל ירוק, פטרוזיליה או עגבניות)",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית חמאה או מעט שמן לשימון הכלי",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "בלי מחבת ובלי כיריים: קערה, מזלג ומיקרו. חלבון לא מצוין בעמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שוברים את הביצים לקערה קטנה שמתאימה למיקרוגל וטורפים במזלג עד שהתערובת אחידה.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים את החלב, מעט מלח ופלפל שחור וממשיכים לטרוף בעדינות.",
+     "timer_min": null
+    },
+    {
+     "text": "משמנים מעט את הכלי בחמאה או שמן כדי שהביצים לא יידבקו.",
+     "timer_min": null
+    },
+    {
+     "text": "יוצקים את תערובת הביצים לכלי המשומן, מוסיפים את הגבינה המגורדת והירקות ומערבבים קלות.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים במיקרוגל בעוצמה גבוהה דקה אחת, מערבבים בעדינות ומחממים עוד 30-60 שניות עד שהביצים יציבות אך לא יבשות.",
+     "timer_min": 1,
+     "timer_max": 2
+    }
+   ],
+   "device_min": 1,
+   "device_max": 2,
+   "device_partial": false,
+   "total_minutes": 3,
+   "time_note": "בעמוד: \"זמן הכנה 3-5 דק'\"; ב-schema של העמוד 3 דק'"
+  },
+  {
+   "id": "clean-cottage-scrambled-eggs",
+   "name": "ביצים מקושקשות עם קוטג' (מתורגם)",
+   "url": "https://cleananddelicious.com/2-minute-scrambled-eggs-with-cottage-cheese/",
+   "meal": "breakfast",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 3,
+   "servings": 1,
+   "protein_g": 20,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "2 ביצים גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כוס קוטג' דל שומן",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט מלח ופלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית חמאה (או שמן קוקוס / ספריי שמן)",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מקור באנגלית, תורגם. 3 מרכיבים, 3 דקות, 20 גרם חלבון לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "בקערה קטנה טורפים את הביצים עם הקוטג', מלח ופלפל עד שהכל מתערבב היטב.",
+     "timer_min": null
+    },
+    {
+     "text": "משמנים מחבת נון-סטיק קטנה ומחממים על אש בינונית-נמוכה. יוצקים בזהירות את תערובת הביצים.",
+     "timer_min": null
+    },
+    {
+     "text": "בעזרת מרית גומי מערבבים ומקשקשים בעדינות עד שנוצרים גושים גדולים ואווריריים והביצים מבושלות אך עדיין רכות וקרמיות.",
+     "timer_min": null
+    },
+    {
+     "text": "מעבירים לצלחת ומגישים עם התוספות שאוהבים.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 3,
+   "time_note": "בעמוד: הכנה 1 דק', בישול 2 דק', סה\"כ 3 דק'"
+  },
+  {
+   "id": "everyvit-banana-almond-shake",
+   "name": "שייק חלבון בננה ושקדים",
+   "url": "https://everyvit.com/recipes/shake-chelbon-banana-shkedim",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": 1,
+   "protein_g": 36,
+   "protein_basis": "source",
+   "protein_note": "לשייק, לפי העמוד (העמוד מציין שהערכים הם הערכה לפי USDA וסימון יצרן)",
+   "ingredients": [
+    {
+     "text": "1 בננה בשלה (רצוי קפואה)",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ (30 גרם) אבקת חלבון וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "250 מ\"ל חלב או משקה שקדים",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חמאת שקדים",
+     "canon": "חמאת שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת שקדים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קוביות קרח לפי הטעם",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "הכל לבלנדר, פחות מדקה טחינה. 36 גרם חלבון לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "קולפים את הבננה וחותכים לפרוסות. בננה קפואה לא צריך להפשיר.",
+     "timer_min": null
+    },
+    {
+     "text": "מכניסים לבלנדר את הבננה, אבקת החלבון, החלב, חמאת השקדים ושיבולת השועל.",
+     "timer_min": null
+    },
+    {
+     "text": "טוחנים כ-40 שניות עד לקבלת מרקם חלק ואחיד.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים קרח וטוחנים עוד 10 שניות. מוזגים לכוס ומגישים מיד.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 5
+  },
+  {
+   "id": "missageless-protein-coffee-shake",
+   "name": "שייק חלבון בטעם קפה",
+   "url": "https://missageless.com/protein-coffee-shake/",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": 2,
+   "protein_g": 20,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד; אבקת החלבון מסומנת בעמוד כלא חובה",
+   "ingredients": [
+    {
+     "text": "1 כוס קפה קר",
+     "canon": "קפה",
+     "pantry_basic": false,
+     "canon_all": [
+      "קפה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 בננה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/4 כוס יוגורט יווני",
+     "canon": "יוגורט יווני",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט יווני"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף מדידה אבקת חלבון קפה (לא חובה)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "קפה קר עם חלבון, 3 שלבים בבלנדר. 20 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מכניסים את כל המרכיבים לבלנדר.",
+     "timer_min": null
+    },
+    {
+     "text": "טוחנים עד שמתקבלת תערובת חלקה, קרמית ומרעננת.",
+     "timer_min": null
+    },
+    {
+     "text": "מוזגים לכוס גבוהה.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 6,
+   "time_note": "בעמוד: הכנה 5 דק', סה\"כ 6 דק'"
+  },
+  {
+   "id": "olivetomato-chickpea-tuna-salad",
+   "name": "סלט טונה וחומוס ים-תיכוני ב-5 דקות (מתורגם)",
+   "url": "https://www.olivetomato.com/5-minute-mediterranean-chickpea-tuna-salad/",
+   "meal": "lunchbox",
+   "equipment": [],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": 1,
+   "protein_g": 45,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "חצי כוס גרגרי חומוס (משימורים או מבושלים)",
+     "canon": "חומוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קופסת טונה במים (112 גרם)",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף זיתי קלמטה קצוצים",
+     "canon": "זיתים",
+     "pantry_basic": false,
+     "canon_all": [
+      "זיתים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף צלפים",
+     "canon": "צלפים",
+     "pantry_basic": false,
+     "canon_all": [
+      "צלפים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלפפון קטן קצוץ",
+     "canon": "מלפפון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "גבעול סלרי פרוס",
+     "canon": "סלרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית חומץ בלסמי",
+     "canon": "חומץ בלסמי",
+     "pantry_basic": false,
+     "canon_all": [
+      "חומץ בלסמי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית אורגנו יבש",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ מחצי לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מקור באנגלית, תורגם. בלי בישול ובלי מיונז, מחזיק 3-4 ימים במקרר לפי העמוד. 45 גרם חלבון.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "בקערה גדולה שמים את גרגרי החומוס, הזיתים, הצלפים, המלפפון הקצוץ, הסלרי הפרוס והטונה.",
+     "timer_min": null
+    },
+    {
+     "text": "בקערה קטנה מערבבים כפית חומץ בלסמי וכף שמן זית.",
+     "timer_min": null
+    },
+    {
+     "text": "יוצקים את הרוטב על הסלט ומערבבים היטב.",
+     "timer_min": null
+    },
+    {
+     "text": "לפני ההגשה סוחטים מעל מיץ לימון ומפזרים אורגנו יבש.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 5
+  },
+  {
+   "id": "mom-lemon-garlic-chicken-pan",
+   "name": "חזה עוף במחבת עם מרינדת לימון ושום",
+   "url": "https://momflavours.co.il/cooking-time-chicken-breast-recipe/",
+   "meal": "lunchbox",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 15,
+   "servings": 4,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "4 נתחי חזה עוף טרי (כ-150 גרם כל אחד)",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית כמון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/3 כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מיץ לימון טרי",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "צרור קטן פטרוזיליה קצוצה להגשה (לא חובה)",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מחבת אחת, 4 דק' לכל צד. טוב לקופסה לעבודה עם אורז או סלט. חלבון לא מצוין בעמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שוטפים את חזה העוף ומייבשים היטב בנייר סופג.",
+     "timer_min": null
+    },
+    {
+     "text": "מערבבים בקערה שמן זית, מיץ לימון, תבלינים ושום. מוסיפים את חזה העוף ומעסים היטב מכל הצדדים. אפילו 10 דקות השריה משפרות את הטעם (לא חובה).",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים מחבת גדולה על אש בינונית-גבוהה. כשהיא לוהטת מניחים את החזה בלי כיסוי וצולים כ-4 דקות (בחזה עבה אפשר דקה נוספת). לא הופכים לפני שהצד התחתון עשוי.",
+     "timer_min": 4,
+     "timer_max": 5
+    },
+    {
+     "text": "הופכים, מכסים את המחבת ומבשלים עוד כ-4 דקות.",
+     "timer_min": 4,
+     "timer_max": 5
+    },
+    {
+     "text": "בודקים בחיתוך קטן במרכז: נוזלים שקופים ובלי ורוד, העוף מוכן.",
+     "timer_min": null
+    },
+    {
+     "text": "מעבירים לצלחת ונותנים לנוח 3-4 דקות.",
+     "timer_min": 3,
+     "timer_max": 4
+    },
+    {
+     "text": "מפזרים פטרוזיליה ומגישים עם סלט או אורז.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 8,
+   "device_max": 10,
+   "device_partial": false,
+   "total_minutes": 20,
+   "time_note": "בעמוד: \"זמן עבודה 15 דקות, משך הכנה 20 דקות\""
+  },
+  {
+   "id": "foodislove-turkey-shawarma-10min",
+   "name": "שווארמה הודו במחבת בעשר דקות",
+   "url": "https://www.foodislove.co.il/recipe/1760871041046/",
+   "meal": "dinner",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 4,
+   "protein_g": 30,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (\"ערכים משוערים\", כ-30 גרם)",
+   "ingredients": [
+    {
+     "text": "500 גרם חזה הודו חתוך לרצועות דקות",
+     "canon": "חזה הודו",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה הודו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית כמון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית כורכום",
+     "canon": "כורכום",
+     "pantry_basic": true,
+     "canon_all": [
+      "כורכום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית שום גבישי",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל שחור לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "100 גרם טחינה גולמית",
+     "canon": "טחינה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טחינה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ מחצי לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 שן שום קטנה כתושה",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כוס מים קרים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 פיתות",
+     "canon": "פיתה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פיתה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "עגבניות ומלפפון פרוסים, עלי חסה",
+     "canon": "עגבנייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבנייה"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מחבת אחת, 6-7 דק' טיגון. כ-30 גרם חלבון למנה לפי העמוד (משוער).",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "בקערה רחבה מערבבים את רצועות ההודו עם שמן הזית, הכמון, הפפריקה, הכורכום, השום הגבישי, מלח ופלפל עד שכל רצועה מצופה.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים מחבת על להבה בינונית-גבוהה ומטגנים את ההודו כ-6-7 דקות תוך ערבוב, עד שמשחים ומתבשל לגמרי. לא להעמיס את המחבת; אפשר בשני סבבים.",
+     "timer_min": 6,
+     "timer_max": 7
+    },
+    {
+     "text": "בקערה נפרדת מערבבים טחינה, מיץ לימון, שום, מלח ומים בהדרגה עד מרקם קרמי.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים את הפיתות במחבת יבשה דקה-שתיים.",
+     "timer_min": 1,
+     "timer_max": 2
+    },
+    {
+     "text": "ממלאים כל פיתה בטחינה, הודו וירקות פרוסים.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 6,
+   "device_max": 7,
+   "device_partial": false,
+   "time_note": "בעמוד: \"זמן הכנה מוערך: 10 דקות\""
+  },
+  {
+   "id": "foodis-fried-rice-leftover-chicken",
+   "name": "אורז מוקפץ עם שאריות עוף",
+   "url": "https://www.foodis.co.il/orez-mukpatz-shearit-of/",
+   "meal": "dinner",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 20,
+   "servings": 4,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "3 כוסות אורז מבושל וקר, עדיף מהיום הקודם",
+     "canon": "אורז לבן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז לבן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כוסות עוף מבושל קרוע לחתיכות (שאריות)",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן קנולה או סויה",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 בצלים ירוקים פרוסים דק",
+     "canon": "בצל ירוק",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל ירוק"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף שמן שומשום",
+     "canon": "שמן שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שמן שומשום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס ירקות קפואים מעורבים (לא חובה)",
+     "canon": "ירקות קפואים",
+     "pantry_basic": false,
+     "canon_all": [
+      "ירקות קפואים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל לבן",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מנצל שאריות עוף ואורז מאתמול. מחבת אחת, 20 דקות.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים מחבת רחבה או ווק על אש גבוהה עם כף שמן.",
+     "timer_min": null
+    },
+    {
+     "text": "טורפים את הביצים ומטגנים לחביתה דקה, פורסים לרצועות ומוציאים לצד.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים את שאר השמן ומטגנים בצל ירוק ושום כשלושים שניות.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים את הירקות הקפואים ומקפיצים כדקה.",
+     "timer_min": 1,
+     "timer_max": 1
+    },
+    {
+     "text": "מוסיפים את האורז הקר (מפרקים גושים ביד לפני) ומקפיצים 3-4 דקות עד שמתחמם ומתחיל להשחים.",
+     "timer_min": 3,
+     "timer_max": 4
+    },
+    {
+     "text": "מוסיפים את העוף, רוטב הסויה ושמן השומשום ומקפיצים עוד 2-3 דקות עד שהעוף חם לגמרי.",
+     "timer_min": 2,
+     "timer_max": 3
+    },
+    {
+     "text": "מחזירים את הביצה, מערבבים, טועמים ומתקנים תיבול. מגישים חם עם בצל ירוק מעל.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 6,
+   "device_max": 8,
+   "device_partial": false,
+   "total_minutes": 20,
+   "time_note": "בעמוד: הכנה 5 דק', בישול 15 דק' (הקפצה פעילה), סה\"כ 20 דק'"
+  },
+  {
+   "id": "gila-tuna-pasta-8-ingredients",
+   "name": "פסטה טונה ב-8 מרכיבים",
+   "url": "https://gilacooking.co.il/tuna-pasta-8-ingredients/",
+   "meal": "dinner",
+   "equipment": [
+    "stovetop",
+    "pan"
+   ],
+   "equipment_any": [],
+   "active_minutes": 20,
+   "servings": 5,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "400 גרם פסטה (פנה/ספגטי/פוזילי)",
+     "canon": "פסטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פסטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 קופסאות טונה בשמן או במים (כ-280 גרם מסונן)",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "400 גרם עגבניות מרוסקות",
+     "canon": "עגבניות מרוסקות בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניות מרוסקות בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "80-100 מ\"ל מי בישול פסטה",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית אורגנו יבש",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מזווה בלבד: פסטה, טונה ועגבניות מרוסקות. 5 מנות, טוב גם לקופסה. חלבון לא מצוין בעמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מביאים סיר מים לרתיחה, מוסיפים מלח ומבשלים את הפסטה לפי ההוראות עד אל דנטה.",
+     "timer_min": null
+    },
+    {
+     "text": "בינתיים מחממים מחבת רחבה על אש בינונית עם שמן זית, מוסיפים שום ומערבבים 20-30 שניות בלבד, בלי לשרוף.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים עגבניות מרוסקות, אורגנו ומלח ומבשלים 6-8 דקות על אש בינונית-נמוכה עד שהרוטב מסמיך.",
+     "timer_min": 6,
+     "timer_max": 8
+    },
+    {
+     "text": "מסננים את הטונה, מפוררים למחבת ומערבבים בעדינות 1-2 דקות.",
+     "timer_min": 1,
+     "timer_max": 2
+    },
+    {
+     "text": "לפני שמסננים את הפסטה שומרים בצד 80-100 מ\"ל ממי הבישול.",
+     "timer_min": null
+    },
+    {
+     "text": "מעבירים את הפסטה המסוננת למחבת, מוסיפים בהדרגה מי בישול ומערבבים עוד 1-2 דקות על האש.",
+     "timer_min": 1,
+     "timer_max": 2
+    },
+    {
+     "text": "טועמים, מתקנים מלח ומגישים מיד.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 8,
+   "device_max": 12,
+   "device_partial": false,
+   "total_minutes": 40,
+   "time_note": "בעמוד: הכנה 20 דק', בישול 20 דק', סה\"כ 40 דק'"
+  },
+  {
+   "id": "dailybis-cottage-egg-toast",
+   "name": "טוסט קוטג' וביצה עם סלט קצוץ",
+   "url": "https://dailybis.com/recipes/cottage-egg-toast/",
+   "meal": "breakfast",
+   "equipment": [
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 3,
+   "servings": 1,
+   "protein_g": 35,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "2 פרוסות לחם מקמח מלא",
+     "canon": "לחם מלא",
+     "pantry_basic": false,
+     "canon_all": [
+      "לחם מלא"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "125 גרם קוטג' 3% (חצי גביע)",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 עגבנייה קטנה",
+     "canon": "עגבנייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבנייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 מלפפון",
+     "canon": "מלפפון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "זעתר, מלח ופלפל שחור לפי הטעם",
+     "canon": "זעתר",
+     "pantry_basic": true,
+     "canon_all": [
+      "זעתר"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "ארוחת בוקר בלי מחבת: סיר מים לביצים וטוסט. 35 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מרתיחים מים בסיר קטן, מכניסים את הביצים ומבשלים 7 דקות לחלמון רך-נוזלי (או 9 דקות לביצה קשה). בינתיים קולים את הלחם.",
+     "timer_min": 7,
+     "timer_max": 9
+    },
+    {
+     "text": "קוצצים עגבנייה ומלפפון לקוביות קטנות ומתבלים במלח.",
+     "timer_min": null
+    },
+    {
+     "text": "מורחים קוטג' על הטוסטים, מקלפים את הביצים ופורסים מעל.",
+     "timer_min": null
+    },
+    {
+     "text": "מפזרים זעתר ופלפל שחור ומגישים עם הסלט בצד.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 7,
+   "device_max": 9,
+   "device_partial": false,
+   "total_minutes": 10,
+   "time_note": "בעמוד: הכנה 3 דק', בישול 7 דק' (בישול הביצים במים, פסיבי); זמן פעיל = זמן ההכנה"
+  },
+  {
+   "id": "dailybis-spinach-feta-omelette",
+   "name": "חביתת חלבונים עם תרד, פטריות ופטה",
+   "url": "https://dailybis.com/recipes/spinach-feta-omelette/",
+   "meal": "breakfast",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 1,
+   "protein_g": 39,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 חלבוני ביצה (או 100 מ\"ל חלבונים מקרטון)",
+     "canon": "חלבון ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלבון ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "4 פטריות פרוסות",
+     "canon": "פטרייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 חופנים עלי תרד",
+     "canon": "תרד",
+     "pantry_basic": false,
+     "canon_all": [
+      "תרד"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "40 גרם גבינה בולגרית / פטה מפוררת",
+     "canon": "גבינת פטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינת פטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 פרוסת לחם מקמח מלא",
+     "canon": "לחם מלא",
+     "pantry_basic": false,
+     "canon_all": [
+      "לחם מלא"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח, פלפל ואורגנו לפי הטעם",
+     "canon": "אורגנו",
+     "pantry_basic": true,
+     "canon_all": [
+      "אורגנו"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מחבת אחת, 10 דקות. 39 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים שמן זית במחבת נון-סטיק על אש בינונית. מוסיפים את הפטריות ומטגנים 3 דקות עד שמשחימות.",
+     "timer_min": 3
+    },
+    {
+     "text": "מוסיפים את התרד לחצי דקה, עד שהוא מצטמק.",
+     "timer_min": null
+    },
+    {
+     "text": "טורפים ביצים, חלבונים, מלח ופלפל ויוצקים מעל הירקות. מפזרים פטה ואורגנו.",
+     "timer_min": null
+    },
+    {
+     "text": "מכסים ומבשלים 3 דקות על אש נמוכה-בינונית, עד שהחלק העליון יציב. מקפלים לחצי ומגישים עם הלחם.",
+     "timer_min": 3
+    }
+   ],
+   "device_min": 6,
+   "device_max": 6,
+   "device_partial": true,
+   "total_minutes": 10,
+   "time_note": "בעמוד: הכנה 3 דק', בישול 7 דק' (בישול פעיל במחבת); סה\"כ 10 דק'"
+  },
+  {
+   "id": "dailybis-banana-pb-protein-shake",
+   "name": "שייק חלבון בננה וחמאת בוטנים",
+   "url": "https://dailybis.com/recipes/banana-peanut-butter-protein-shake/",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": 1,
+   "protein_g": 41,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "300 מ\"ל חלב 1%",
+     "canon": "חלב",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בננה בינונית, עדיף קפואה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת חלבון מי גבינה בטעם וניל",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף חמאת בוטנים",
+     "canon": "חמאת בוטנים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת בוטנים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חופן קרח, אם הבננה לא קפואה",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "בלנדר, 5 דקות. 41 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מכניסים לבלנדר את החלב, ואז את שאר המרכיבים.",
+     "timer_min": null
+    },
+    {
+     "text": "טוחנים 30-40 שניות עד שהשייק חלק לגמרי.",
+     "timer_min": null
+    },
+    {
+     "text": "שותים מיד.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 5,
+   "time_note": "בעמוד: הכנה 5 דק', בישול: בלי"
+  },
+  {
+   "id": "foodik-pineapple-protein-shake-50g",
+   "name": "שייק אננס עם 50 גרם חלבון",
+   "url": "https://www.foodik.co.il/recipes/%d7%a9%d7%99%d7%99%d7%a7-%d7%90%d7%a0%d7%a0%d7%a1-50-%d7%92%d7%a8%d7%9d-%d7%97%d7%9c%d7%91%d7%95%d7%9f-%d7%9c%d7%9e%d7%aa%d7%90%d7%9e%d7%a0%d7%99%d7%9d-%d7%91%d7%97%d7%93%d7%a8-%d7%9b%d7%95%d7%a9/",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 1,
+   "protein_g": 50,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (בכותרת \"50 גרם חלבון\": 25 גרם ממעדן מולר + 25 גרם מסקופ חלבון, כפי שמצוין במרכיבים)",
+   "ingredients": [
+    {
+     "text": "1 אננס טרי (בקוביות)",
+     "canon": "אננס",
+     "pantry_basic": false,
+     "canon_all": [
+      "אננס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 קוביות פסיפלורה קפואות",
+     "canon": "פסיפלורה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פסיפלורה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "30 מ\"ל חלב קוקוס",
+     "canon": "חלב קוקוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב קוקוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 מעדן חלבון מולר (25 גרם חלבון)",
+     "canon": "מעדן חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מעדן חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 סקופ אבקת חלבון בטעם וניל (25 גרם חלבון)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי בננה (קפואה או טרייה)",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 קוביות קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "נכתב במקור לבלנדר נינג'ה. 50 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מכניסים לבלנדר את מעדן החלבון, 2 קוביות פסיפלורה קפואה, חצי בננה, קוביות אננס טרי וכ-30 מ\"ל חלב קוקוס (אפשר יותר או פחות לפי הטעם) וטוחנים הכול.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים סקופ אבקת חלבון בטעם וניל ועוד כמה קוביות אננס לחיזוק הטעם וטוחנים שוב.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים מעט קרח וטוחנים שוב עד שהשייק חלק.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false,
+   "total_minutes": 10,
+   "time_note": "בעמוד: \"הכנה 10 דקות\", \"זמן כולל 10 דקות\""
+  },
+  {
+   "id": "dailybis-lentil-feta-egg-salad",
+   "name": "סלט עדשים, פטה וביצה קשה",
+   "url": "https://dailybis.com/recipes/lentil-feta-egg-salad/",
+   "meal": "lunchbox",
+   "equipment": [
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 2,
+   "protein_g": 33,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "400 גרם עדשים מבושלות (2 שקיות ואקום, או מבושלות מראש)",
+     "canon": "עדשים מבושלות",
+     "pantry_basic": false,
+     "canon_all": [
+      "עדשים מבושלות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "100 גרם גבינה בולגרית / פטה מפוררת",
+     "canon": "גבינת פטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "גבינת פטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס עגבניות שרי חצויות",
+     "canon": "עגבניית שרי",
+     "pantry_basic": false,
+     "canon_all": [
+      "עגבניית שרי"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 מלפפונים קצוצים",
+     "canon": "מלפפון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 צרור קטן פטרוזיליה קצוצה",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי בצל סגול קצוץ דק",
+     "canon": "בצל סגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל סגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כמון, מלח ופלפל לפי הטעם",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "צמחוני, נאכל קר מהקופסה. הסלט (בלי הביצים) מחזיק 3 ימים במקרר לפי העמוד. 33 גרם חלבון למנה.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מבשלים את הביצים 10 דקות במים רותחים ומעבירים למים קרים.",
+     "timer_min": 10
+    },
+    {
+     "text": "בזמן שהביצים מתבשלות, שוטפים ומסננים את העדשים וקוצצים את הירקות והפטרוזיליה.",
+     "timer_min": null
+    },
+    {
+     "text": "מערבבים בקערה עדשים, ירקות, שמן זית, מיץ לימון, כמון, מלח ופלפל.",
+     "timer_min": null
+    },
+    {
+     "text": "מקלפים וחוצים את הביצים ומגישים מעל הסלט עם הפטה המפוררת.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 10,
+   "device_max": 10,
+   "device_partial": false,
+   "total_minutes": 20,
+   "time_note": "בעמוד: הכנה 10 דק', בישול 10 דק' (בישול הביצים, פסיבי; את הירקות קוצצים בזמן הזה); זמן פעיל = זמן ההכנה"
+  },
+  {
+   "id": "dailybis-tahini-chicken-bulgur",
+   "name": "עוף בטחינה ולימון עם בורגול",
+   "url": "https://dailybis.com/recipes/tahini-chicken-bulgur/",
+   "meal": "lunchbox",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 20,
+   "servings": 3,
+   "protein_g": 36,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "400 גרם חזה עוף פרוס לרצועות",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס בורגול דק (יבש)",
+     "canon": "בורגול",
+     "pantry_basic": false,
+     "canon_all": [
+      "בורגול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות טחינה גולמית",
+     "canon": "טחינה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טחינה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי צרור פטרוזיליה קצוצה",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 שן שום כתושה",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פפריקה, כורכום, מלח ופלפל לפי הטעם",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "3 קופסאות אוכל בבת אחת. הבורגול רק מושרה במים רותחים, בלי בישול. 36 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שמים את הבורגול בקערה, מוסיפים מלח וכוס וחצי מים רותחים, מכסים ומשאירים 10 דקות.",
+     "timer_min": 10
+    },
+    {
+     "text": "מתבלים את רצועות העוף בפפריקה, כורכום, מלח ופלפל.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים שמן זית במחבת על אש גבוהה וצורבים את העוף 5-6 דקות, עם היפוך אחד, עד שאין ורוד בפנים.",
+     "timer_min": 5,
+     "timer_max": 6
+    },
+    {
+     "text": "מערבבים טחינה, מיץ לימון, שום, מלח ו-3-4 כפות מים קרים עד לרוטב חלק.",
+     "timer_min": null
+    },
+    {
+     "text": "מפרידים את הבורגול במזלג, מערבבים פנימה פטרוזיליה, מחלקים ל-3 קופסאות ומסדרים מעל עוף ורוטב טחינה.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 5,
+   "device_max": 6,
+   "device_partial": false,
+   "total_minutes": 20,
+   "time_note": "בעמוד: הכנה 8 דק', בישול 12 דק'; סה\"כ 20 דק' (צריבת העוף פעילה, לכן הזמן הפעיל נלקח כסה\"כ)"
+  },
+  {
+   "id": "dailybis-tuna-rice-edamame-bowl",
+   "name": "קערת טונה, אורז ואדממה",
+   "url": "https://dailybis.com/recipes/tuna-rice-edamame-bowl/",
+   "meal": "lunchbox",
+   "equipment": [
+    "microwave"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 1,
+   "protein_g": 48,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "1 קופסת טונה במים, מסוננת (כ-120 גרם)",
+     "canon": "טונה בקופסה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טונה בקופסה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כוס אורז לבן מבושל (שארית או שקית מוכנה)",
+     "canon": "אורז לבן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז לבן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כוס אדממה קפואה מקולפת",
+     "canon": "אדממה",
+     "pantry_basic": false,
+     "canon_all": [
+      "אדממה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 מלפפון פרוס",
+     "canon": "מלפפון",
+     "pantry_basic": false,
+     "canon_all": [
+      "מלפפון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע אבוקדו פרוס",
+     "canon": "אבוקדו",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבוקדו"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שומשום",
+     "canon": "שומשום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שומשום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ ליים וצ'ילי לפי הטעם",
+     "canon": "ליים",
+     "pantry_basic": false,
+     "canon_all": [
+      "ליים"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "בלי בישול אמיתי: אורז מוכן וטונה מקופסה, רק חימום במיקרו. 48 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים את האורז במיקרוגל דקה.",
+     "timer_min": 1
+    },
+    {
+     "text": "מפשירים את האדממה 2 דקות במים רותחים (או דקה וחצי במיקרוגל).",
+     "timer_min": 2
+    },
+    {
+     "text": "מערבבים את הטונה עם רוטב הסויה, מיץ הליים והצ'ילי.",
+     "timer_min": null
+    },
+    {
+     "text": "מסדרים בקערה אורז, טונה, אדממה, מלפפון ואבוקדו.",
+     "timer_min": null
+    },
+    {
+     "text": "מפזרים שומשום ומגישים.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 3,
+   "device_max": 3,
+   "device_partial": false,
+   "total_minutes": 10,
+   "time_note": "בעמוד: הכנה 7 דק', בישול 3 דק'; סה\"כ 10 דק'"
+  },
+  {
+   "id": "dailybis-pan-salmon-asparagus",
+   "name": "סלמון במחבת עם אספרגוס ולימון",
+   "url": "https://dailybis.com/recipes/pan-salmon-asparagus-rice/",
+   "meal": "dinner",
+   "equipment": [
+    "pan",
+    "stovetop",
+    "microwave"
+   ],
+   "equipment_any": [],
+   "active_minutes": 17,
+   "servings": 2,
+   "protein_g": 37,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (ערכים תזונתיים למנה לפי נתוני USDA)",
+   "ingredients": [
+    {
+     "text": "2 נתחי פילה סלמון עם עור (כ-150 גרם כל אחד)",
+     "canon": "סלמון",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 צרור אספרגוס, בלי הקצוות הקשים",
+     "canon": "אספרגוס",
+     "pantry_basic": false,
+     "canon_all": [
+      "אספרגוס"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כוסות אורז לבן מבושל (שארית או שקית מוכנה)",
+     "canon": "אורז לבן",
+     "pantry_basic": false,
+     "canon_all": [
+      "אורז לבן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפיות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום פרוסות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל שחור לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מחבת אחת, האורז מוכן מראש ומתחמם במיקרו. 37 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מייבשים את הסלמון היטב במגבת נייר ומתבלים במלח ופלפל.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים שמן זית במחבת על אש בינונית-גבוהה ומניחים את הסלמון עם העור למטה. צורבים 6 דקות בלי להזיז.",
+     "timer_min": 6
+    },
+    {
+     "text": "הופכים, מוסיפים לצד הסלמון את האספרגוס והשום ומבשלים עוד 4-5 דקות, עד שהסלמון ורדרד במרכז והאספרגוס ירוק ופריך.",
+     "timer_min": 4,
+     "timer_max": 5
+    },
+    {
+     "text": "בזמן הזה מחממים את האורז במיקרוגל.",
+     "timer_min": null
+    },
+    {
+     "text": "מזלפים מיץ לימון על הסלמון והאספרגוס ומגישים עם האורז.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 10,
+   "device_max": 11,
+   "device_partial": false,
+   "total_minutes": 17,
+   "time_note": "בעמוד: הכנה 5 דק', בישול 12 דק' (צריבה פעילה במחבת); סה\"כ 17 דק'"
+  },
+  {
+   "id": "dakot-ninja-pasta-chicken",
+   "name": "פסטה ועוף בנינג'ה",
+   "url": "https://www.10dakot.co.il/recipe/%d7%a4%d7%a1%d7%98%d7%94-%d7%95%d7%a2%d7%95%d7%a3-%d7%91%d7%a0%d7%99%d7%a0%d7%92%d7%94/",
+   "meal": "dinner",
+   "equipment": [
+    "ninja_foodi"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 3,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "חצי חבילת פסטה קצרה (250 גרם)",
+     "canon": "פסטה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פסטה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בצל בינוני קצוץ",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום קצוצות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "350 גרם חזה עוף חתוך לקוביות",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "גמבה חתוכה לרצועות",
+     "canon": "פלפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "פלפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף סילאן",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית מלח, קמצוץ פלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כפית כורכום",
+     "canon": "כורכום",
+     "pantry_basic": true,
+     "canon_all": [
+      "כורכום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רבע כפית כמון",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כפית אבקת מרק",
+     "canon": "אבקת מרק",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת מרק"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שליש כפית תבלין כוסברה/פטרוזיליה",
+     "canon": "עשבי תיבול מיובשים",
+     "pantry_basic": true,
+     "canon_all": [
+      "עשבי תיבול מיובשים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מים רותחים",
+     "canon": "מים",
+     "pantry_basic": true,
+     "canon_all": [
+      "מים"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "ארוחה שלמה בסיר אחד בנינג'ה (נכתב לדגם סמארט ליד; צריך מצב בישול בלחץ). חלבון לא מצוין בעמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מפעילים את הנינג'ה על מצב צריבה/בישול.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים לסיר 3 כפות שמן ומטגנים את הבצל עד להזהבה קלה. מוסיפים שום ומטגנים כחצי דקה.",
+     "timer_min": null
+    },
+    {
+     "text": "מוסיפים את חזה העוף ומטגנים כדקה מכל צד.",
+     "timer_min": 1
+    },
+    {
+     "text": "מוסיפים גמבה ופסטה ומתבלים. מוזגים מים רותחים עד גובה הפסטה, מערבבים וסוגרים את הסיר.",
+     "timer_min": null
+    },
+    {
+     "text": "עוברים למצב סיר לחץ (השסתום על SEAL), מפעילים על HI למשך 6 דקות ומשחררים לחץ בשחרור מהיר.",
+     "timer_min": 6
+    },
+    {
+     "text": "כשהלחץ שוחרר פותחים את הסיר, מערבבים ומגישים.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 6,
+   "device_max": 6,
+   "device_partial": true,
+   "total_minutes": 16,
+   "time_note": "בעמוד: \"זמן הכנה 10 דקות\", \"בישול/אפייה 6 דקות\" (בישול בלחץ, פסיבי); זמן בניית הלחץ לא מצוין"
+  },
+  {
+   "id": "taimeta-ninja-airfry-chicken-fillet",
+   "name": "פילה עוף בטיגון אוויר חם בנינג'ה",
+   "url": "https://taimeta.co.il/ninja-chicken-breast-recipe/",
+   "meal": "dinner",
+   "equipment": [
+    "ninja_foodi"
+   ],
+   "equipment_any": [],
+   "active_minutes": 15,
+   "servings": 4,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "600 גרם פילה עוף נקי (כ-8 יחידות בינוניות)",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שטוחה פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית שום גרוס (לא חובה)",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כפית טימין יבש",
+     "canon": "טימין",
+     "pantry_basic": true,
+     "canon_all": [
+      "טימין"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חצי כפית פלפל שחור גרוס",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קורט כמון (לא חובה)",
+     "canon": "כמון",
+     "pantry_basic": true,
+     "canon_all": [
+      "כמון"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "רבע שעה עבודה, את השאר עושה הנינג'ה במצב Air Crisp. טוב גם לקופסה למחרת. חלבון לא מצוין בעמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מייבשים היטב את פילה העוף בנייר סופג.",
+     "timer_min": null
+    },
+    {
+     "text": "בקערה גדולה מערבבים את הפילאים עם שמן הזית וכל התבלינים ומעסים כ-2 דקות.",
+     "timer_min": 2
+    },
+    {
+     "text": "מפעילים את הנינג'ה על מצב טיגון באוויר חם (Air Crisp) על 190 מעלות; אם אפשר, מחממים מראש 3 דקות.",
+     "timer_min": 3
+    },
+    {
+     "text": "מסדרים את הפילאים בסלסלה כך שלא ייגעו זה בזה.",
+     "timer_min": null
+    },
+    {
+     "text": "מבשלים 10 דקות, פותחים את המכסה והופכים את הפילאים בזהירות עם מלקחיים.",
+     "timer_min": 10
+    },
+    {
+     "text": "ממשיכים לבשל עוד 10-12 דקות, לפי העובי, עד שהפילאים זהובים מבחוץ ועסיסיים מבפנים.",
+     "timer_min": 10,
+     "timer_max": 12
+    },
+    {
+     "text": "מוציאים למנוחה של 3 דקות לפני פריסה או הגשה.",
+     "timer_min": 3
+    }
+   ],
+   "device_min": 20,
+   "device_max": 22,
+   "device_partial": false,
+   "time_note": "בעמוד: \"זמן עבודה: 15 דק'\"; \"ההכנה אורכת כ-15 דקות בלבד, כולל תיבול והתארגנות, והבישול בנינג'ה עצמו אורך כ-20-22 דקות\" (זמן כולל לא מצוין)"
   },
   {
    "id": "protein-cookies-oat-choc",

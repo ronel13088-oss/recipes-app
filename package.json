@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/ && node scripts/check-vendor-provenance.mjs",
+    "test": "node --test tests/*.mjs && node scripts/check-vendor-provenance.mjs",
     "check": "node scripts/check-no-real-data.mjs",
     "prepare": "node scripts/install-hooks.mjs",
     "setup": "node scripts/install-hooks.mjs",

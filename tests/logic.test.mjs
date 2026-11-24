@@ -17,7 +17,12 @@ test('ingredient parsing', () => { assert.deepEqual(L.parseIngredient('500 גר�
 test('filter: unknown prep excluded only when max set', () => { const all = L.filterRecipes(R, {}); assert.equal(all.length, R.length);
   const f = L.filterRecipes(R, { maxPrep: 10 }); assert.ok(f.every(r => r.prepMinutes != null && r.prepMinutes <= 10));
   assert.ok(L.filterRecipes(R, { meal: 'shake' }).every(r => r.meal === 'shake')); assert.ok(L.filterRecipes(R, { device: 'pan' }).every(r => r.devices.includes('pan'))); });
-test('pantry ranking', () => { const x = L.rankByPantry(R, 'טונה, ביצים'); assert.ok(x.length > 0); assert.match(x[0].r.title, /טונה/); assert.deepEqual(L.rankByPantry(R, ''), []); });
+test('pantry ranking', () => {
+  const rs = [{ id: 't', title: 'סלט טונה', ingredients: [L.parseIngredient('קופסת טונה'), L.parseIngredient('2 ביצים')] },
+    { id: 'e', title: 'חביתת חלבונים', ingredients: [L.parseIngredient('2 ביצים'), L.parseIngredient('חלבוני ביצה'), L.parseIngredient('תרד')] }];
+  const x = L.rankByPantry(rs, 'טונה, ביצים'); assert.ok(x.length > 0); assert.match(x[0].r.title, /טונה/); assert.equal(x[0].hit, 2);
+  assert.deepEqual(L.rankByPantry(R, ''), []);
+  assert.ok(L.rankByPantry(R, 'טונה, ביצים').some(row => /טונה/.test(row.r.title) && row.hit >= 2)); });
 test('shopping list merges duplicates', () => { const rs = [{ id: 'a', title: 'A', ingredients: [L.parseIngredient('2 ביצים'), L.parseIngredient('1 כוס חלב')] }, { id: 'b', title: 'B', ingredients: [L.parseIngredient('3 ביצים'), L.parseIngredient('מלח')] }];
   const l = L.shoppingList(rs, ['a', 'b', 'zz']); const e = l.find(i => i.name === 'ביצים'); assert.equal(e.qty, '5'); assert.equal(e.count, 2); assert.equal(l.length, 3); });
 test('streak', () => { const t = new Date(2026, 10, 3), k = d => L.dayKey(new Date(2026, 10, d)); // allow-fake-data
@@ -28,8 +33,14 @@ test('build-data merges, fails on duplicate id and bad JSON', () => { const d = 
   assert.equal(merge(d).recipes.length, 2);
   fs.writeFileSync(path.join(d, 'recipes-b3.json'), JSON.stringify([{ id: 'a' }])); assert.throws(() => merge(d), /duplicate id "a"/);
   fs.writeFileSync(path.join(d, 'recipes-b3.json'), '{oops'); assert.throws(() => merge(d), /invalid JSON in recipes-b3/); });
-test('pantry ranks by matched count first: tuna salad tops "טונה, ביצה"', () => { const x = L.rankByPantry(R, 'טונה, ביצה'); assert.match(x[0].r.title, /טונה/); assert.ok(x[0].hit >= 2);
-  for (let i = 1; i < x.length; i++) assert.ok(x[i - 1].hit > x[i].hit || (x[i - 1].hit === x[i].hit && x[i - 1].score >= x[i].score)); });
+test('pantry ranks by matched count first: tuna salad tops "טונה, ביצה"', () => {
+  const rs = [{ id: 't', title: 'סלט טונה עם ביצים', ingredients: [L.parseIngredient('קופסת טונה'), L.parseIngredient('2 ביצים')] },
+    { id: 'e', title: 'חביתת חלבונים', ingredients: [L.parseIngredient('2 ביצים'), L.parseIngredient('חלבוני ביצה'), L.parseIngredient('תרד')] }];
+  const x = L.rankByPantry(rs, 'טונה, ביצה'); assert.match(x[0].r.title, /טונה/); assert.ok(x[0].hit >= 2);
+  for (let i = 1; i < x.length; i++) assert.ok(x[i - 1].hit > x[i].hit || (x[i - 1].hit === x[i].hit && x[i - 1].score >= x[i].score));
+  const live = L.rankByPantry(R, 'טונה, ביצה');
+  for (let i = 1; i < live.length; i++) assert.ok(live[i - 1].hit > live[i].hit || (live[i - 1].hit === live[i].hit && live[i - 1].score >= live[i].score));
+  assert.ok(live.some(row => /טונה/.test(row.r.title) && row.hit >= 2)); });
 test('singular/plural folding', () => { assert.equal(L.stem('ביצה'), L.stem('ביצים')); assert.equal(L.stem('עגבנייה'), L.stem('עגבניות'));
   const rs = [{ id: 'a', title: 'A', ingredients: [L.parseIngredient('1 ביצה')] }, { id: 'b', title: 'B', ingredients: [L.parseIngredient('3 ביצים')] }];
   const l = L.shoppingList(rs, ['a', 'b']); assert.equal(l.length, 1); assert.equal(l[0].qty, '4');
