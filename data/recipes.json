@@ -4395,7 +4395,7 @@
    ],
    "equipment_any": [],
    "active_minutes": 10,
-   "servings": "6 מנות",
+   "servings": "6",
    "protein_g": null,
    "protein_basis": null,
    "ingredients": [
@@ -4520,7 +4520,7 @@
    ],
    "equipment_any": [],
    "active_minutes": 5,
-   "servings": "1-2 מנות",
+   "servings": "1-2",
    "protein_g": null,
    "protein_basis": null,
    "ingredients": [
@@ -4546,15 +4546,14 @@
      "text": "תוספות לפי בחירה (כפית מכל אחת): בצל קצוץ, זיתים קצוצים, עגבנייה קצוצה, עלי פטרוזיליה קצוצים, גבינה צהובה מגורדת, גבינה בולגרית מפוררת",
      "canon": "עגבנייה",
      "pantry_basic": false,
-     "canon_all": [
-      "בצל",
-      "עגבנייה",
-      "פטרוזיליה"
-     ],
+     "canon_all": [],
      "canon_any": [
       "בצל",
       "עגבנייה",
-      "פטרוזיליה"
+      "פטרוזיליה",
+      "זיתים",
+      "גבינה צהובה",
+      "גבינת פטה"
      ]
     },
     {
@@ -5229,7 +5228,12 @@
    "url": "https://matkonit.com/%D7%A1%D7%9C%D7%9E%D7%95%D7%9F-%D7%91%D7%9E%D7%A8%D7%99%D7%A0%D7%93%D7%94/",
    "meal": "dinner",
    "equipment": [],
-   "equipment_any": [],
+   "equipment_any": [
+    [
+     "oven",
+     "ninja_foodi"
+    ]
+   ],
    "active_minutes": 10,
    "servings": 4,
    "protein_g": 32,
@@ -5315,7 +5319,7 @@
     }
    ],
    "short_note": "מקור לתנור 20 דק'; 32 גרם חלבון למנה. אפשר בנינג'ה במצב אפייה.",
-   "ninja_bake_adaptation": false,
+   "ninja_bake_adaptation": true,
    "steps": [
     {
      "text": "מחממים תנור ל-220 מעלות ומרפדים תבנית תנור בנייר אפייה.",
