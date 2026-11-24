@@ -2,8 +2,7 @@ import test from 'node:test'; import assert from 'node:assert/strict'; import fs
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const raw = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/recipes.json'), 'utf8'));
 const byId = Object.fromEntries(raw.recipes.map(r => [r.id, r]));
-// Known legacy offender (batch 2), left unchanged by decision; reported separately.
-const LEGACY_SERVINGS = new Set(['date-oat-protein-balls']);
+const LEGACY_SERVINGS = new Set();
 
 test('servings never contains the word מנות (UI appends it)', () => {
   const bad = raw.recipes.filter(r => !LEGACY_SERVINGS.has(r.id) && String(r.servings ?? '').includes('מנות')).map(r => r.id);
