@@ -6,7 +6,7 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Hebrew equipment vocabulary (teammate data) -> app tool keys. null = explicit "not an app tool" (dropped on purpose).
 // Any value not listed here fails the build.
 export const EQUIP = { 'כיריים': 'stovetop', 'סיר': 'stovetop', 'מחבת': 'pan', 'בלנדר': 'blender', 'מעבד מזון': 'blender', 'מיקרוגל': 'microwave',
-  "סיר רב תכליתי נינג'ה": 'ninja_foodi', 'אייר פרייר': 'ninja_foodi', 'תנור': null, 'גריל': null, 'מקרר בלבד': null };
+  "סיר רב תכליתי נינג'ה": 'ninja_foodi', "נינג'ה": 'ninja_foodi', 'אייר פרייר': 'ninja_foodi', 'תנור': null, 'גריל': null, 'מקרר בלבד': null };
 // Inside equipment_any groups oven/grill stay as display-only tokens (not filter keys), so [תנור,נינג'ה] differs from required ninja.
 export const ANY_DISPLAY = { 'תנור': 'oven', 'גריל': 'grill' };
 const KEYS = new Set(['stovetop', 'pan', 'blender', 'microwave', 'ninja_foodi']);

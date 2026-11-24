@@ -9,14 +9,14 @@ test('equipment: unmapped value fails the build', () => {
   assert.throws(() => mapEquipment({ equipment_any: [['ווק']] }, 'r2'), /unmapped/); assert.throws(() => mapEquipment({ equipment_any: ['מחבת'] }, 'r3'), /array of arrays/);
   assert.throws(() => mapEquipment({ equipment: ['constructor'] }, 'r4'), /unmapped/); });
 test('equipment: every Hebrew value in teammate source is mapped', () => {
-  for (const f of ['recipes.json', 'recipes-batch2.json', 'recipes-batch4.json', 'recipes-batch5.json']) { const p = '/workspace/health/' + f; if (!fs.existsSync(p)) continue; const j = JSON.parse(fs.readFileSync(p)); const l = Array.isArray(j) ? j : j.recipes;
+  for (const f of ['recipes.json', 'recipes-batch2.json', 'recipes-batch3.json', 'recipes-batch4.json', 'recipes-batch5.json']) { const p = '/workspace/health/' + f; if (!fs.existsSync(p)) continue; const j = JSON.parse(fs.readFileSync(p)); const l = Array.isArray(j) ? j : j.recipes;
     for (const r of l) mapEquipment(r, r.id); } assert.ok(Object.keys(EQUIP).length >= 11); });
 test('filter honors equipment_any (any one suffices)', () => {
   const R = L.normalize({ recipes: [{ id: 'm', meal: 'breakfast', equipment: ['blender'], equipment_any: [['ninja_foodi']], active_minutes: 10 }, { id: 'p', equipment: ['pan'], active_minutes: 10 }] });
   assert.deepEqual(L.filterRecipes(R, { device: 'ninja_foodi' }).map(r => r.id), ['m']); assert.deepEqual(L.filterRecipes(R, { device: 'blender' }).map(r => r.id), ['m']);
   assert.deepEqual(L.filterRecipes(R, { device: 'pan' }).map(r => r.id), ['p']); });
-test('shipped data: only app keys, 69 recipes, ninja_bake_adaptation kept', () => { const d = JSON.parse(fs.readFileSync(new URL('../data/recipes.json', import.meta.url))).recipes; const K = Object.keys(L.DEVICES);
-  assert.equal(d.length, 69); for (const r of d) { assert.ok(r.equipment.every(k => K.includes(k)), r.id); assert.ok((r.equipment_any || []).flat().every(k => K.includes(k) || k in L.DISPLAY_ONLY), r.id); assert.ok('ninja_bake_adaptation' in r); } });
+test('shipped data: only app keys, 79 recipes, ninja_bake_adaptation kept', () => { const d = JSON.parse(fs.readFileSync(new URL('../data/recipes.json', import.meta.url))).recipes; const K = Object.keys(L.DEVICES);
+  assert.equal(d.length, 79); for (const r of d) { assert.ok(r.equipment.every(k => K.includes(k)), r.id); assert.ok((r.equipment_any || []).flat().every(k => K.includes(k) || k in L.DISPLAY_ONLY), r.id); assert.ok('ninja_bake_adaptation' in r); } });
 test('filter ignores display-only oven/grill', () => { const R = L.normalize({ recipes: [{ id: 'o', equipment: [], equipment_any: [['oven', 'ninja_foodi']], active_minutes: 5 }, { id: 'g', equipment: [], equipment_any: [['grill']], active_minutes: 5 }] });
   assert.deepEqual(L.filterRecipes(R, { device: 'ninja_foodi' }).map(r => r.id), ['o']); assert.equal(L.filterRecipes(R, { device: 'oven' }).length, 0); });
 test('recipe page: any-groups shown as X או Y and work label found via deviceAny (shipped data)', () => {
@@ -26,3 +26,7 @@ test('recipe page: any-groups shown as X או Y and work label found via deviceA
     if (r.deviceAny.flat().some(d => d in W)) assert.ok(L.deviceKey(r, W), r.id); }
   assert.equal(L.deviceText({ devices: [], deviceAny: [['oven', 'ninja_foodi']] }), "תנור או נינג'ה פודי"); });
 test('build output is deterministic (no timestamp)', () => { const d = JSON.parse(fs.readFileSync(new URL('../data/recipes.json', import.meta.url))); assert.ok(!('generated' in d)); });
+test("equipment: short נינג'ה maps to ninja_foodi", () => {
+  const o = mapEquipment({ id: 'n', equipment: ["נינג'ה"] }, 'n');
+  assert.deepEqual(o.equipment, ['ninja_foodi']);
+});

@@ -26,11 +26,11 @@ const NEW = {
   'taimeta-ninja-airfry-chicken-fillet': "פילה עוף בטיגון אוויר חם בנינג'ה",
 };
 
-test('batches 4+5: 69 recipes, expected sources, unique ids and titles', () => {
-  assert.equal(raw.count, 69); assert.equal(raw.recipes.length, 69); assert.equal(R.length, 69);
-  assert.deepEqual([...raw.sources].sort(), ['recipes-batch2.json', 'recipes-batch4.json', 'recipes-batch5.json', 'recipes.json']);
-  assert.equal(new Set(raw.recipes.map(r => r.id)).size, 69);
-  assert.equal(new Set(raw.recipes.map(r => r.name)).size, 69);
+test('batches 4+5: 79 recipes after batch 3, expected sources, unique ids and titles', () => {
+  assert.equal(raw.count, 79); assert.equal(raw.recipes.length, 79); assert.equal(R.length, 79);
+  assert.deepEqual([...raw.sources].sort(), ['recipes-batch2.json', 'recipes-batch3.json', 'recipes-batch4.json', 'recipes-batch5.json', 'recipes.json']);
+  assert.equal(new Set(raw.recipes.map(r => r.id)).size, 79);
+  assert.equal(new Set(raw.recipes.map(r => r.name)).size, 79);
 });
 
 test('batches 4+5: all 19 new recipes present and normalize with title, ingredients, steps, labels', () => {

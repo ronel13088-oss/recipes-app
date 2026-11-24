@@ -1,11 +1,12 @@
 {
  "sources": [
   "recipes-batch2.json",
+  "recipes-batch3.json",
   "recipes-batch4.json",
   "recipes-batch5.json",
   "recipes.json"
  ],
- "count": 69,
+ "count": 79,
  "recipes": [
   {
    "id": "onebody-protein-pancake",
@@ -4288,6 +4289,1051 @@
    "device_max": 14,
    "device_partial": true,
    "equipment_any": []
+  },
+  {
+   "id": "matkonit-yogurt-oat-pancake",
+   "name": "פנקייק שיבולת שועל ויוגורט",
+   "url": "https://matkonit.com/%D7%A4%D7%A0%D7%A7%D7%99%D7%99%D7%A7-%D7%A9%D7%99%D7%91%D7%95%D7%9C%D7%AA-%D7%A9%D7%95%D7%A2%D7%9C-%D7%95%D7%99%D7%95%D7%92%D7%95%D7%A8%D7%98/",
+   "meal": "breakfast",
+   "equipment": [
+    "blender",
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 3,
+   "protein_g": 20,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "1 גביע יוגורט טבעי (150-200 גרם)",
+     "canon": "יוגורט",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1.5 כוסות שיבולת שועל",
+     "canon": "שיבולת שועל",
+     "pantry_basic": false,
+     "canon_all": [
+      "שיבולת שועל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות סירופ מייפל טבעי",
+     "canon": "סירופ מייפל",
+     "pantry_basic": false,
+     "canon_all": [
+      "סירופ מייפל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית אבקת אפייה",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית תמצית וניל",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "הכל לבלנדר ואז מחבת. 20 גרם חלבון למנה.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שמים את כל הרכיבים בכוס בלנדר, מערבלים עד לקבלת מרקם חלק.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים מחבת פנקייקים או מחבת נון סטיק ומשמנים עם מעט חמאה או שמן.",
+     "timer_min": null
+    },
+    {
+     "text": "יוצקים למחבת ½ כוס ומטגנים את הפנקייק למשך 2-3 דקות עד שנוצרות בועות. הופכים את הפנקייק ומטגנים למשך דקה נוספת ומגישים לצלחת. מומלץ להגיש לצד סירופ מייפל טבעי ופירות טריים.",
+     "timer_min": 2,
+     "timer_max": 3
+    }
+   ],
+   "device_min": 3,
+   "device_max": 4,
+   "device_partial": false
+  },
+  {
+   "id": "mom-protein-crepes",
+   "name": "קרפ חלבון עם קוטג' ואבקת חלבון",
+   "url": "https://momflavours.co.il/protein-crepes-7-ingredients/",
+   "meal": "breakfast",
+   "equipment": [
+    "blender",
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": "6 מנות",
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "ביצים: 2 גדולות",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "אבקת חלבון (וניל/טבעי): 30 גרם (סקופ אחד)",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קוטג' 5%: 100 גרם",
+     "canon": "קוטג׳",
+     "pantry_basic": false,
+     "canon_all": [
+      "קוטג׳"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "משקה שקדים/חלב: 120 מ\"ל (אפשר עוד 1–2 כפות לפי הצורך)",
+     "canon": "חלב שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב שקדים",
+      "חלב"
+     ],
+     "canon_any": [
+      "חלב שקדים",
+      "חלב"
+     ]
+    },
+    {
+     "text": "אבקת אפייה: 1/2 כפית",
+     "canon": "אבקת אפייה",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת אפייה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תמצית וניל: 1 כפית",
+     "canon": "תמצית וניל",
+     "pantry_basic": true,
+     "canon_all": [
+      "תמצית וניל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שמן (קנולה/קוקוס) לשימון מחבת: 1 כפית (או תרסיס שמן)",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן",
+      "שמן קוקוס"
+     ],
+     "canon_any": [
+      "שמן",
+      "שמן קוקוס"
+     ]
+    }
+   ],
+   "short_note": "7 מרכיבים, בלנדר ומחבת. חלבון לא מצוין במספר למנה.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שמים בבלנדר או כוס בלנדר מוט את הביצים, אבקת החלבון, הקוטג', משקה השקדים/חלב, אבקת האפייה ותמצית הווניל. טוחנים 20–30 שניות, עד שמתקבלת בלילה אחידה בלי גושים. אם היא סמיכה מדי, מוסיפים עוד כף-שתיים משקה שקדים ומערבלים שוב.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים מחבת נון-סטיק בינונית על אש בינונית-נמוכה דקה-שתיים לפני שמתחילים.",
+     "timer_min": 1,
+     "timer_max": 2
+    },
+    {
+     "text": "מורחים 1/4 כפית שמן (או תרסיס קצר).",
+     "timer_min": null
+    },
+    {
+     "text": "יוצקים כ-1/3 כוס בלילה למחבת ומסובבים מיד את המחבת כדי לפזר לשכבה דקה.",
+     "timer_min": null
+    },
+    {
+     "text": "מטגנים 60–90 שניות, עד שהשוליים מתנתקים לבד והחלק העליון נראה יציב ולא מבריק. אם הוא עדיין רטוב מאוד, נותנים עוד 15–20 שניות.",
+     "timer_min": 1,
+     "timer_max": 2
+    },
+    {
+     "text": "מחליקים תרווד רחב מתחת והופכים בתנועה אחת. מטגנים עוד 30–45 שניות.",
+     "timer_min": null
+    },
+    {
+     "text": "מעבירים לצלחת ומכסים במגבת נקייה או מכסה כדי לשמור עליהם רכים. משמנים קלות בין סבב לסבב רק אם צריך. מגישים חמים או פושרים, עם מילוי מתוק או מלוח.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false
+  },
+  {
+   "id": "dakot-omelette-tortilla",
+   "name": "חביתה טורטיה ב-5 דקות",
+   "url": "https://www.10dakot.co.il/recipe/%d7%97%d7%91%d7%99%d7%aa%d7%94-%d7%98%d7%95%d7%a8%d7%98%d7%99%d7%94/",
+   "meal": "breakfast",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": "1-2 מנות",
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "טורטיה",
+     "canon": "טורטיה",
+     "pantry_basic": false,
+     "canon_all": [
+      "טורטיה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 ביצים",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תוספות לפי בחירה (כפית מכל אחת): בצל קצוץ, זיתים קצוצים, עגבנייה קצוצה, עלי פטרוזיליה קצוצים, גבינה צהובה מגורדת, גבינה בולגרית מפוררת",
+     "canon": "עגבנייה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל",
+      "עגבנייה",
+      "פטרוזיליה"
+     ],
+     "canon_any": [
+      "בצל",
+      "עגבנייה",
+      "פטרוזיליה"
+     ]
+    },
+    {
+     "text": "מעט מלח ופלפל שחור",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מחבת אחת, 5 דקות. חלבון לא מצוין.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים מחבת עם 2 כפות שמן (מומלץ להשתמש במחבת בקוטר הטורטיה).",
+     "timer_min": null
+    },
+    {
+     "text": "טורפים את הביצים בקערית, מוסיפים תוספת שאוהבים, מלח ופלפל שחור. כשהמחבת חמה יוצקים את הבלילה למחבת ומטגנים על אש בינונית במשך כחצי דקה.",
+     "timer_min": null
+    },
+    {
+     "text": "מניחים מעל החביתה את הטורטיה, מכסים וממשיכים לטגן במשך כדקה, עד שהחביתה מתבשלת מצד אחד וניתן להפוך אותה בקלות. הופכים את החביתה (כך שהטורטיה תהיה מונחת בתחתית), מכסים ומטגנים במשך דקה-דקה וחצי. מעבירים לצלחת, מגלגלים לרולדה וחותכים לחצי.",
+     "timer_min": 1,
+     "timer_max": 2
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false
+  },
+  {
+   "id": "onebody-strawberry-yogurt-shake",
+   "name": "שייק/קערת תותים עם יוגורט חלבון",
+   "url": "https://www.onebody.co.il/strawberry-bowl-recipe/",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": 5,
+   "servings": 2,
+   "protein_g": 13,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "יוגורט חלבון, 1 גביע",
+     "canon": "יוגורט",
+     "pantry_basic": false,
+     "canon_all": [
+      "יוגורט"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בננה קפואה, 1 יחידה",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "תותים, 6 יחידות",
+     "canon": "תות",
+     "pantry_basic": false,
+     "canon_all": [
+      "תות"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "חמאת שקדים / בוטנים טבעית, 1 כפית – לא חובה",
+     "canon": "חמאת שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חמאת שקדים",
+      "חמאת בוטנים"
+     ],
+     "canon_any": [
+      "חמאת שקדים",
+      "חמאת בוטנים"
+     ]
+    },
+    {
+     "text": "דבש, 2 כפיות",
+     "canon": "דבש",
+     "pantry_basic": false,
+     "canon_all": [
+      "דבש"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קרח, 1 כוס",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "בלנדר כדקה. 13 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "ערבבו את כל המצרכים בבלנדר חשמלי במשך כדקה.",
+     "timer_min": 1,
+     "timer_max": 1
+    },
+    {
+     "text": "מזגו ל-2 קערות. אפשר לפזר מעל זרעי צ'יה, תותים נוספים, קוקוס קלוי וגרנולה.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false
+  },
+  {
+   "id": "proteins-banana-almond-shake",
+   "name": "שייק חלבון עם בננה וחלב שקדים",
+   "url": "https://www.proteins.co.il/nutrition/easy-protein-recipes/",
+   "meal": "shake",
+   "equipment": [
+    "blender"
+   ],
+   "equipment_any": [],
+   "active_minutes": null,
+   "servings": 1,
+   "protein_g": 30,
+   "protein_basis": "source",
+   "protein_note": "לשייק, לפי העמוד (כ-30 גרם)",
+   "ingredients": [
+    {
+     "text": "סקופ אבקת חלבון",
+     "canon": "אבקת חלבון",
+     "pantry_basic": false,
+     "canon_all": [
+      "אבקת חלבון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כוס חלב שקדים",
+     "canon": "חלב שקדים",
+     "pantry_basic": false,
+     "canon_all": [
+      "חלב שקדים"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "בננה אחת",
+     "canon": "בננה",
+     "pantry_basic": false,
+     "canon_all": [
+      "בננה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "קרח",
+     "canon": "קרח",
+     "pantry_basic": true,
+     "canon_all": [
+      "קרח"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "4 מרכיבים לבלנדר. כ-30 גרם חלבון לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "שמים את כל המרכיבים בבלנדר.",
+     "timer_min": null
+    },
+    {
+     "text": "מערבלים עד לקבלת תערובת חלקה.",
+     "timer_min": null
+    },
+    {
+     "text": "מוזגים לכוס ומגישים.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false
+  },
+  {
+   "id": "proteins-chicken-herbs-pan",
+   "name": "חזה עוף במחבת עם עשבי תיבול",
+   "url": "https://www.proteins.co.il/nutrition/chicken-breast-in-a-pan/",
+   "meal": "lunchbox",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": null,
+   "servings": 2,
+   "protein_g": 31,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד (כ-31 גרם)",
+   "ingredients": [
+    {
+     "text": "2 חתיכות חזה עוף",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף תערובת עשבי תיבול (כמו רוזמרין, טימין, בזיליקום)",
+     "canon": "עשבי תיבול מיובשים",
+     "pantry_basic": true,
+     "canon_all": [
+      "עשבי תיבול מיובשים",
+      "רוזמרין",
+      "טימין",
+      "בזיליקום"
+     ],
+     "canon_any": [
+      "עשבי תיבול מיובשים",
+      "רוזמרין",
+      "טימין",
+      "בזיליקום"
+     ]
+    },
+    {
+     "text": "מלח ופלפל לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "בלי השרייה ארוכה. כ-31 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מורחים את חזה העוף בשמן זית ומתבלים בעשבי התיבול, מלח ופלפל.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים מחבת על אש בינונית ומטגנים את העוף עד שהוא מבושל היטב.",
+     "timer_min": null
+    }
+   ],
+   "device_min": null,
+   "device_max": null,
+   "device_partial": false
+  },
+  {
+   "id": "mom-ninja-chicken-meatballs",
+   "name": "קציצות עוף בנינג'ה",
+   "url": "https://momflavours.co.il/chicken-meatballs-in-ninja-cooker/",
+   "meal": "lunchbox",
+   "equipment": [
+    "ninja_foodi"
+   ],
+   "equipment_any": [],
+   "active_minutes": 15,
+   "servings": 4,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "500 גרם חזה עוף טחון",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל קטן מגורד",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 ביצה",
+     "canon": "ביצה",
+     "pantry_basic": false,
+     "canon_all": [
+      "ביצה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1/2 כוס פירורי לחם",
+     "canon": "פירורי לחם",
+     "pantry_basic": false,
+     "canon_all": [
+      "פירורי לחם"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "כף שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח ופלפל שחור לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות כוסברה קצוצה (למי שאוהב)",
+     "canon": "כוסברה",
+     "pantry_basic": false,
+     "canon_all": [
+      "כוסברה"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "עבודה ~15 דק', נינג'ה עושה את השאר. חלבון לא מצוין.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "בקערה גדולה מערבבים את כל המרכיבים: עוף טחון, בצל מגורד, שום, ביצה, פירורי לחם, פפריקה, שמן זית, מלח ופלפל. אם רוצים – מוסיפים גם את הכוסברה הקצוצה.",
+     "timer_min": null
+    },
+    {
+     "text": "לשים את התערובת בעדינות עם הידיים עד שהיא מתאחדת. התערובת צריכה להיות רכה, אבל לא נוזלית.",
+     "timer_min": null
+    },
+    {
+     "text": "יוצרים מהתערובת קציצות בינוניות ומסדרים אותן על צלחת. מומלץ להרטיב ידיים כדי למנוע מהתערובת להידבק.",
+     "timer_min": null
+    },
+    {
+     "text": "מחממים את הנינג'ה למצב Air Fry על 200 מעלות צלזיוס. נותנים למכשיר כמה דקות להתחמם.",
+     "timer_min": null
+    },
+    {
+     "text": "משמנים מעט את סלסלת הנינג'ה בשמן זית ומסדרים את הקציצות בשכבה אחת. אין לצופף.",
+     "timer_min": null
+    },
+    {
+     "text": "מפעילים את הנינג'ה למשך 15-20 דקות. הופכים את הקציצות לאחר כ-10 דקות כדי שיקבלו צבע אחיד מכל הצדדים.",
+     "timer_min": 15,
+     "timer_max": 20
+    },
+    {
+     "text": "כאשר הקציצות פריכות וזהובות מבחוץ – הן מוכנות. מוציאים ומניחים להתקרר לכמה דקות.",
+     "timer_min": null
+    }
+   ],
+   "device_min": 15,
+   "device_max": 20,
+   "device_partial": true
+  },
+  {
+   "id": "matkonit-chicken-pan-strips",
+   "name": "חזה עוף עסיסי במחבת",
+   "url": "https://matkonit.com/%D7%97%D7%96%D7%94-%D7%A2%D7%95%D7%A3-%D7%A2%D7%A1%D7%99%D7%A1%D7%99/",
+   "meal": "lunchbox",
+   "equipment": [
+    "pan",
+    "stovetop"
+   ],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 6,
+   "protein_g": 38,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "1 קילו חזה עוף",
+     "canon": "חזה עוף",
+     "pantry_basic": false,
+     "canon_all": [
+      "חזה עוף"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 בצל לבן חתוך לקוביות",
+     "canon": "בצל",
+     "pantry_basic": false,
+     "canon_all": [
+      "בצל"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "3 כפות שמן קנולה",
+     "canon": "שמן",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כף גריל עוף",
+     "canon": "תיבול",
+     "pantry_basic": true,
+     "canon_all": [
+      "תיבול"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית אבקת שום",
+     "canon": "אבקת שום",
+     "pantry_basic": true,
+     "canon_all": [
+      "אבקת שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית מלח",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "½ כפית פלפל שחור",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "רצועות במחבת, 38 גרם חלבון למנה לפי העמוד.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים מחבת פסים או מחבת רחבה עם 2 כפות שמן ומטגנים את הבצל עד להזהבה.",
+     "timer_min": null
+    },
+    {
+     "text": "במקביל פורסים את חזה העוף לרצועות דקות ומערבבים היטב עם תבלינים וכף שמן.",
+     "timer_min": null
+    },
+    {
+     "text": "כשהבצל מזהיב, מוסיפים את רצועות העוף למחבת ומטגנים במשך 3-5 דקות מכל צד עד להשחמה. ניתן להגיש לצד אורז לבן וסלט ירקות טרי עם טחינה.",
+     "timer_min": 3,
+     "timer_max": 5
+    }
+   ],
+   "device_min": 6,
+   "device_max": 10,
+   "device_partial": false
+  },
+  {
+   "id": "taimeta-ninja-salmon",
+   "name": "פילה סלמון בנינג'ה עם מרינדה",
+   "url": "https://taimeta.co.il/ninja-cooked-salmon-filet-recipe/",
+   "meal": "dinner",
+   "equipment": [
+    "ninja_foodi"
+   ],
+   "equipment_any": [],
+   "active_minutes": 15,
+   "servings": 4,
+   "protein_g": null,
+   "protein_basis": null,
+   "ingredients": [
+    {
+     "text": "פילה סלמון טרי (ללא עור) – 720 גרם (כ-4 נתחי פילה שווים, בעובי 2-2.5 ס\"מ)",
+     "canon": "סלמון",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שום כתוש – 2 שיניים (6 גרם)",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "שמן זית איכותי – 30 מ\"ל (2 כפות)",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "רוטב סויה – 20 מ\"ל (1 כף וחצי)",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "סילאן טבעי (או דבש) – 25 גרם (1 כף)",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן",
+      "דבש"
+     ],
+     "canon_any": [
+      "סילאן",
+      "דבש"
+     ]
+    },
+    {
+     "text": "גרידת לימון – 1 כפית (2 גרם)",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מיץ לימון טרי – 15 מ\"ל (1 כף)",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פלפל שחור גרוס – 1/2 כפית (1 גרם)",
+     "canon": "פלפל שחור",
+     "pantry_basic": true,
+     "canon_all": [
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח דק – 1/2 כפית (3 גרם)",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "פטרוזיליה קצוצה – 2 כפות (7 גרם)",
+     "canon": "פטרוזיליה",
+     "pantry_basic": false,
+     "canon_all": [
+      "פטרוזיליה"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "נינג'ה Air Fry 12–14 דק'. חלבון לא מצוין במספר.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "הניחו את נתחי הסלמון על נייר סופג וייבשו היטב את שני הצדדים.",
+     "timer_min": null
+    },
+    {
+     "text": "בקערה בינונית, ערבבו שמן זית, רוטב סויה, סילאן, שום כתוש, גרידת לימון, מיץ לימון, פלפל שחור ומלח עד לתערובת אחידה.",
+     "timer_min": null
+    },
+    {
+     "text": "הניחו את נתחי הסלמון במרינדה והשרו למשך כ-10 דקות בטמפרטורת החדר.",
+     "timer_min": 10,
+     "timer_max": 10
+    },
+    {
+     "text": "הפעילו את מכשיר הנינג'ה על מצב Air Fry בטמפרטורה של 200 מעלות צלזיוס, ותנו לו להתחמם במשך 3 דקות מראש (Preheat).",
+     "timer_min": 3,
+     "timer_max": 3
+    },
+    {
+     "text": "רססו בעדינות את מגש הנינג'ה בתרסיס שמן, והניחו עליו את נתחי הסלמון בצד אחד, מבלי לחפוף ביניהם. שפכו בעדינות את יתרת המרינדה מעל הדגים.",
+     "timer_min": null
+    },
+    {
+     "text": "בשלו במשך 12-14 דקות, לפי עובי הנתח (עד 2 ס\"מ – 12 דקות; נתח עבה – 14 דקות). מומלץ לבדוק אחרי 10 דקות.",
+     "timer_min": 12,
+     "timer_max": 14
+    },
+    {
+     "text": "הוציאו בזהירות את הנתחים והניחו אותם למנוחה של דקה-שתיים. פזרו פטרוזיליה קצוצה וגרידת לימון טרייה לפני ההגשה.",
+     "timer_min": 1,
+     "timer_max": 2
+    }
+   ],
+   "device_min": 12,
+   "device_max": 14,
+   "device_partial": false
+  },
+  {
+   "id": "matkonit-salmon-marinade",
+   "name": "סלמון במרינדה משגעת",
+   "url": "https://matkonit.com/%D7%A1%D7%9C%D7%9E%D7%95%D7%9F-%D7%91%D7%9E%D7%A8%D7%99%D7%A0%D7%93%D7%94/",
+   "meal": "dinner",
+   "equipment": [],
+   "equipment_any": [],
+   "active_minutes": 10,
+   "servings": 4,
+   "protein_g": 32,
+   "protein_basis": "source",
+   "protein_note": "למנה, לפי העמוד",
+   "ingredients": [
+    {
+     "text": "4 נתחי פילה דג סלמון",
+     "canon": "סלמון",
+     "pantry_basic": false,
+     "canon_all": [
+      "סלמון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות שמן זית",
+     "canon": "שמן זית",
+     "pantry_basic": true,
+     "canon_all": [
+      "שמן זית"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 שיני שום כתושות",
+     "canon": "שום",
+     "pantry_basic": false,
+     "canon_all": [
+      "שום"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות סילאן או דבש",
+     "canon": "סילאן",
+     "pantry_basic": false,
+     "canon_all": [
+      "סילאן",
+      "דבש"
+     ],
+     "canon_any": [
+      "סילאן",
+      "דבש"
+     ]
+    },
+    {
+     "text": "3 כפות רוטב סויה",
+     "canon": "רוטב סויה",
+     "pantry_basic": false,
+     "canon_all": [
+      "רוטב סויה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "2 כפות מיץ לימון",
+     "canon": "לימון",
+     "pantry_basic": false,
+     "canon_all": [
+      "לימון"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "1 כפית פפריקה מתוקה",
+     "canon": "פפריקה",
+     "pantry_basic": true,
+     "canon_all": [
+      "פפריקה"
+     ],
+     "canon_any": []
+    },
+    {
+     "text": "מלח פלפל לפי הטעם",
+     "canon": "מלח",
+     "pantry_basic": true,
+     "canon_all": [
+      "מלח",
+      "פלפל שחור"
+     ],
+     "canon_any": []
+    }
+   ],
+   "short_note": "מקור לתנור 20 דק'; 32 גרם חלבון למנה. אפשר בנינג'ה במצב אפייה.",
+   "ninja_bake_adaptation": false,
+   "steps": [
+    {
+     "text": "מחממים תנור ל-220 מעלות ומרפדים תבנית תנור בנייר אפייה.",
+     "timer_min": null
+    },
+    {
+     "text": "מערבבים את מרכיבי המרינדה בקערה, מוסיפים את נתחי הסלמון ומצפים אותם מכל הכיוונים.",
+     "timer_min": null
+    },
+    {
+     "text": "מניחים את הדגים על גבי נייר האפייה ואופים למשך 20 דקות או עד להזהבה קלה.",
+     "timer_min": 20,
+     "timer_max": 20
+    }
+   ],
+   "device_min": 20,
+   "device_max": 20,
+   "device_partial": false
   },
   {
    "id": "gila-microwave-eggs-cheese",
